@@ -1,0 +1,21 @@
+{
+  "name": "SampleTravis",
+  "version": "0.0.1",
+  "authors": [
+    "Adam Estela <adam.estela@paperg.com>"
+  ],
+  "description": "Test out Travis CI and it's features.",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.2.26",
+    "jquery": "~2.1.1",
+    "bootstrap": "~3.2.0"
+  }
+}

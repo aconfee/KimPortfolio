@@ -1,11 +1,17 @@
+body{
+	background-color: black;
+}
+
 #view-portfolio-button{
 	position:absolute;
 
 	bottom:40px;
-	left:90px;
+	left:120px;
 
 	height:50px;
 	width:160px;
+
+	letter-spacing: 0.1em;
 }
 
 .custom-primary-button{
@@ -49,4 +55,70 @@ a:hover{
 
 a:visited{
 	text-decoration: none;
+}
+
+#coverTitle{
+	position: absolute;
+	display: inline-block;
+
+	bottom:100px;
+	left:120px;
+}
+
+#coverName{
+	font-size: 3em;
+	color:white;
+	letter-spacing: 0.1em;
+	font-weight: bold;
+	margin:0;
+	height:45px;
+}
+
+#professionalTitle{
+	font-size: 1.4em;
+	color: white;
+	letter-spacing: 0.4em;
+	opacity: 0.8;
+	margin:0;
+}
+
+.carousel-control{
+	height:60px;
+	width:50px;
+	top:50%;
+	background-color: black;
+	opacity:0.3;
+
+	transition: all .2s ease-in-out;
+   -moz-transition: all .2s ease-in-out;
+   -webkit-transition: all .2s ease-in-out;
+}
+
+.carousel-control:hover{
+	opacity: 0.7;
+	width:65px;
+
+	transition: all .2s ease-in-out;
+   -moz-transition: all .2s ease-in-out;
+   -webkit-transition: all .2s ease-in-out;
+}
+
+.carousel-control.left{
+	border-bottom-right-radius: 5px;
+	border-top-right-radius: 5px;
+}
+
+.carousel-control.right{
+	border-bottom-left-radius: 5px;
+	border-top-left-radius: 5px;
+}
+
+.carousel-control.left .glyphicon{
+	top:30px;
+	left:25px;
+}
+
+.carousel-control.right .glyphicon{
+	top:30px;
+	right:25px;
 }

@@ -1,6 +1,7 @@
 function portfolioController($scope){
 
 	$scope.openCategory = -1;
+	$scope.galleryOpen = false;
 
 	$scope.expandCategory = function(index){
 		// Clone the element with the auto property to see how far we should extend the height.

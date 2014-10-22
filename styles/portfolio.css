@@ -1,7 +1,17 @@
-body{
-	
-}
-
+div::-webkit-scrollbar {  
+    width: 10px; 
+}  
+div::-webkit-scrollbar-track { 
+	width: 10px; 
+    background-color: blue;  
+    border-left: 1px solid white;  
+}  
+div::-webkit-scrollbar-thumb {  
+    background-color: red;  
+}  
+div::-webkit-scrollbar-thumb:hover {  
+    background-color: green;  
+}  
 ul{
 	list-style: none;
 }
@@ -40,10 +50,14 @@ ul{
 	position: fixed;
 	width:30px;
 	height:450px;
+
+
 	display: inline-block;
 	background-color: black;
 	margin-left:211px;
 	margin-top:15px;
+	padding:10px;
+	overflow: hidden;
 
 	border-bottom-right-radius: 5px;
 	border-top-right-radius: 5px;
@@ -54,7 +68,53 @@ ul{
 }
 
 #gallery-flyout:hover{
-	width:400px;
+	width:700px;
+
+	transition: all .2s ease-in-out;
+   -moz-transition: all .2s ease-in-out;
+   -webkit-transition: all .2s ease-in-out;
+}
+
+.gallery-title{
+	color:white;
+	font-weight: bold;
+	font-size: 1.5em;
+	letter-spacing: 0.3em;
+
+	width: 590px;
+
+	margin-top: 10px;
+	margin-bottom: 30px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.thumb-container{
+	width:590px;
+	height:350px;
+	overflow-y:scroll;
+
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.gallery-thumb{
+	width:90px;
+	height:90px;
+	background-color: green;
+	margin: 10px 10px 20px 10px;
+	display:inline-block;
+
+	border:1px solid rgba(255,255,255,0);
+
+	transition: all .2s ease-in-out;
+   -moz-transition: all .2s ease-in-out;
+   -webkit-transition: all .2s ease-in-out;
+}
+
+.gallery-thumb:hover{
+	border:1px solid rgba(255,255,255,1);
+	cursor: pointer;
 
 	transition: all .2s ease-in-out;
    -moz-transition: all .2s ease-in-out;

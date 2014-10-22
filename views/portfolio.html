@@ -17,7 +17,29 @@
 
 <body>
 	<div id='screen-size-container' ng-controller='portfolioController'>
-		<div id='gallery-flyout'></div>
+		<div id='gallery-flyout' ng-mouseenter='galleryOpen=true' ng-mouseleave='galleryOpen=false'>
+			<div class='gallery-title' ng-show='galleryOpen'>Gallery Nav</div>
+			<div class='thumb-container' ng-show='galleryOpen'>
+				<div class='gallery-thumb'></div>
+				<div class='gallery-thumb'></div>
+				<div class='gallery-thumb'></div>
+				<div class='gallery-thumb'></div>
+				<div class='gallery-thumb'></div>
+				<div class='gallery-thumb'></div>
+				<div class='gallery-thumb'></div>
+				<div class='gallery-thumb'></div>
+				<div class='gallery-thumb'></div>
+				<div class='gallery-thumb'></div>
+				<div class='gallery-thumb'></div>
+				<div class='gallery-thumb'></div>
+				<div class='gallery-thumb'></div>
+				<div class='gallery-thumb'></div>
+				<div class='gallery-thumb'></div>
+				<div class='gallery-thumb'></div>
+				<div class='gallery-thumb'></div>
+				<div class='gallery-thumb'></div>
+			</div>
+		</div>
 		<div id='mainNav'>
 			<div id='header'></div>
 			<div id='content-links'>

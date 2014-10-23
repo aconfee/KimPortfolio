@@ -1,7 +1,6 @@
 function portfolioController($scope){
 
 	$scope.openCategory = -1;
-	$scope.galleryOpen = false;
 
 	$scope.expandCategory = function(index){
 		// Clone the element with the auto property to see how far we should extend the height.
@@ -34,6 +33,51 @@ function portfolioController($scope){
 		  }, 200, function() {
 		    // Animation complete.
 		  });
+	};
+
+	$scope.expandGallery = function(){
+		// Open the gallery.
+		$( "#gallery-flyout" ).animate({
+		    width: "700px"
+		  }, 200, function() {
+		    // Animation complete.
+		  });
+
+		$( "#thumb-container" ).animate({
+		    opacity: "1.0"
+		  }, 800, function() {
+		    // Animation complete.
+		  });
+
+		$( "#gallery-title" ).animate({
+		    opacity: "1.0"
+		  }, 600, function() {
+		    // Animation complete.
+		  });
+	};
+
+	$scope.retractGallery = function(){
+		$( "#gallery-flyout" ).animate({
+		    width: "30px"
+		  }, 200, function() {
+		    // Animation complete.
+		  });
+
+		$( "#thumb-container" ).animate({
+		    opacity: "0.0"
+		  }, 400, function() {
+		    // Animation complete.
+		  });
+
+		$( "#gallery-title" ).animate({
+		    opacity: "0.0"
+		  }, 400, function() {
+		    // Animation complete.
+		  });
+	};
+
+	$scope.selectThumb = function(index){
+		$scope.retractGallery();
 	};
 
 	$scope.populateGallery = function(index){

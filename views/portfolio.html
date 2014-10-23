@@ -17,10 +17,10 @@
 
 <body>
 	<div id='screen-size-container' ng-controller='portfolioController'>
-		<div id='gallery-flyout' ng-mouseenter='galleryOpen=true' ng-mouseleave='galleryOpen=false'>
-			<div class='gallery-title' ng-show='galleryOpen'>Gallery Nav</div>
-			<div class='thumb-container' ng-show='galleryOpen'>
-				<div class='gallery-thumb'></div>
+		<div id='gallery-flyout' ng-mouseenter='expandGallery();'>
+			<div id='gallery-title'>Gallery Nav<span id='gallery-close-button' ng-click='retractGallery();'></span></div>
+			<div id='thumb-container'>
+				<div class='gallery-thumb' ng-click='selectThumb($index);'></div>
 				<div class='gallery-thumb'></div>
 				<div class='gallery-thumb'></div>
 				<div class='gallery-thumb'></div>
@@ -43,6 +43,7 @@
 		<div id='mainNav'>
 			<div id='header'></div>
 			<div id='content-links'>
+				<a href='index.html'>Home</a>
 				<div class='linkHeaderContainer'><span class='linkHeaderText' ng-click='expandCategory(0);'>Characters</span>
 					<div class='listItem' ng-click='populateGallery(0);'>Hello</div>
 					<div class='listItem' ng-click='populateGallery(0);'>Hello</div>

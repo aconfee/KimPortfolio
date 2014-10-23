@@ -16,6 +16,22 @@ ul{
 	list-style: none;
 }
 
+a{
+	text-decoration: none;
+	color:white;
+	letter-spacing: 0.2em;
+	font-size: 1.1em;
+}
+
+a:hover{
+	text-decoration: none;
+	cursor: pointer;
+}
+
+a:visited{
+	text-decoration: none;
+}
+
 #screen-size-container{
 	height: 100%;
     width: 100%;
@@ -67,32 +83,38 @@ ul{
    -webkit-transition: all .2s ease-in-out;
 }
 
-#gallery-flyout:hover{
-	width:700px;
-
-	transition: all .2s ease-in-out;
-   -moz-transition: all .2s ease-in-out;
-   -webkit-transition: all .2s ease-in-out;
-}
-
-.gallery-title{
+#gallery-title{
 	color:white;
 	font-weight: bold;
 	font-size: 1.5em;
 	letter-spacing: 0.3em;
 
-	width: 590px;
+	width: 615px;
+	opacity: 0;
 
 	margin-top: 10px;
 	margin-bottom: 30px;
-	margin-left: auto;
-	margin-right: auto;
+	margin-left: 55px;
+	display: inline-block;
 }
 
-.thumb-container{
+#gallery-close-button{
+	width:25px;
+	height:25px;
+	background-color: red;
+	float:right;
+}
+
+#gallery-close-button:hover{
+	cursor: pointer;
+	background-color: white;
+}
+
+#thumb-container{
 	width:590px;
 	height:350px;
 	overflow-y:scroll;
+	opacity: 0;
 
 	margin-left: auto;
 	margin-right: auto;

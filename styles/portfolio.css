@@ -83,6 +83,10 @@ a:visited{
    -webkit-transition: all .2s ease-in-out;
 }
 
+.gallery-closed-hover{
+	cursor: pointer;
+}
+
 #gallery-title{
 	color:white;
 	font-weight: bold;

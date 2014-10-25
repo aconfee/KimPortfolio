@@ -1,6 +1,20 @@
 function portfolioController($scope){
 
+	// Angular vars
 	$scope.openCategory = -1;
+	$scope.galleryOpen = false;
+	$scope.defaultPreview = 'green';
+	$scope.currentPreview = $scope.defaultPreview;
+
+	// Class vars
+	var self = this;
+	self.navLinkPreviews = {
+		'characters':[
+			'black',
+			'red',
+			'yellow'
+		]
+	};
 
 	$scope.expandCategory = function(index){
 		// Clone the element with the auto property to see how far we should extend the height.
@@ -35,8 +49,24 @@ function portfolioController($scope){
 		  });
 	};
 
-	$scope.expandGallery = function(){
-		// Open the gallery.
+	// Get the preview for this link.
+	$scope.getPreview = function(category, index){
+		console.log('gettinng the preview');
+		$scope.currentPreview = self.navLinkPreviews[category][index];
+	};
+
+	// Restore the default preview
+	$scope.restorePreview = function(){
+		$scope.currentPreview = $scope.defaultPreview;
+	};
+
+	$scope.toggleGallery = function(){
+		if($scope.galleryOpen == true){
+			$scope.retractGallery();
+			return;
+		}
+
+		// Expand the gallery by default.
 		$( "#gallery-flyout" ).animate({
 		    width: "700px"
 		  }, 200, function() {
@@ -54,6 +84,8 @@ function portfolioController($scope){
 		  }, 600, function() {
 		    // Animation complete.
 		  });
+
+		$scope.galleryOpen = true;
 	};
 
 	$scope.retractGallery = function(){
@@ -74,10 +106,12 @@ function portfolioController($scope){
 		  }, 400, function() {
 		    // Animation complete.
 		  });
+
+		$scope.galleryOpen = false;
 	};
 
 	$scope.selectThumb = function(index){
-		$scope.retractGallery();
+
 	};
 
 	$scope.populateGallery = function(index){

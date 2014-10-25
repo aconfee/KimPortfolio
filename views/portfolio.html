@@ -17,8 +17,8 @@
 
 <body>
 	<div id='screen-size-container' ng-controller='portfolioController'>
-		<div id='gallery-flyout' ng-mouseenter='expandGallery();'>
-			<div id='gallery-title'>Gallery Nav<span id='gallery-close-button' ng-click='retractGallery();'></span></div>
+		<div id='gallery-flyout' ng-click='toggleGallery();' ng-class="{ 'gallery-closed-hover': galleryOpen == false }">
+			<div id='gallery-title'>Gallery Nav<span id='gallery-close-button' ></span></div>
 			<div id='thumb-container'>
 				<div class='gallery-thumb' ng-click='selectThumb($index);'></div>
 				<div class='gallery-thumb'></div>
@@ -41,13 +41,13 @@
 			</div>
 		</div>
 		<div id='mainNav'>
-			<div id='header'></div>
+			<div id='header' style="background-color: {{ currentPreview }}"></div>
 			<div id='content-links'>
 				<a href='index.html'>Home</a>
 				<div class='linkHeaderContainer'><span class='linkHeaderText' ng-click='expandCategory(0);'>Characters</span>
-					<div class='listItem' ng-click='populateGallery(0);'>Hello</div>
-					<div class='listItem' ng-click='populateGallery(0);'>Hello</div>
-					<div class='listItem' ng-click='populateGallery(0);'>Hello</div>
+					<div class='listItem' ng-mouseenter="getPreview('characters', 0);" ng-mouseleave="restorePreview();">Hello</div>
+					<div class='listItem' ng-mouseenter="getPreview('characters', 1);" ng-mouseleave="restorePreview();">Hello</div>
+					<div class='listItem' ng-mouseenter="getPreview('characters', 2);" ng-mouseleave="restorePreview();">Hello</div>
 				</div>
 				<div class='linkHeaderContainer'><span class='linkHeaderText' ng-click='expandCategory(1);'>Environment</span>
 					<div class='listItem' ng-click='populateGallery(0);'>Hello</div>

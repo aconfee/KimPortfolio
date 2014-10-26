@@ -20,48 +20,38 @@
 		<div id='gallery-flyout' ng-click='toggleGallery();' ng-class="{ 'gallery-closed-hover': galleryOpen == false }">
 			<div id='gallery-title'>Gallery Nav<span id='gallery-close-button' ></span></div>
 			<div id='thumb-container'>
-				<div class='gallery-thumb' ng-click='selectThumb($index);'></div>
-				<div class='gallery-thumb'></div>
-				<div class='gallery-thumb'></div>
-				<div class='gallery-thumb'></div>
-				<div class='gallery-thumb'></div>
-				<div class='gallery-thumb'></div>
-				<div class='gallery-thumb'></div>
-				<div class='gallery-thumb'></div>
-				<div class='gallery-thumb'></div>
-				<div class='gallery-thumb'></div>
-				<div class='gallery-thumb'></div>
-				<div class='gallery-thumb'></div>
-				<div class='gallery-thumb'></div>
-				<div class='gallery-thumb'></div>
-				<div class='gallery-thumb'></div>
-				<div class='gallery-thumb'></div>
-				<div class='gallery-thumb'></div>
-				<div class='gallery-thumb'></div>
+				<div class='gallery-thumb' ng-repeat="thumb in thumbs[currentThumb]">
+					<img src = "{{ thumb }}" ></img>
+				</div>
 			</div>
 		</div>
 		<div id='mainNav'>
-			<div id='header' style="background-color: {{ currentPreview }}"></div>
+			<div id='header'>
+				<img src=" {{ currentPreview }} "></img>
+			</div>
 			<div id='content-links'>
 				<a href='index.html'>Home</a>
 				<div class='linkHeaderContainer'><span class='linkHeaderText' ng-click='expandCategory(0);'>Characters</span>
-					<div class='listItem' ng-mouseenter="getPreview('characters', 0);" ng-mouseleave="restorePreview();">Hello</div>
-					<div class='listItem' ng-mouseenter="getPreview('characters', 1);" ng-mouseleave="restorePreview();">Hello</div>
-					<div class='listItem' ng-mouseenter="getPreview('characters', 2);" ng-mouseleave="restorePreview();">Hello</div>
+					<div class='listItem' ng-mouseenter="getPreview('characters', 0);" ng-mouseleave="restorePreview();" ng-click="chooseLink('girls');">Girls</div>
+					<div class='listItem' ng-mouseenter="getPreview('characters', 1);" ng-mouseleave="restorePreview();" ng-click="chooseLink('sketches');">Sketches</div>
+					<div class='listItem' ng-mouseenter="getPreview('characters', 2);" ng-mouseleave="restorePreview();">Fan Art</div>
 				</div>
 				<div class='linkHeaderContainer'><span class='linkHeaderText' ng-click='expandCategory(1);'>Environment</span>
-					<div class='listItem' ng-click='populateGallery(0);'>Hello</div>
-					<div class='listItem' ng-click='populateGallery(0);'>Hello</div>
-					<div class='listItem' ng-click='populateGallery(0);'>Hello</div>
-					<div class='listItem' ng-click='populateGallery(0);'>Hello</div>
-					<div class='listItem' ng-click='populateGallery(0);'>Hello</div>
+					<div class='listItem' ng-mouseenter="getPreview('environment', 0);" ng-mouseleave="restorePreview();">Forest</div>
+					<div class='listItem' ng-mouseenter="getPreview('environment', 1);" ng-mouseleave="restorePreview();">Urban</div>
+					<div class='listItem' ng-mouseenter="getPreview('environment', 2);" ng-mouseleave="restorePreview();">Fantasy</div>
 				</div>
 				<div class='linkHeaderContainer'><span class='linkHeaderText' ng-click='expandCategory(2);'>Sketches</span>
-					<div class='listItem' ng-click='populateGallery(0);'>Hello</div>
-					<div class='listItem' ng-click='populateGallery(0);'>Hello</div>
+					<div class='listItem' ng-mouseenter="getPreview('sketches', 0);" ng-mouseleave="restorePreview();">Dailies</div>
+					<div class='listItem' ng-mouseenter="getPreview('sketches', 1);" ng-mouseleave="restorePreview();">Paint</div>
+					<div class='listItem' ng-mouseenter="getPreview('sketches', 2);" ng-mouseleave="restorePreview();">Inktober</div>
 				</div>
 			</div>
 			<div id='contact-button'>CONTACT ME</div>
+		</div>
+
+		<div class='art-display' ng-include="'templates/slideOne.html'">
+
 		</div>
 	</div>
 </body>

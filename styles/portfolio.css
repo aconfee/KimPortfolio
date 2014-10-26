@@ -147,13 +147,24 @@ a:visited{
    -webkit-transition: all .2s ease-in-out;
 }
 
+.gallery-thumb img{
+	max-width: 100%;
+	max-height: 100%;
+}
+
 #header{
 	display: inline-block;
 	background-color: green;
 	width:100%;
 	height:150px;
+	overflow: hidden;
 
 	margin: 0 auto;
+}
+
+#header img{
+	max-width: 100%;
+	max-height: 100%;
 }
 
 #content-links{
@@ -230,4 +241,13 @@ a:visited{
 .listItem:hover{
 	cursor:pointer;
 	color: green;
+}
+
+.art-display{
+	width:200px;
+	height:200px;
+	background-color: blue;
+	position: absolute;
+	top:50%;
+	right:50%;
 }

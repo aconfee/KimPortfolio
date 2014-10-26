@@ -3,17 +3,46 @@ function portfolioController($scope){
 	// Angular vars
 	$scope.openCategory = -1;
 	$scope.galleryOpen = false;
-	$scope.defaultPreview = 'green';
+	$scope.defaultPreview = 'http://www.warrenphotographic.co.uk/photography/cats/18458.jpg';
 	$scope.currentPreview = $scope.defaultPreview;
 
 	// Class vars
 	var self = this;
 	self.navLinkPreviews = {
 		'characters':[
-			'black',
-			'red',
-			'yellow'
+			'http://www.craigspets.com/sites/default/files/imagecache/product_full/pet-for-sale/puppies_for_sale_in_pa_jlsii8653_1.jpg',
+			'http://4.bp.blogspot.com/-hzVCoWekCiI/T0Oq1HCVgjI/AAAAAAAAB6A/ZcB-Zqxkpag/s1600/Brown_+Cavalier_King_Charles_Spaniel_Puppies.jpg',
+			'http://i3.findthebest.com/sites/default/files/465/media/images/Cavalier_King_Charles_Spaniel_915857.jpg'
+		],
+		'environment':[
+			'http://www.craigspets.com/sites/default/files/imagecache/product_full/pet-for-sale/puppies_for_sale_in_pa_jlsii8653_1.jpg',
+			'http://4.bp.blogspot.com/-hzVCoWekCiI/T0Oq1HCVgjI/AAAAAAAAB6A/ZcB-Zqxkpag/s1600/Brown_+Cavalier_King_Charles_Spaniel_Puppies.jpg',
+			'http://i3.findthebest.com/sites/default/files/465/media/images/Cavalier_King_Charles_Spaniel_915857.jpg'
+		],
+		'sketches':[
+			'http://www.craigspets.com/sites/default/files/imagecache/product_full/pet-for-sale/puppies_for_sale_in_pa_jlsii8653_1.jpg',
+			'http://4.bp.blogspot.com/-hzVCoWekCiI/T0Oq1HCVgjI/AAAAAAAAB6A/ZcB-Zqxkpag/s1600/Brown_+Cavalier_King_Charles_Spaniel_Puppies.jpg',
+			'http://i3.findthebest.com/sites/default/files/465/media/images/Cavalier_King_Charles_Spaniel_915857.jpg'
 		]
+	};
+
+	$scope.currentThumb = "girls";
+
+	$scope.thumbs = {
+		'girls':[
+			'http://www.craigspets.com/sites/default/files/imagecache/product_full/pet-for-sale/puppies_for_sale_in_pa_jlsii8653_1.jpg',
+			'http://4.bp.blogspot.com/-hzVCoWekCiI/T0Oq1HCVgjI/AAAAAAAAB6A/ZcB-Zqxkpag/s1600/Brown_+Cavalier_King_Charles_Spaniel_Puppies.jpg',
+			'http://i3.findthebest.com/sites/default/files/465/media/images/Cavalier_King_Charles_Spaniel_915857.jpg'
+		],
+		'sketches':[
+			'http://4.bp.blogspot.com/-hzVCoWekCiI/T0Oq1HCVgjI/AAAAAAAAB6A/ZcB-Zqxkpag/s1600/Brown_+Cavalier_King_Charles_Spaniel_Puppies.jpg',
+			'http://i3.findthebest.com/sites/default/files/465/media/images/Cavalier_King_Charles_Spaniel_915857.jpg'
+		]
+	};
+
+	$scope.chooseLink = function(linkName){
+		// Change the displayed thumbs in the gallery.
+		$scope.currentThumb = linkName;
 	};
 
 	$scope.expandCategory = function(index){
@@ -51,8 +80,7 @@ function portfolioController($scope){
 
 	// Get the preview for this link.
 	$scope.getPreview = function(category, index){
-		console.log('gettinng the preview');
-		$scope.currentPreview = self.navLinkPreviews[category][index];
+		$scope.currentPreview = self.navLinkPreviews[category.toLowerCase()][index];
 	};
 
 	// Restore the default preview

@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang='en' ng-app>
+<html lang='en'>
 
 <head>
 	<!-- STYLES -->
 	<link rel='stylesheet' type='text/css' href='../bower_components/bootstrap/dist/css/bootstrap.min.css' />
-	<link rel='stylesheet' type='text/css' href='../styles/portfolio.css' />
+	<link rel='stylesheet' type='text/css' href='../styles/cover.css' />
 
 	<!-- SCRIPTS -->
 	<!-- jQuery for bootstrap and minor animations -->
@@ -12,47 +12,72 @@
 	<!-- Javascript for bootstrap -->
 	<script src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 	<script src="../bower_components/angular/angular.min.js"></script>
-	<script src="../controllers/portfolioController.js"></script>
+
+	<script>
+	$('.carousel').carousel({  
+	  interval: false  
+	}); 
+	</script>
 </head>
 
 <body>
-	<div id='screen-size-container' ng-controller='portfolioController'>
-		<div id='gallery-flyout' ng-click='toggleGallery();' ng-class="{ 'gallery-closed-hover': galleryOpen == false }">
-			<div id='gallery-title'>Gallery Nav<span id='gallery-close-button' ></span></div>
-			<div id='thumb-container'>
-				<div class='gallery-thumb' ng-repeat="thumb in thumbs[currentThumb]">
-					<img src = "{{ thumb }}" ></img>
-				</div>
-			</div>
-		</div>
-		<div id='mainNav'>
-			<div id='header'>
-				<img src=" {{ currentPreview }} "></img>
-			</div>
-			<div id='content-links'>
-				<a href='index.html'>Home</a>
-				<div class='linkHeaderContainer'><span class='linkHeaderText' ng-click='expandCategory(0);'>Characters</span>
-					<div class='listItem' ng-mouseenter="getPreview('characters', 0);" ng-mouseleave="restorePreview();" ng-click="chooseLink('girls');">Girls</div>
-					<div class='listItem' ng-mouseenter="getPreview('characters', 1);" ng-mouseleave="restorePreview();" ng-click="chooseLink('sketches');">Sketches</div>
-					<div class='listItem' ng-mouseenter="getPreview('characters', 2);" ng-mouseleave="restorePreview();">Fan Art</div>
-				</div>
-				<div class='linkHeaderContainer'><span class='linkHeaderText' ng-click='expandCategory(1);'>Environment</span>
-					<div class='listItem' ng-mouseenter="getPreview('environment', 0);" ng-mouseleave="restorePreview();">Forest</div>
-					<div class='listItem' ng-mouseenter="getPreview('environment', 1);" ng-mouseleave="restorePreview();">Urban</div>
-					<div class='listItem' ng-mouseenter="getPreview('environment', 2);" ng-mouseleave="restorePreview();">Fantasy</div>
-				</div>
-				<div class='linkHeaderContainer'><span class='linkHeaderText' ng-click='expandCategory(2);'>Sketches</span>
-					<div class='listItem' ng-mouseenter="getPreview('sketches', 0);" ng-mouseleave="restorePreview();">Dailies</div>
-					<div class='listItem' ng-mouseenter="getPreview('sketches', 1);" ng-mouseleave="restorePreview();">Paint</div>
-					<div class='listItem' ng-mouseenter="getPreview('sketches', 2);" ng-mouseleave="restorePreview();">Inktober</div>
-				</div>
-			</div>
-			<div id='contact-button'>CONTACT ME</div>
+	<!-- NAVBAR -->
+	<nav class="navbar navbar-default navbar-fixed-top" role="navigation" style="opacity:0.6;">
+	  <div class="container-fluid">
+	    <!-- Brand and toggle get grouped for better mobile display -->
+	    <div class="navbar-header">
+	      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+	        <span class="sr-only">Toggle navigation</span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	      </button>
+	      <a class="navbar-brand" href="#">Kim Greenough</a>
+	    </div>
+
+	    <!-- Collect the nav links, forms, and other content for toggling -->
+	    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+	      <ul class="nav navbar-nav navbar-right">
+	        <li class="active"><a href="#">Insta</a></li>
+	        <li><a href="#">Twitter</a></li>
+	        <li><a href="#">Tumblr</a></li>
+	        <li><a href="#">Facebook</a></li>
+	        <li><a href="#">Blog</a></li>
+	      </ul>
+	    </div><!-- /.navbar-collapse -->
+	  </div><!-- /.container-fluid -->
+	</nav>
+
+	<!-- CAROUSEL -->
+	<div id='main-display-container'>
+		<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+		  <!-- Wrapper for slides -->
+		  <div class="carousel-inner">
+		    <div class="item active">
+		      <img src="http://image.superstreetonline.com/f/features/sstp_1302_2008_subaru_wrx_sti/45467397/sstp-1302-03-o%2B2008-subaru-wrx-sti%2Bbottom-line-type1-rear-spoilers.jpg" alt="0">
+		    </div>
+		    <div class="item">
+		      <a href='https://www.facebook.com'><img src="http://image.adam.automotive.com/f/18448510/modp-0907-01+spt-2008-subaru-impreza-wrx-sti+left.jpg" alt="1"></a>
+		    </div>
+		    <div class="item">
+		      <img src="http://www.velosterturbo.org/forum/attachments/veloster-wheels-tires/22762d1392054651-white-vt-bronze-gold-wheels-sti-2.jpg" alt="2">
+		    </div>
+		  </div>
+
+		  <!-- Controls -->
+		  <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+		    <span class="glyphicon glyphicon-chevron-left"></span>
+		  </a>
+		  <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+		    <span class="glyphicon glyphicon-chevron-right"></span>
+		  </a>
 		</div>
 
-		<div class='art-display'>
-				<div ng-include="'templates/slideOne.html'"></div>
+		<div id='coverTitle'>
+			<p id='coverName'>Kim Greenough</p>
+			<p id='professionalTitle'>Artist</p>
 		</div>
+		<a href='portfolio.html' id='view-portfolio-button' class="custom-primary-button">VIEW PORTFOLIO</a>
 	</div>
 </body>
 

@@ -1,0 +1,62 @@
+#name-header{
+	position:fixed;
+
+	height:auto;
+	width:auto;
+
+	color:white;
+	text-align:left;
+	font-weight:bold;
+	font-size:2.4em;
+	letter-spacing: 0.2em;
+
+	top:10px;
+	left:20px;
+}
+
+.social-link-container{
+	position:fixed;
+
+	height:auto;
+	width:auto;
+
+	top:65px;
+	left:20px;
+}
+
+.social-link{
+	position:relative;
+	display:inline-block;
+	width:50px;
+	height:50px;
+
+	margin-right:15px;
+
+	background-color: blue;
+}
+
+.social-link:hover{
+	cursor:pointer;
+}
+
+#view-portfolio-button{
+	position:absolute;
+
+	top:170px;
+	left:20px;
+}
+
+.cover-scroll-button{
+	position:fixed;
+	bottom:50px;
+
+	background-color:white;
+}
+
+.cover-scroll-button-left{
+	left:0px;
+}
+
+.cover-scroll-button-right{
+	right:0px;
+}

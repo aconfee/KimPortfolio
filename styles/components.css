@@ -2,6 +2,10 @@ body{
 	font-family: 'Poiret One', 'Avant Garde', 'Helvetica', cursive;
 }
 
+a{
+	text-decoration:none;
+}
+
 .fullscreen-container{
 	height: 100%;
     width: 100%;
@@ -88,7 +92,6 @@ img.fullscreen-clipped{
 }
 
 .scroll-button-left{
-	/* Image positioning stuff and extend */
 	border-top-right-radius:25%;
 	border-bottom-right-radius:25%;
 }

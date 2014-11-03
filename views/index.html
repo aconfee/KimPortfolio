@@ -1,57 +1,30 @@
-<!DOCTYPE html>
-<html lang='en'>
+<!DOCTYPE>
+<html>
 
 <head>
-	<!-- STYLES -->
-	<link rel='stylesheet' type='text/css' href='../bower_components/bootstrap/dist/css/bootstrap.min.css' />
 	<link rel='stylesheet' type='text/css' href='../styles/cover.css' />
+	<link rel='stylesheet' type='text/css' href='../styles/components.css' />
 
-	<!-- SCRIPTS -->
-	<!-- jQuery for bootstrap and minor animations -->
-	<script src="../bower_components/jquery/dist/jquery.min.js"></script>
-	<!-- Javascript for bootstrap -->
-	<script src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-	<script src="../bower_components/angular/angular.min.js"></script>
-
-	<script>
-	$('.carousel').carousel({  
-	  interval: false  
-	}); 
-	</script>
+	<!-- FONT -->
+	<link href='http://fonts.googleapis.com/css?family=Poiret+One' rel='stylesheet' type='text/css'>
 </head>
 
 <body>
-	<!-- CAROUSEL -->
-	<div id='main-display-container'>
-		<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-		  <!-- Wrapper for slides -->
-		  <div class="carousel-inner">
-		    <div class="item active">
-		      <img src="http://image.superstreetonline.com/f/features/sstp_1302_2008_subaru_wrx_sti/45467397/sstp-1302-03-o%2B2008-subaru-wrx-sti%2Bbottom-line-type1-rear-spoilers.jpg" alt="0">
-		    </div>
-		    <div class="item">
-		      <a href='https://www.facebook.com'><img src="http://image.adam.automotive.com/f/18448510/modp-0907-01+spt-2008-subaru-impreza-wrx-sti+left.jpg" alt="1"></a>
-		    </div>
-		    <div class="item">
-		      <img src="http://www.velosterturbo.org/forum/attachments/veloster-wheels-tires/22762d1392054651-white-vt-bronze-gold-wheels-sti-2.jpg" alt="2">
-		    </div>
-		  </div>
-
-		  <!-- Controls -->
-		  <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
-		    <span class="glyphicon glyphicon-chevron-left"></span>
-		  </a>
-		  <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
-		    <span class="glyphicon glyphicon-chevron-right"></span>
-		  </a>
-		</div>
-
-		<div id='coverTitle'>
-			<p id='coverName'>Kim Greenough</p>
-			<p id='professionalTitle'>Artist</p>
-		</div>
-		<a href='portfolio.html' id='view-portfolio-button' class="custom-primary-button">VIEW PORTFOLIO</a>
+	<div class="fullscreen-container static-fullscreen">
+		<img id="image1" class="fullscreen-clipped" src="https://newevolutiondesigns.com/images/freebies/colorful-background-21.jpg"></img>
+		<img id="image2" class="fullscreen-clipped" src="http://www.hdwallpapers3d.com/wp-content/uploads/2013/04/background-5-point.jpg"></img>
+		<img id="image2" class="fullscreen-clipped" src="http://th02.deviantart.net/fs70/PRE/f/2012/154/5/7/outernauts_monster_battle_by_creaturebox-d5248ff.jpg"></img>
+	<div>
+	<div id="name-header">KIM GREENOUGH</div>
+	<div class="social-link-container">
+		<div class="social-link"></div>
+		<div class="social-link"></div>
+		<div class="social-link"></div>
+		<div class="social-link"></div>
 	</div>
+	<a id="view-portfolio-button" class="default-button" href="portfolio.html">VIEW PORTFOLIO</a>
+	<div class="scroll-button cover-scroll-button scroll-button-left cover-scroll-button-left"></div>
+	<div class="scroll-button cover-scroll-button scroll-button-right cover-scroll-button-right"></div>
 </body>
 
 </html>

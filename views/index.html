@@ -1,5 +1,5 @@
 <!DOCTYPE>
-<html>
+<html ng-app>
 
 <head>
 	<link rel='stylesheet' type='text/css' href='../styles/cover.css' />
@@ -7,24 +7,37 @@
 
 	<!-- FONT -->
 	<link href='http://fonts.googleapis.com/css?family=Poiret+One' rel='stylesheet' type='text/css'>
+
+	<!-- Angular, jQuery, and Scripts -->
+	<script src='../bower_components/jquery/dist/jquery.js'></script>
+	<script src='../bower_components/angular/angular.js'></script>
+	<script src='../controllers/galleryController.js'></script>
 </head>
 
-<body>
+<body ng-controller="galleryController">
 	<div class="fullscreen-container static-fullscreen">
-		<img id="image1" class="fullscreen-clipped" src="https://newevolutiondesigns.com/images/freebies/colorful-background-21.jpg"></img>
-		<img id="image2" class="fullscreen-clipped" src="http://www.hdwallpapers3d.com/wp-content/uploads/2013/04/background-5-point.jpg"></img>
-		<img id="image2" class="fullscreen-clipped" src="http://th02.deviantart.net/fs70/PRE/f/2012/154/5/7/outernauts_monster_battle_by_creaturebox-d5248ff.jpg"></img>
+		<img id="image1" class="fullscreen-clipped active" src="http://th02.deviantart.net/fs70/PRE/f/2012/154/5/7/outernauts_monster_battle_by_creaturebox-d5248ff.jpg"></img>
+		<img id="image2" class="fullscreen-clipped" src="https://newevolutiondesigns.com/images/freebies/colorful-background-21.jpg"></img>
+		<img id="image3" class="fullscreen-clipped" src="http://www.hdwallpapers3d.com/wp-content/uploads/2013/04/background-5-point.jpg"></img>
 	<div>
 	<div id="name-header">KIM GREENOUGH</div>
 	<div class="social-link-container">
-		<div class="social-link"></div>
-		<div class="social-link"></div>
-		<div class="social-link"></div>
-		<div class="social-link"></div>
+		<a class="social-link" href="http://instagram.com/kimby_arting">
+			<img src="http://www.woodburnbaptist.org/hp_wordpress/wp-content/uploads/2014/03/instagram_256.png"></img>
+		</a>
+		<a class="social-link">
+			<img src="http://chidiozieh.com/images/tumblr-logo.jpg"></img>
+		</a>
+		<a class="social-link">
+			<img src="http://storage.mobilebuilder.net/users/images/3dd7a1ff-87f2-4965-a19c-52c20f8d958f.jpg"></img>
+		</a>
+		<a class="social-link" href="https://www.facebook.com/kim.greenough.9?fref=ts">
+			<img src="http://static.squarespace.com/static/53163395e4b04f773bf709cb/5351a202e4b0a74166d8d036/53566f0ae4b0753f93e2782b/1398173453509/FB-f-Logo__blue_1024.png"></img>
+		</a>
 	</div>
 	<a id="view-portfolio-button" class="default-button" href="portfolio.html">VIEW PORTFOLIO</a>
-	<div class="scroll-button cover-scroll-button scroll-button-left cover-scroll-button-left"></div>
-	<div class="scroll-button cover-scroll-button scroll-button-right cover-scroll-button-right"></div>
+	<div class="scroll-button cover-scroll-button scroll-button-left cover-scroll-button-left" ng-click="previousSlide();"></div>
+	<div class="scroll-button cover-scroll-button scroll-button-right cover-scroll-button-right" ng-click="nextSlide();"></div>
 </body>
 
 </html>

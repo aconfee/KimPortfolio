@@ -1,10 +1,12 @@
+/*
 @font-face {
 	font-family: 'Miss Brooks';
 	src: local('../fonts/MISSB___.ttf') format ('truetype');
 }
+*/
 
 body{
-	font-family: 'Miss Brooks', 'Poiret One', 'Avant Garde', 'Helvetica', cursive;
+	font-family: 'Poiret One', 'Avant Garde', 'Helvetica', cursive;
 }
 
 a{
@@ -35,7 +37,6 @@ a{
 	letter-spacing:0.1em;
 	text-align:center;
 	font-weight:bold;
-	font-family: "Miss Brooks";
 	color:white;
 	font-size: 1.1em;
 

@@ -3,6 +3,7 @@ function galleryController($scope){
 
 	$scope.slideIds = ["#image1", "#image2", "#image3", "#image4"];
 	$scope.currentSlideIndex = 0;
+	$scope.nextSlideInterval;
 
 	self.getPreviousSlideId = function(){
 		// Account for rollover
@@ -38,8 +39,8 @@ function galleryController($scope){
 
 		$(imageId).animate({
 	    	"left": slideMargin
-			}, 500, function() {
-	    	// Animation complete.
+			}, 400, function(){
+
 		});
 	};
 
@@ -61,9 +62,19 @@ function galleryController($scope){
 
 		$(imageId).animate({
 	    	"left": "0px"
-			}, 500, function() {
-	    	// Animation complete.
+			}, 400, function(){
 		});
+
+		// Optional
+		/*
+		$(imageId).animate({
+			"width":"105%",
+			"max-width":"105%"
+		}, 3360, function(){
+			$(imageId).css("width", "100%");
+			$(imageId).css("max-width", "100%");
+		});
+*/
 	};
 
 	$scope.getPreviousIndex = function(){
@@ -89,10 +100,14 @@ function galleryController($scope){
 		var nextId = self.getNextSlideId();
 		var currentId = $scope.slideIds[$scope.currentSlideIndex];
 
+		/* Slide out optional */
 		$scope.slideOut("left", currentId);
 		$scope.slideIn("left", nextId);
 
 		$scope.currentSlideIndex = $scope.getNextIndex();
+
+		// During automatic scroll, need to apply to update text n/m
+		$scope.$apply();
 	};
 
 	$scope.previousSlide = function(){
@@ -104,5 +119,25 @@ function galleryController($scope){
 		$scope.slideIn("right", previousId);
 
 		$scope.currentSlideIndex = $scope.getPreviousIndex();
+	};
+
+	// Initialize auto scroll timer
+	(function(){
+		$scope.nextSlideInterval = window.setInterval(function(){$scope.nextSlide()},3360);
+	})();
+
+	$scope.stopAutoscroll = function(){
+		clearInterval($scope.nextSlideInterval);
+	};
+
+	$scope.fadeInOut = function(selector, duration){
+		$(selector).animate({
+	    	"opacity": "0"
+			}, duration / 2, function(){
+				$(selector).animate({
+					"opacity":"1.0"
+				}, duration / 2, function(){
+			});
+		});
 	};
 };

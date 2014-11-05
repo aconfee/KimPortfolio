@@ -2,6 +2,7 @@
 <html ng-app>
 
 <head>
+	<title>Kim Greenough</title>
 	<link rel='stylesheet' type='text/css' href='../styles/cover.css' />
 	<link rel='stylesheet' type='text/css' href='../styles/components.css' />
 
@@ -40,8 +41,11 @@
 		</a>
 	</div>
 	<a id="view-portfolio-button" class="default-button" href="portfolio.html">VIEW PORTFOLIO</a>
-	<div class="scroll-button cover-scroll-button scroll-button-left cover-scroll-button-left" ng-click="previousSlide();">< {{ getPreviousIndex() + 1}}/{{ slideIds.length }}</div>
-	<div class="scroll-button cover-scroll-button scroll-button-right cover-scroll-button-right" ng-click="nextSlide();">{{ getNextIndex() + 1}}/{{ slideIds.length }} ></div>
+	<div class="scroll-button cover-scroll-button scroll-button-left cover-scroll-button-left" ng-click="previousSlide(); stopAutoscroll();">
+		<span>< {{ getPreviousIndex() + 1}}/{{ slideIds.length }}</span>
+	</div>
+	<div class="scroll-button cover-scroll-button scroll-button-right cover-scroll-button-right" ng-click="nextSlide(); stopAutoscroll();">
+		<span>{{ getNextIndex() + 1}}/{{ slideIds.length }} ></span>
+	</div>
 </body>
-
 </html>

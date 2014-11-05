@@ -1,7 +1,7 @@
 function galleryController($scope){
 	var self = this;
 
-	$scope.slideIds = ["#image1", "#image2", "#image3"];
+	$scope.slideIds = ["#image1", "#image2", "#image3", "#image4"];
 	$scope.currentSlideIndex = 0;
 
 	self.getPreviousSlideId = function(){
@@ -66,7 +66,7 @@ function galleryController($scope){
 		});
 	};
 
-	self.getPreviousIndex = function(){
+	$scope.getPreviousIndex = function(){
 		var previousIndex = $scope.currentSlideIndex - 1;
 		if(previousIndex < 0){
 			previousIndex = $scope.slideIds.length - 1;
@@ -75,7 +75,7 @@ function galleryController($scope){
 		return previousIndex;
 	};
 
-	self.getNextIndex = function(){
+	$scope.getNextIndex = function(){
 		var nextIndex = $scope.currentSlideIndex + 1;
 		if(nextIndex === $scope.slideIds.length){
 			nextIndex = 0;
@@ -92,7 +92,7 @@ function galleryController($scope){
 		$scope.slideOut("left", currentId);
 		$scope.slideIn("left", nextId);
 
-		$scope.currentSlideIndex = self.getNextIndex();
+		$scope.currentSlideIndex = $scope.getNextIndex();
 	};
 
 	$scope.previousSlide = function(){
@@ -103,6 +103,6 @@ function galleryController($scope){
 		$scope.slideOut("right", currentId);
 		$scope.slideIn("right", previousId);
 
-		$scope.currentSlideIndex = self.getPreviousIndex();
+		$scope.currentSlideIndex = $scope.getPreviousIndex();
 	};
 };

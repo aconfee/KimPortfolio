@@ -64,17 +64,6 @@ function galleryController($scope){
 	    	"left": "0px"
 			}, 400, function(){
 		});
-
-		// Optional
-		/*
-		$(imageId).animate({
-			"width":"105%",
-			"max-width":"105%"
-		}, 3360, function(){
-			$(imageId).css("width", "100%");
-			$(imageId).css("max-width", "100%");
-		});
-*/
 	};
 
 	$scope.getPreviousIndex = function(){

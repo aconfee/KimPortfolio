@@ -3,16 +3,16 @@
 
 <head>
 	<title>Kim Greenough</title>
-	<link rel='stylesheet' type='text/css' href='../styles/cover.css' />
-	<link rel='stylesheet' type='text/css' href='../styles/components.css' />
+	<link rel='stylesheet' type='text/css' href='styles/cover.css' />
+	<link rel='stylesheet' type='text/css' href='styles/components.css' />
 
 	<!-- FONT -->
 	<link href='http://fonts.googleapis.com/css?family=Poiret+One' rel='stylesheet' type='text/css'>
 
 	<!-- Angular, jQuery, and Scripts -->
-	<script src='../bower_components/jquery/dist/jquery.js'></script>
-	<script src='../bower_components/angular/angular.js'></script>
-	<script src='../controllers/galleryController.js'></script>
+	<script src='bower_components/jquery/dist/jquery.js'></script>
+	<script src='bower_components/angular/angular.js'></script>
+	<script src='controllers/galleryController.js'></script>
 </head>
 
 <body ng-controller="galleryController">
@@ -40,7 +40,7 @@
 			<img src="https://www.cloud9charts.com/images/email-icon.png"></img>
 		</a>
 	</div>
-	<a id="view-portfolio-button" class="default-button" href="portfolio.html">VIEW PORTFOLIO</a>
+	<a id="view-portfolio-button" class="default-button" href="views/portfolio.html">VIEW PORTFOLIO</a>
 	<div class="scroll-button cover-scroll-button scroll-button-left cover-scroll-button-left" ng-click="previousSlide(); stopAutoscroll();">
 		<span>< {{ getPreviousIndex() + 1}}/{{ slideIds.length }}</span>
 	</div>

@@ -73,11 +73,13 @@ img.fullscreen-stretch{
 }
 
 /* Hidden by default for gallery use. Can use .active to show */
+/* True ratio display. Always fill screen. */
 img.fullscreen-clipped{
-	width:100%;
+	width:auto;
 	height:auto;
 
-	max-width:100%;
+	min-width:100%;
+	min-height:100%;
 
 	position:absolute;
 	left:100%;

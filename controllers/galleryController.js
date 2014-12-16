@@ -26,12 +26,13 @@ function galleryController($scope){
 	// TODO: try fading opacity in-out instead of sliding.
 	$scope.slideOut = function(direction, imageId){
 		var slideMargin = "";
+		var width = $(imageId).width();
 
 		if(direction.toLowerCase() === "left"){
-			slideMargin = "-100%";
+			slideMargin = "-" + width.toString() + "px";
 		}
 		else if(direction.toLowerCase() === "right"){
-			slideMargin = "100%";
+			slideMargin = width.toString() + "px";
 		}
 		else{
 			console.error("Parameter '" + direction + "' not a valid direction in galleryController::slideOut.");

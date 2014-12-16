@@ -42,7 +42,7 @@
 	</div>
 	<a id="view-portfolio-button" class="default-button" href="views/portfolio.html">VIEW PORTFOLIO</a>
 	<div class="scroll-button cover-scroll-button scroll-button-left cover-scroll-button-left" ng-click="previousSlide(); stopAutoscroll();">
-		<span>< {{ getPreviousIndex() + 1}}/{{ slideIds.length }}</span>
+		<span> {{ getPreviousIndex() + 1}}/{{ slideIds.length }}</span>
 	</div>
 	<div class="scroll-button cover-scroll-button scroll-button-right cover-scroll-button-right" ng-click="nextSlide(); stopAutoscroll();">
 		<span>{{ getNextIndex() + 1}}/{{ slideIds.length }} ></span>

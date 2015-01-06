@@ -2,15 +2,18 @@
 <html lang='en' ng-app>
 
 <head>
+	<title>Kim Greenough</title>
+
 	<!-- STYLES -->
-	<link rel='stylesheet' type='text/css' href='../bower_components/bootstrap/dist/css/bootstrap.min.css' />
 	<link rel='stylesheet' type='text/css' href='../styles/portfolio.css' />
+
+	<!-- FONT -->
+	<link href='http://fonts.googleapis.com/css?family=Poiret+One' rel='stylesheet' type='text/css'>
 
 	<!-- SCRIPTS -->
 	<!-- jQuery for bootstrap and minor animations -->
 	<script src="../bower_components/jquery/dist/jquery.min.js"></script>
 	<!-- Javascript for bootstrap -->
-	<script src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 	<script src="../bower_components/angular/angular.min.js"></script>
 	<script src="../controllers/portfolioController.js"></script>
 </head>
@@ -30,28 +33,26 @@
 				<img src=" {{ currentPreview }} "></img>
 			</div>
 			<div id='content-links'>
-				<a href='index.html'>Home</a>
-				<div class='linkHeaderContainer'><span class='linkHeaderText' ng-click='expandCategory(0);'>Characters</span>
+				<a href='../index.html'>HOME</a>
+				<p></p>
+				<div class='linkHeaderContainer'><span class='linkHeaderText' ng-click='expandCategory(0);'>CHARACTERS</span>
 					<div class='listItem' ng-mouseenter="getPreview('characters', 0);" ng-mouseleave="restorePreview();" ng-click="chooseLink('girls');">Girls</div>
 					<div class='listItem' ng-mouseenter="getPreview('characters', 1);" ng-mouseleave="restorePreview();" ng-click="chooseLink('sketches');">Sketches</div>
 					<div class='listItem' ng-mouseenter="getPreview('characters', 2);" ng-mouseleave="restorePreview();">Fan Art</div>
 				</div>
-				<div class='linkHeaderContainer'><span class='linkHeaderText' ng-click='expandCategory(1);'>Environment</span>
+				<div class='linkHeaderContainer'><span class='linkHeaderText' ng-click='expandCategory(1);'>ENVIRONMENT</span>
 					<div class='listItem' ng-mouseenter="getPreview('environment', 0);" ng-mouseleave="restorePreview();">Forest</div>
 					<div class='listItem' ng-mouseenter="getPreview('environment', 1);" ng-mouseleave="restorePreview();">Urban</div>
 					<div class='listItem' ng-mouseenter="getPreview('environment', 2);" ng-mouseleave="restorePreview();">Fantasy</div>
 				</div>
-				<div class='linkHeaderContainer'><span class='linkHeaderText' ng-click='expandCategory(2);'>Sketches</span>
+				<div class='linkHeaderContainer'><span class='linkHeaderText' ng-click='expandCategory(2);'>SKETCHES</span>
 					<div class='listItem' ng-mouseenter="getPreview('sketches', 0);" ng-mouseleave="restorePreview();">Dailies</div>
 					<div class='listItem' ng-mouseenter="getPreview('sketches', 1);" ng-mouseleave="restorePreview();">Paint</div>
 					<div class='listItem' ng-mouseenter="getPreview('sketches', 2);" ng-mouseleave="restorePreview();">Inktober</div>
 				</div>
-			</div>
-			<div id='contact-button'>CONTACT ME</div>
-		</div>
 
-		<div class='art-display'>
-				<div ng-include="'templates/slideOne.html'"></div>
+			</div>
+			<a id="contact-button" href="views/portfolio.html">CONTACT ME</a>
 		</div>
 	</div>
 </body>

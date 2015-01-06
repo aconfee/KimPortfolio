@@ -32,7 +32,20 @@ function portfolioController($scope){
 		'girls':[
 			'http://www.craigspets.com/sites/default/files/imagecache/product_full/pet-for-sale/puppies_for_sale_in_pa_jlsii8653_1.jpg',
 			'http://4.bp.blogspot.com/-hzVCoWekCiI/T0Oq1HCVgjI/AAAAAAAAB6A/ZcB-Zqxkpag/s1600/Brown_+Cavalier_King_Charles_Spaniel_Puppies.jpg',
-			'http://i3.findthebest.com/sites/default/files/465/media/images/Cavalier_King_Charles_Spaniel_915857.jpg'
+			'http://i3.findthebest.com/sites/default/files/465/media/images/Cavalier_King_Charles_Spaniel_915857.jpg',
+			'http://resource.supercheats.com/library/2013/1384846394forzahorizon.jpg',
+			'http://compass.xboxlive.com/assets/5e/39/5e393b30-ea3c-4443-8c89-c4be56649bfd.jpg?n=Horizon_cars_banner.jpg',
+			'http://www.twinfinite.net/wp-content/uploads/2014/07/TheLastofUs_feature.jpg',
+			'http://www.cinemablend.com/images/gallery/s44494/Forza_Horizon_Limited_Collector_s_Edition_13420393014891.jpg',
+			'http://cdni.wired.co.uk/1920x1280/s_v/the-last-of-us.jpg',
+			'http://stancewords.stanceworks.netdna-cdn.com/wp-content/uploads/2012/10/bmw-1m-forza-horizon.jpg',
+			'http://ecx.images-amazon.com/images/I/71awkWHQJ6L._SL1280_.jpg',
+			'http://cdn.arstechnica.net/wp-content/uploads/2012/10/Forza_Horizon_Press_Tour_5.jpg',
+			'http://www.independent.co.uk/incoming/article9176466.ece/binary/original/2518386-the_last_of_us_ps3_game-wide.jpg',
+			'http://www.junkiemonkeys.com/wp-content/uploads/2014/01/The-Last-of-Us-VGA-2012-Story-Trailer_2.jpg',
+			'http://psmedia.playstation.com/is/image/psmedia/the-last-of-us-remastered-screen-15-ps4-us-28jul14?$MediaCarousel_Original$',
+			'http://img1.wikia.nocookie.net/__cb20130711180104/thelastofus/images/8/84/The_las_of_us1.jpg',
+			'http://gamingbolt.com/wp-content/uploads/2011/12/last-of-us-3.jpg'
 		],
 		'sketches':[
 			'http://4.bp.blogspot.com/-hzVCoWekCiI/T0Oq1HCVgjI/AAAAAAAAB6A/ZcB-Zqxkpag/s1600/Brown_+Cavalier_King_Charles_Spaniel_Puppies.jpg',

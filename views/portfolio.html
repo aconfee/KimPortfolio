@@ -20,6 +20,10 @@
 
 <body>
 	<div id='screen-size-container' ng-controller='portfolioController'>
+		<!-- Content display -->
+		<div ng-include="'template.html'"></div>
+
+		<!-- User controls -->
 		<div id='gallery-flyout' ng-click='toggleGallery();' ng-class="{ 'gallery-closed-hover': galleryOpen == false }">
 			<div id='gallery-title'>Gallery Nav<span id='gallery-close-button' ></span></div>
 			<div id='thumb-container'>

@@ -58,6 +58,10 @@ a:visited{
 
 #mainNav{
 	position:fixed;
+
+	top: 15px;
+	left: 15px;
+
 	background-color: #0b1e2e;
 	width:200px;
 	height:450px;
@@ -77,6 +81,10 @@ a:visited{
 
 #gallery-flyout{
 	position: fixed;
+
+	top:15px;
+	left:211px;
+
 	width:30px;
 	height:450px;
 

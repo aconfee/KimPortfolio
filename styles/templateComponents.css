@@ -1,0 +1,11 @@
+#template-container{
+	padding: 15px;
+}
+
+.template-image{
+	max-width:auto;
+	max-height:100%;
+	
+	width:auto;
+	height:auto;
+}

@@ -1,19 +1,15 @@
 #template-container{
-	width:100%;
+	width:auto;
 	height:auto;
 
-	max-width:100%;
-	max-height:auto;
+	min-width:100%;
+	min-height:100%;
 
+	position:absolute;
+	left:100%;
 	top:0;
-	left:0;
-	bottom:0;
 
-	overflow-x:scroll;
-	overflow-y:hidden;
-
-	padding-top:5px;
-	padding-bottom:5px;
+	display:inline-block;
 }
 
 .template-image{

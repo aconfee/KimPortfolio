@@ -1,6 +1,15 @@
 .template-container{
+	/*
 	overflow-y:hidden;
 	overflow-x:scroll;
+	*/
+
+	height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    overflow: hidden;
+    position: fixed;
 }
 
 .template-image{

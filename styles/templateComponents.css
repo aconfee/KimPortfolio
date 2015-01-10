@@ -6,12 +6,12 @@
 	max-height:100%;
 
 	overflow-x:scroll;
-	overflow-y:none;
+	overflow-y:hidden;
 
 	padding-top:15px;
 	padding-bottom:15px;
 }
 
 .template-image{
-
+	max-height:100%;
 }

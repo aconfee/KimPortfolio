@@ -1,5 +1,12 @@
 #template-container{
-	padding: 15px;
+	width:auto;
+	height:100%;
+
+	max-width:auto;
+	max-height:100%;
+
+	padding-top:15px;
+	padding-bottom:15px;
 }
 
 .template-image{
@@ -7,5 +14,5 @@
 	max-height:100%;
 	
 	width:auto;
-	height:auto;
+	height:100%;
 }

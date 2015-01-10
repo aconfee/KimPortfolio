@@ -5,13 +5,10 @@
 
 
 	height: 100%;
-    width: auto;
+    width: 100%;
     left: 0;
     top: 0;
     position: fixed;
-
-    max-width: 200%;
-    max-height: 100%;
 }
 
 .template-image{

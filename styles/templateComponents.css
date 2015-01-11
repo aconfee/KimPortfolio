@@ -13,9 +13,9 @@
 
 /* Allow image to take anywhere from 0 - 100% height */
 .template-image-restrict{
-	width:100%;
-	height:auto;
+	width:auto;
 
+	max-width:3000%;
 	max-height:100%;
 
 	margin-top:5px;

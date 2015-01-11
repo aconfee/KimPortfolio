@@ -62,11 +62,12 @@ a:visited{
 	top: 15px;
 	left: 15px;
 
-	background-color: #0b1e2e;
+	background-color: rgba(11, 30, 46, 0.7);
 	width:200px;
 	height:450px;
 
-	border-radius: 5px;
+	border-top-left-radius:5px;
+	border-bottom-left-radius:5px;
 
 	display: inline-block;
 
@@ -83,14 +84,14 @@ a:visited{
 	position: fixed;
 
 	top:15px;
-	left:250px;
+	left:260px;
 
-	width:30px;
+	width:10px;
 	height:450px;
 
 
 	display: inline-block;
-	background-color: #595248;
+	background-color: rgba(89, 82, 72, 0.7);
 	margin-top:15px;
 	padding:15px;
 	overflow: hidden;

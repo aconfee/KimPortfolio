@@ -131,7 +131,7 @@ function portfolioController($scope){
 
 	$scope.retractGallery = function(){
 		$( "#gallery-flyout" ).animate({
-		    width: "30px"
+		    width: "10px"
 		  }, 200, function() {
 		    // Animation complete.
 		  });

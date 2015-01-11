@@ -11,7 +11,21 @@
     position: fixed;
 }
 
-.template-image{
+/* Allow image to take anywhere from 0 - 100% height */
+.template-image-restrict{
+	width:100%;
+	height:auto;
+
+	max-height:100%;
+
+	margin-top:5px;
+	margin-bottom: 5px;
+}
+
+/* Force image to take 100% height */
+.template-image-force{
+	height:100%;
+
 	max-width:auto;
 	max-height:100%;
 

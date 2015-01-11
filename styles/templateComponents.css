@@ -9,6 +9,9 @@
     left: 0;
     top: 0;
     position: fixed;
+
+    padding-top:10px;
+    padding-bottom:10px;
 }
 
 /* Allow image to take anywhere from 0 - 100% height */
@@ -17,18 +20,12 @@
 
 	max-width:3000%;
 	max-height:100%;
-
-	margin-top:5px;
-	margin-bottom: 5px;
 }
 
 /* Force image to take 100% height */
 .template-image-force{
 	height:100%;
 
-	max-width:auto;
+	max-width:3000%;
 	max-height:100%;
-
-	margin-top:5px;
-	margin-bottom: 5px;
 }

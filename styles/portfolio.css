@@ -4,7 +4,7 @@ div::-webkit-scrollbar {
 div::-webkit-scrollbar-track { 
 	width: 10px; 
     background-color: #a09d9d;  
-    border-left: 1px solid #a09d9d;  
+    border-left: 1px solid white;  
 }  
 div::-webkit-scrollbar-thumb {  
     background-color: #eadda4;  

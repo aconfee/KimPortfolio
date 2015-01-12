@@ -7,6 +7,10 @@ function portfolioController($scope){
 	$scope.currentPreview = $scope.defaultPreview;
 	$scope.currentTemplate = "'templates/template.html'";
 
+	$scope.getTemplate = function(){
+		return $scope.currentTemplate;
+	};
+
 	// Class vars
 	var self = this;
 	self.navLinkPreviews = {

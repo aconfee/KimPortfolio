@@ -5,10 +5,10 @@ function portfolioController($scope){
 	$scope.galleryOpen = false;
 	$scope.defaultPreview = 'http://www.warrenphotographic.co.uk/photography/cats/18458.jpg';
 	$scope.currentPreview = $scope.defaultPreview;
-	$scope.currentTemplate = 'template_2';
+	$scope.currentTemplate = "template";
 
-	$scope.getTemplate = function(){
-		return 'templates/template.html';
+	$scope.changeTemplate = function(newTemplate){
+		$scope.currentTemplate = newTemplate;
 	};
 
 	// Class vars

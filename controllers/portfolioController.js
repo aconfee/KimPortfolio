@@ -8,7 +8,7 @@ function portfolioController($scope){
 	$scope.currentTemplate = "'templates/template.html'";
 
 	$scope.getTemplate = function(){
-		return $scope.currentTemplate;
+		return 'templates/template.html';
 	};
 
 	// Class vars

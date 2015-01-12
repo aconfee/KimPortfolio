@@ -9,9 +9,6 @@
     left: 0;
     top: 0;
     position: fixed;
-
-    padding-top:10px;
-    padding-bottom:10px;
 }
 
 /* Allows us to scroll since wider than screen */
@@ -31,6 +28,9 @@
 
 	max-width:3000%;
 	max-height:100%;
+
+	margin-top: 10px;
+	margin-bottom: 10px;
 }
 
 /* Force image to take 100% height */

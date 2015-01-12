@@ -5,7 +5,7 @@ function portfolioController($scope){
 	$scope.galleryOpen = false;
 	$scope.defaultPreview = 'http://www.warrenphotographic.co.uk/photography/cats/18458.jpg';
 	$scope.currentPreview = $scope.defaultPreview;
-	$scope.currentTemplate = 'template';
+	$scope.currentTemplate = 'template_2';
 
 	$scope.getTemplate = function(){
 		return 'templates/template.html';

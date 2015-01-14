@@ -11,10 +11,9 @@
 	overflow-x:scroll;
 	overflow-y:hidden;
 
-	width:3000%;
+	width:auto;
 	height:100%;
 
-	max-width: 3000%;
 	max-height:100%;
 }
 
@@ -22,7 +21,9 @@
 .template-image-restrict{
 	width:auto;
 
-	display:inline-block;
+	display:inline;
+
+	float:left;
 
 	max-width:3000%;
 	max-height:98%;

@@ -21,6 +21,8 @@
 .template-image-restrict{
 	width:auto;
 
+	display:inline-block;
+
 	max-width:3000%;
 	max-height:98%;
 

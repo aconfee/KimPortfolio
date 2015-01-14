@@ -6,13 +6,12 @@
     position: fixed;
 
     overflow-x:scroll;
+    overflow-y:hidden;
 }
 
 /* Allows us to scroll since wider than screen */
-.template-container{
-	
-
-	width:300%;
+#template-characters-girls-container{
+	width:3940px;
 	height:100%;
 
 	max-height:100%;

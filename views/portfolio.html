@@ -21,6 +21,15 @@
 
 <body>
 	<div id='screen-size-container' ng-controller='portfolioController'>
+		<script>
+			$( document ).ready(function() {
+				changeTemplate(currentTemplate);
+			});
+
+			$( window ).resize(function() {
+				changeTemplate(currentTemplate);
+			});
+		</script>
 
 		<!-- Content display -->
 		<div ng-include="'templates/' + currentTemplate + '.html'"></div>

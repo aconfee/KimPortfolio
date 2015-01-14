@@ -4,6 +4,8 @@
     left: 0;
     top: 0;
     position: fixed;
+
+    overflow-x:scroll;
 }
 
 /* Allows us to scroll since wider than screen */
@@ -22,8 +24,6 @@
 	width:auto;
 
 	display:inline-block;
-
-	float:left;
 
 	max-width:3000%;
 	max-height:98%;

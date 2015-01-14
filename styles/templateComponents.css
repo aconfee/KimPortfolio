@@ -11,7 +11,7 @@
 	overflow-x:scroll;
 	overflow-y:hidden;
 
-	width:auto;
+	width:3000%;
 	height:100%;
 
 	max-width: 3000%;
@@ -28,12 +28,4 @@
 	max-height:98%;
 
 	margin:0.5%;
-}
-
-/* Force image to take 100% height */
-.template-image-force{
-	height:100%;
-
-	max-width:3000%;
-	max-height:100%;
 }

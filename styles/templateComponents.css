@@ -13,7 +13,7 @@
 	left: 0;
     top: 0;
     position: fixed;
-    
+
 	overflow-x:scroll;
 	overflow-y:hidden;
 
@@ -34,3 +34,8 @@
 
 	margin:0.5%;
 }
+
+.image-container{
+	width:400%;
+}
+

@@ -7,8 +7,10 @@
 }
 
 /* Allows us to scroll since wider than screen */
-.image-container{
+.template-container{
+	overflow-x:scroll;
 	overflow-y:hidden;
+
 	width:auto;
 	height:100%;
 
@@ -19,13 +21,16 @@
 .template-image-restrict{
 	width:auto;
 
-	display:inline-block;
-
 	max-width:3000%;
 	max-height:98%;
 
 	margin:0.5%;
 }
 
+/* Force image to take 100% height */
+.template-image-force{
+	height:100%;
 
-
+	max-width:3000%;
+	max-height:100%;
+}

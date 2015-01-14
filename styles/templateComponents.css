@@ -1,16 +1,14 @@
 .screen-container{
 	height: 100%;
-    width: 400%;
-    
-
-    overflow-x:scroll;
+    width: 100%;
+    left: 0;
+    top: 0;
+    position: fixed;
 }
 
 /* Allows us to scroll since wider than screen */
-.template-container{
-	overflow-x:scroll;
+.image-container{
 	overflow-y:hidden;
-
 	width:auto;
 	height:100%;
 
@@ -29,7 +27,5 @@
 	margin:0.5%;
 }
 
-.image-container{
-	width:400%;
-}
+
 

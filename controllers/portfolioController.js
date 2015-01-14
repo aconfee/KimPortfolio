@@ -9,6 +9,7 @@ function portfolioController($scope){
 
 	$scope.changeTemplate = function(newTemplate){
 		$scope.currentTemplate = newTemplate;
+		$scope.$apply();
 
 		var $images = $(".template-image-restrict");
 		var totalWidth = 0;

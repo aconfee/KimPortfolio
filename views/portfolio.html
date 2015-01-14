@@ -18,38 +18,31 @@
 	<script src="../bower_components/angular/angular.min.js"></script>
 	<script src="../controllers/portfolioController.js"></script>
 
+	<!-- Resize the gallery width anytime the page loads or window is resized. This is also done in portfolioController::ChangeTemplate()-->
 	<script>
+		var resizeGallery = function(){
+			var $images = $(".template-image-restrict");
+			var totalWidth = 0;
 
+			for(var i = 0; i < $images.length; ++i){
+				totalWidth += $images.eq(i).width() + parseInt($images.eq(i).css("marigin-left").substring(0, length - 2)) + parseInt($images.eq(i).css("marigin-right").substring(0, length - 2));
+			}
+
+			$(".template-container").css("width", totalWidth + "px");
+		}
+
+		$( document ).ready(function() {
+			resizeGallery();
+		});
+
+		$( window ).resize(function() {
+			resizeGallery();
+		});
 	</script>
 </head>
 
 <body>
 	<div id='screen-size-container' ng-controller='portfolioController'>
-		<script>
-			$( document ).ready(function() {
-				var $images = $(".template-image-restrict");
-				var totalWidth = 0;
-
-				for(var i = 0; i < $images.length; ++i){
-					totalWidth += $images.eq(i).width();
-				}
-
-				totalWidth += 100;
-				$(".template-container").css("width", totalWidth + "px");
-			});
-
-			$( window ).resize(function() {
-				var $images = $(".template-image-restrict");
-				var totalWidth = 0;
-
-				for(var i = 0; i < $images.length; ++i){
-					totalWidth += $images.eq(i).width();
-				}
-
-				totalWidth += 100;
-				$(".template-container").css("width", totalWidth + "px");
-			});
-		</script>
 
 		<!-- Content display -->
 		<div ng-include="'templates/' + currentTemplate + '.html'"></div>

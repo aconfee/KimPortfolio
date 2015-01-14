@@ -11,7 +11,8 @@
 
 /* Allows us to scroll since wider than screen */
 #template-characters-girls-container{
-	width:3940px;
+	width:auto;
+	max-width: 3940px;
 }
 
 .template-container{

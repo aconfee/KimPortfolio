@@ -11,8 +11,8 @@
 
 /* Allows us to scroll since wider than screen */
 #template-characters-girls-container{
+	/* Width is defined in PortfolioController::ChangeTemplate() do fit images */
 	width:auto;
-	max-width: 3940px;
 }
 
 .template-container{
@@ -29,5 +29,5 @@
 	max-width:3000%;
 	max-height:98%;
 
-	margin:0.5%;
+	margin:10px;
 }

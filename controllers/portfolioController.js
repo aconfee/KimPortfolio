@@ -18,6 +18,7 @@ function portfolioController($scope){
 			totalWidth += $images.eq(i).width();// + $images.eq(i).css("margin-left") + $images.eq(i).css("margin-right");
 		}
 
+		totalWidth += 100;
 		$(".template-container").css("width", totalWidth + "px");
 	};
 

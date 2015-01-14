@@ -10,6 +10,10 @@
 
 /* Allows us to scroll since wider than screen */
 .template-container{
+	left: 0;
+    top: 0;
+    position: fixed;
+    
 	overflow-x:scroll;
 	overflow-y:hidden;
 

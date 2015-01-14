@@ -15,7 +15,7 @@ function portfolioController($scope){
 		var totalWidth = 0;
 
 		for(var i = 0; i < $images.length; ++i){
-			totalWidth += $images.eq(i).width() + $images.eq(i).css("margin-left") + $images.eq(i).css("margin-right");
+			totalWidth += $images.eq(i).width();// + $images.eq(i).css("margin-left") + $images.eq(i).css("margin-right");
 		}
 
 		$(".template-container").css("width", totalWidth + "px");

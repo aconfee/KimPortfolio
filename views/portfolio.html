@@ -25,7 +25,8 @@
 			var totalWidth = 0;
 
 			for(var i = 0; i < $images.length; ++i){
-				totalWidth += $images.eq(i).width() + parseInt($images.eq(i).css("marigin-left").substring(0, length - 2)) + parseInt($images.eq(i).css("marigin-right").substring(0, length - 2));
+				console.log("Left marigin: " + $images.eq(i).css("margin-left"))
+				totalWidth += $images.eq(i).width() + parseInt($images.eq(i).css("margin-left").substring(0, length - 2));
 			}
 
 			$(".template-container").css("width", totalWidth + "px");

@@ -39,12 +39,13 @@
 			$(".template-container").css("width", totalWidth + "px");
 		}
 
+		var resizeLoadIterations = 3;
 		var checkExist = setInterval(function() {
-		   if ($('.template-image-restrict').width() > 0) {
-		      console.log("Exists!");
-		      clearInterval(checkExist);
-		   }
-		}, 100);
+			   if (resizeLoadIterations < 0) {
+			      clearInterval(checkExist);
+			   }
+			   --resizeLoadIterations;
+			}, 500);
 
 		$( ".template-image-restrict" ).load(function() {
 			resizeGallery();

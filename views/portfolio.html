@@ -54,10 +54,7 @@
 
 		$(document).ready(function() {
 		    $('body').on('mousewheel', function(event, delta) {
-
-		    	console.log($('#gallery-flyout').is(":hover"));
-
-		    	if($('#gallery-flyout').is(":hover") === false){
+		    	if($('#thumb-container').is(":hover") === false){
 		    		$( ".screen-container" ).scrollLeft( $(".screen-container").scrollLeft() - delta * 100 );
 		    	}	
 			});

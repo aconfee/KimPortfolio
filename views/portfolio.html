@@ -39,6 +39,13 @@
 			$(".template-container").css("width", totalWidth + "px");
 		}
 
+		var checkExist = setInterval(function() {
+		   if ($('.template-image-restrict').length) {
+		      console.log("Exists!");
+		      clearInterval(checkExist);
+		   }
+		}, 100);
+
 		$( ".template-image-restrict" ).load(function() {
 			resizeGallery();
 		});

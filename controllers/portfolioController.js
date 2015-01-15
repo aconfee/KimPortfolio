@@ -9,7 +9,7 @@ function portfolioController($scope){
 	$scope.currentPreview = $scope.defaultPreview;
 	$scope.currentTemplate = "template";
 
-	var self.resizeGallery = function(){
+	self.resizeGallery = function(){
 		var $images = $(".template-image-restrict");
 		var totalWidth = 0;
 

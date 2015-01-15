@@ -39,14 +39,14 @@
 			$(".template-container").css("width", totalWidth + "px");
 		}
 
-		var resizeLoadIterations = 3;
+		var resizeLoadIterations = 5;
 		var checkExist = setInterval(function() {
 		    if (resizeLoadIterations === 0) {
 		    	clearInterval(checkExist);
 		    }
 		    resizeGallery();
 		    --resizeLoadIterations;
-		}, 500);
+		}, 100);
 
 		$( window ).resize(function() {
 			resizeGallery();

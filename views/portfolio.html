@@ -55,7 +55,7 @@
 		$(document).ready(function() {
 		    $('body').on('mousewheel', function(event, delta) {
 		    	if($('#thumb-container').is(":hover") === false){
-		    		$( ".screen-container" ).animate({scrollLeft: $(".screen-container").scrollLeft() - delta * 150}, 20 );
+		    		$( ".screen-container" ).scrollLeft( $(".screen-container").scrollLeft() - delta * 150 );
 		    	}	
 			});
 		});
@@ -72,7 +72,7 @@
 		<div id='gallery-flyout' ng-click='toggleGallery();' ng-class="{ 'gallery-closed-hover': galleryOpen == false }">
 			<div id='gallery-title'>Gallery Nav<span id='gallery-close-button' ></span></div>
 			<div id='thumb-container'>
-				<div class='gallery-thumb' ng-click='scrollToX(50);' ng-repeat="thumb in thumbs[currentThumb]">
+				<div class='gallery-thumb' ng-click='scrollToMe($index);' ng-repeat="thumb in thumbs[currentThumb]">
 					<img src = "{{ thumb }}" ></img>
 				</div>
 			</div>

@@ -20,7 +20,7 @@
 }
 
 /* Allow image to take anywhere from 0 - 100% height */
-.template-image-restrict{
+.template-image{
 	width:auto;
 
 	display:inline-block;

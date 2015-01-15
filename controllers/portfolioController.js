@@ -9,8 +9,8 @@ function portfolioController($scope){
 	$scope.currentPreview = $scope.defaultPreview;
 	$scope.currentTemplate = "template";
 
-	$scope.scrollToX = function(){
-		$( ".screen-container" ).scrollLeft( 100 );
+	$scope.scrollToMe = function(index){
+		$( ".screen-container" )animate({scrollLeft: $(".template-image").eq(index).position().left}, 1000 );
 	};
 
 	self.resizeGallery = function(){

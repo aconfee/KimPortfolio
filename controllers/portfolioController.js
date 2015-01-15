@@ -9,6 +9,10 @@ function portfolioController($scope){
 	$scope.currentPreview = $scope.defaultPreview;
 	$scope.currentTemplate = "template";
 
+	$scope.scrollToX = function(){
+		window.scrollBy(100,0);
+	};
+
 	self.resizeGallery = function(){
 		var $images = $(".template-image-restrict");
 		var totalWidth = 0;

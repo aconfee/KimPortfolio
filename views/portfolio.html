@@ -30,7 +30,7 @@
 
 				console.log("margin left: " + parseInt(marginLeft.substring(0, marginLeft.length - 2)));
 
-				totalWidth += $images.eq(i).width() + parseInt(marginLeft.substring(0, marginLeft.length - 2));
+				totalWidth += $images.eq(i).width() + parseInt(marginLeft.substring(0, marginLeft.length - 2)) + parseInt(marginRight.substring(0, marginRight.length - 2));
 			}
 
 			$(".template-container").css("width", totalWidth + "px");

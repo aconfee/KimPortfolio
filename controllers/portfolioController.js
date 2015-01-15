@@ -10,9 +10,7 @@ function portfolioController($scope){
 	$scope.currentTemplate = "template";
 
 	$scope.scrollToX = function(){
-		$('html, body').animate({
-		    scrollTop: ($('.template-image-restrict').eq(1).offset().top)
-		},500);
+		$( "body" ).scrollLeft( 300 );
 	};
 
 	self.resizeGallery = function(){

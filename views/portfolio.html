@@ -40,7 +40,7 @@
 		}
 
 		var checkExist = setInterval(function() {
-		   if ($('.template-image-restrict').length) {
+		   if ($('.template-image-restrict').length === 2) {
 		      console.log("Exists!");
 		      clearInterval(checkExist);
 		   }

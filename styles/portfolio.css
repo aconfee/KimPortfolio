@@ -106,6 +106,14 @@ a:visited{
    -webkit-transition: all .2s ease-in-out;
 }
 
+#gallery-flyout:hover{
+	width:30px;
+
+	transition: all .2s ease-in-out;
+   -moz-transition: all .2s ease-in-out;
+   -webkit-transition: all .2s ease-in-out;
+}
+
 .gallery-closed-hover{
 	cursor: pointer;
 }

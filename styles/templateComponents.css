@@ -8,13 +8,9 @@
     overflow-y:hidden;
 }
 
-/* Allows us to scroll since wider than screen */
-#template-characters-girls-container{
-	/* Width is defined in PortfolioController::ChangeTemplate() do fit images */
-	width:auto;
-}
-
 .template-container{
+	width:auto;
+
 	height:100%;
 	max-height:100%;
 }

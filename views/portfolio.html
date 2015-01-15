@@ -53,8 +53,8 @@
 		});
 
 		$(document).ready(function() {
-		    $('.screen-container').on('mousewheel', function(event) {
-		    	window.scrollBy(30, 0);;
+		    $('body').on('mousewheel', function(event) {
+		    	$( ".screen-container" ).scrollLeft( 20 );
 			});
 		});
 	</script>

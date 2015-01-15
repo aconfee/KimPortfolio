@@ -14,7 +14,7 @@ function portfolioController($scope){
 	};
 
 	self.resizeGallery = function(){
-		var $images = $(".template-image");
+		var $images = $(".template-image-restrict");
 		var totalWidth = 0;
 
 		for(var i = 0; i < $images.length; ++i){

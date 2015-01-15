@@ -40,22 +40,19 @@
 
 		$( window ).load(function() {
 			resizeGallery();
-
-			$(function() {
-
-			   $("body").mousewheel(function(event, delta) {
-
-			      this.scrollLeft -= (delta * 30);
-			    
-			      event.preventDefault();
-
-			   });
-
-			});
 		});
 
 		$( window ).resize(function() {
 			resizeGallery();
+		});
+
+		$(function() {
+		   $("body").mousewheel(function(event, delta) {
+
+		      this.scrollLeft -= (delta * 30);		    
+		      event.preventDefault();
+		   });
+
 		});
 	</script>
 </head>

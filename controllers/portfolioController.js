@@ -17,8 +17,6 @@ function portfolioController($scope){
 			var marginLeft = $images.eq(i).css("margin-left");
 			var marginRight = $images.eq(i).css("margin-right");
 
-			console.log("margin left: " + parseInt(marginLeft.substring(0, marginLeft.length - 2)));
-
 			totalWidth += $images.eq(i).width() + parseInt(marginLeft.substring(0, marginLeft.length - 2)) + parseInt(marginRight.substring(0, marginRight.length - 2));
 		}
 

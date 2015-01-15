@@ -19,7 +19,7 @@
 	<script src="../controllers/portfolioController.js"></script>
 
 	<!-- Scroll horizontally -->
-	<script type='text/javascript' src='/js/jquery.mousewheel.min.js'></script>
+	<script type='text/javascript' src='/../bower_components/jquery-mousewheel/jquery.mousewheel.min.js'></script>
 
 	<!-- Resize the gallery width anytime the page loads or window is resized. This is also done in portfolioController::ChangeTemplate()-->
 	<script>
@@ -30,8 +30,6 @@
 			for(var i = 0; i < $images.length; ++i){
 				var marginLeft = $images.eq(i).css("margin-left");
 				var marginRight = $images.eq(i).css("margin-right");
-
-				console.log("margin left: " + parseInt(marginLeft.substring(0, marginLeft.length - 2)));
 
 				totalWidth += $images.eq(i).width() + parseInt(marginLeft.substring(0, marginLeft.length - 2)) + parseInt(marginRight.substring(0, marginRight.length - 2));
 			}

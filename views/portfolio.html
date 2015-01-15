@@ -39,22 +39,22 @@
 
 		$( window ).load(function() {
 			resizeGallery();
+
+			$(function() {
+
+			   $(".screen-container").mousewheel(function(event, delta) {
+
+			      this.scrollLeft -= (delta * 30);
+			    
+			      event.preventDefault();
+
+			   });
+
+			});
 		});
 
 		$( window ).resize(function() {
 			resizeGallery();
-		});
-
-		$(function() {
-
-		   $(".screen-container").mousewheel(function(event, delta) {
-
-		      this.scrollLeft -= (delta * 30);
-		    
-		      event.preventDefault();
-
-		   });
-
 		});
 	</script>
 </head>

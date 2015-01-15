@@ -44,6 +44,11 @@
 		$( window ).resize(function() {
 			resizeGallery();
 		});
+
+		document.getElementByClassName('screen-container').addEventListener('mousewheel', function(e) {
+		  this.scrollLeft -= (e.wheelDelta);
+		  e.preventDefault();
+		}, false);
 	</script>
 </head>
 

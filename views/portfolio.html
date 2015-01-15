@@ -45,17 +45,17 @@
 			resizeGallery();
 		});
 
-		var mouseWheelEvt = function (event) {
-		    if (document.body.doScroll)
-		        document.body.doScroll(event.wheelDelta>0?"left":"right");
-		    else if ((event.wheelDelta || event.detail) > 0)
-		        document.body.scrollLeft -= 10;
-		    else
-		        document.body.scrollLeft += 10;
+		$(function() {
 
-		    return false;
-		}
-		document.body.addEventListener("mousewheel", mouseWheelEvt);
+		   $("body").mousewheel(function(event, delta) {
+
+		      this.scrollLeft -= (delta * 30);
+		    
+		      event.preventDefault();
+
+		   });
+
+		});
 	</script>
 </head>
 

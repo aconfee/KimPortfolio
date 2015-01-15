@@ -53,8 +53,8 @@
 		});
 
 		$(document).ready(function() {
-		    $('body').on('mousewheel', function(event) {
-		    	$( ".screen-container" ).scrollLeft( 20 );
+		    $('body').on('mousewheel', function(event, delta) {
+		    	$( ".screen-container" ).scrollLeft( $(".screen-container").scrollLeft() -= delta * 20 );
 			});
 		});
 	</script>

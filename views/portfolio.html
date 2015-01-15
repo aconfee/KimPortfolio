@@ -25,8 +25,12 @@
 			var totalWidth = 0;
 
 			for(var i = 0; i < $images.length; ++i){
-				console.log("Left marigin: " + $images.eq(i).css("margin-left"))
-				totalWidth += $images.eq(i).width() + parseInt($images.eq(i).css("margin-left").substring(0, length - 2));
+				var marginLeft = $images.eq(i).css("margin-left");
+				var marginRight = $images.eq(i).css("margin-right");
+
+				console.log("margin left: " + parseInt(marginLeft.substring(0, marginLeft.length - 2)));
+
+				totalWidth += $images.eq(i).width() + parseInt(marginLeft.substring(0, marginLeft.length - 2));
 			}
 
 			$(".template-container").css("width", totalWidth + "px");

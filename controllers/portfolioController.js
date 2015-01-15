@@ -1,25 +1,36 @@
 function portfolioController($scope){
 
 	// Angular vars
+	var self = this;
+
 	$scope.openCategory = -1;
 	$scope.galleryOpen = false;
 	$scope.defaultPreview = 'http://www.warrenphotographic.co.uk/photography/cats/18458.jpg';
 	$scope.currentPreview = $scope.defaultPreview;
 	$scope.currentTemplate = "template";
 
-	$scope.changeTemplate = function(newTemplate){
-		$scope.currentTemplate = newTemplate;
-		$scope.$apply();
-
+	var self.resizeGallery = function(){
 		var $images = $(".template-image-restrict");
 		var totalWidth = 0;
 
 		for(var i = 0; i < $images.length; ++i){
-			totalWidth += $images.eq(i).width();// + $images.eq(i).css("margin-left") + $images.eq(i).css("margin-right");
+			var marginLeft = $images.eq(i).css("margin-left");
+			var marginRight = $images.eq(i).css("margin-right");
+
+			console.log("margin left: " + parseInt(marginLeft.substring(0, marginLeft.length - 2)));
+
+			totalWidth += $images.eq(i).width() + parseInt(marginLeft.substring(0, marginLeft.length - 2)) + parseInt(marginRight.substring(0, marginRight.length - 2));
 		}
 
-		totalWidth += 100;
+		totalWidth += 10;
 		$(".template-container").css("width", totalWidth + "px");
+	}
+
+	$scope.changeTemplate = function(newTemplate){
+		$scope.currentTemplate = newTemplate;
+		$scope.$apply();
+
+		self.resizeGallery();
 	};
 
 	// Class vars

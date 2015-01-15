@@ -53,10 +53,9 @@
 		});
 
 		$(document).ready(function() {
-		    $('body').on('mousewheel', (function(e) {
-		        this.scrollLeft -= (e.deltaX * 40);
-		        //e.preventDefault();
-		    });
+		    $('body').on('mousewheel', function(event) {
+			    console.log(event.deltaX, event.deltaY, event.deltaFactor);
+			});
 		});
 	</script>
 </head>

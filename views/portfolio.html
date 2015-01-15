@@ -41,9 +41,10 @@
 
 		var resizeLoadIterations = 3;
 		var checkExist = setInterval(function() {
-			   if (resizeLoadIterations < 0) {
+			   if (resizeLoadIterations === 0) {
 			      clearInterval(checkExist);
 			   }
+			   resizeGallery();
 			   --resizeLoadIterations;
 			}, 500);
 

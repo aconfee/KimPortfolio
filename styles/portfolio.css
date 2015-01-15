@@ -108,6 +108,7 @@ a:visited{
 
 #gallery-flyout:hover{
 	width:30px;
+	background-color: rgba(99, 99, 92, 0.7);
 
 	transition: all .2s ease-in-out;
    -moz-transition: all .2s ease-in-out;

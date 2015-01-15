@@ -55,7 +55,7 @@
 		$(document).ready(function() {
 		    $('body').on('mousewheel', function(event, delta) {
 		    	if($('#thumb-container').is(":hover") === false){
-		    		$( ".screen-container" ).scrollLeft( $(".screen-container").scrollLeft() - delta * 150 );
+		    		$( ".screen-container" ).animate({scrollLeft: $(".screen-container").scrollLeft() - delta * 150}, 1000 );
 		    	}	
 			});
 		});

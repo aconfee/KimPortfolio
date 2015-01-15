@@ -66,12 +66,7 @@
 	<div id='screen-size-container' ng-controller='portfolioController'>
 
 		<!-- Content display -->
-
-		<div class="screen-container">
-			<div class="template-container">
-				<div ng-include="'templates/' + currentTemplate + '.html'"></div>
-			</div>
-		</div>
+		<div ng-include="'templates/' + currentTemplate + '.html'"></div>
 
 		<!-- User controls -->
 		<div id='gallery-flyout' ng-click='toggleGallery();' ng-class="{ 'gallery-closed-hover': galleryOpen == false }">

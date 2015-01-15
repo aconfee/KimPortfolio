@@ -19,7 +19,8 @@
 	<script src="../controllers/portfolioController.js"></script>
 
 	<!-- Scroll horizontally -->
-	<script type='text/javascript' src='/../bower_components/jquery-mousewheel/jquery.mousewheel.min.js'></script>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+	<script src="js/jquery.mousewheel.js"></script>
 
 	<!-- Resize the gallery width anytime the page loads or window is resized. This is also done in portfolioController::ChangeTemplate()-->
 	<script>
@@ -46,13 +47,11 @@
 			resizeGallery();
 		});
 
-		$(function() {
-		   $("body").mousewheel(function(event, delta) {
-
-		      this.scrollLeft -= (delta * 30);		    
-		      event.preventDefault();
-		   });
-
+		$(document).ready(function() {
+		    $('html, body, *').mousewheel(function(e, delta) {
+		        this.scrollLeft -= (delta * 40);
+		        e.preventDefault();
+		    });
 		});
 	</script>
 </head>

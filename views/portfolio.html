@@ -17,37 +17,6 @@
 	<!-- Javascript for bootstrap -->
 	<script src="../bower_components/angular/angular.min.js"></script>
 	<script src="../controllers/portfolioController.js"></script>
-
-	<!-- Resize the gallery width anytime the page loads or window is resized. This is also done in portfolioController::ChangeTemplate()-->
-	<script>
-		var resizeGallery = function(){
-			var $images = $(".template-image-restrict");
-			var totalWidth = 0;
-
-			for(var i = 0; i < $images.length; ++i){
-				var marginLeft = $images.eq(i).css("margin-left");
-				var marginRight = $images.eq(i).css("margin-right");
-
-				totalWidth += $images.eq(i).width() + parseInt(marginLeft.substring(0, marginLeft.length - 2)) + parseInt(marginRight.substring(0, marginRight.length - 2));
-			}
-
-			totalWidth += 10;
-			$(".template-container").css("width", totalWidth + "px");
-		}
-
-		var resizeLoadIterations = 10;
-		var checkExist = setInterval(function() {
-		    if (resizeLoadIterations === 0) {
-		    	clearInterval(checkExist);
-		    }
-		    resizeGallery();
-		    --resizeLoadIterations;
-		}, 50);
-
-		$( window ).resize(function() {
-			resizeGallery();
-		});
-	</script>
 </head>
 
 <body>
@@ -93,5 +62,52 @@
 		</div>
 	</div>
 </body>
+
+<!-- Resize the gallery width anytime the page loads or window is resized. This is also done in portfolioController::ChangeTemplate()-->
+	<script>
+		var numberOfImagesPrevious = 0;
+		var resizeGallery = function(){
+			var $images = $(".template-image-restrict");
+			var numberOfImagesCurrent = $images.length;
+			var totalWidth = 0;
+
+			for(var i = 0; i < $images.length; ++i){
+				var marginLeft = $images.eq(i).css("margin-left");
+				var marginRight = $images.eq(i).css("margin-right");
+
+				totalWidth += $images.eq(i).width() + parseInt(marginLeft.substring(0, marginLeft.length - 2)) + parseInt(marginRight.substring(0, marginRight.length - 2));
+				console.log("totalWidth is: " + totalWidth);
+			}
+			
+			if (numberOfImagesCurrent > numberOfImagesPrevious && 
+				numberOfImagesCurrent > 0){
+					
+				numberOfImagesPrevious = numberOfImagesCurrent;
+				console.log("gallery still resizing. number of images: " + numberOfImagesCurrent);
+				return false;
+			}
+
+			totalWidth += 10;
+			$(".template-container").css("width", totalWidth + "px");
+			
+			console.log("gallery successfully resized");
+			return true;
+		};
+
+		// Set an interval to resize the gallery on DOM load.
+		var checkExist = setInterval(function() {
+			// If the gallery is successfully resized, clear the refresh interval.
+			if(resizeGallery() === true){
+		    	clearInterval(checkExist);
+				console.log("interval cleared.");
+			}
+		}, 100);
+
+		// Resize the gallery when the window is resized.
+		$( window ).resize(function() {
+			resizeGallery();
+			console.log("window resized");
+		});
+	</script>
 
 </html>

@@ -22,9 +22,9 @@ function portfolioController($scope){
 			var marginRight = $images.eq(i).css("margin-right");
 
 			totalWidth += $images.eq(i).width() + parseInt(marginLeft.substring(0, marginLeft.length - 2)) + parseInt(marginRight.substring(0, marginRight.length - 2));
+			totalWidth += 500;
 		}
-
-		totalWidth += 10;
+		
 		$(".template-container").css("width", totalWidth + "px");
 	}
 

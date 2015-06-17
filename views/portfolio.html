@@ -76,32 +76,57 @@
 				var marginRight = $images.eq(i).css("margin-right");
 
 				totalWidth += $images.eq(i).width() + parseInt(marginLeft.substring(0, marginLeft.length - 2)) + parseInt(marginRight.substring(0, marginRight.length - 2));
-				console.log("totalWidth is: " + totalWidth);
+				totalWidth += 6;
 			}
 			
 			if (numberOfImagesCurrent > numberOfImagesPrevious && 
 				numberOfImagesCurrent > 0){
 					
 				numberOfImagesPrevious = numberOfImagesCurrent;
-				console.log("gallery still resizing. number of images: " + numberOfImagesCurrent);
+				console.log("no new images");
 				return false;
 			}
 
-			totalWidth += 10;
 			$(".template-container").css("width", totalWidth + "px");
 			
-			console.log("gallery successfully resized");
 			return true;
 		};
 
 		// Set an interval to resize the gallery on DOM load.
-		var checkExist = setInterval(function() {
+		var resizeGalleryInterval = setInterval(function() {
 			// If the gallery is successfully resized, clear the refresh interval.
+			console.log("First resize");
 			if(resizeGallery() === true){
-		    	clearInterval(checkExist);
-				console.log("interval cleared.");
+		    	clearInterval(resizeGalleryInterval);
 			}
 		}, 100);
+		
+		// Set an interval to resize the gallery on DOM load.
+		var resizeGalleryIntervalLate = setInterval(function() {
+			// If the gallery is successfully resized, clear the refresh interval.
+			console.log("Late resize");
+			if(resizeGallery() === true){
+		    	clearInterval(resizeGalleryIntervalLate);
+			}
+		}, 500);
+		
+		// Set an interval to resize the gallery on DOM load.
+		var resizeGalleryIntervalMegaLate = setInterval(function() {
+			// If the gallery is successfully resized, clear the refresh interval.
+			console.log("Mega late resize");
+			if(resizeGallery() === true){
+		    	clearInterval(resizeGalleryIntervalMegaLate);
+			}
+		}, 2000);
+		
+		// Set an interval to resize the gallery on DOM load.
+		var resizeGalleryIntervalUltraLate = setInterval(function() {
+			// If the gallery is successfully resized, clear the refresh interval.
+			console.log("Ultra late resize");
+			if(resizeGallery() === true){
+		    	clearInterval(resizeGalleryIntervalUltraLate);
+			}
+		}, 5000);
 
 		// Resize the gallery when the window is resized.
 		$( window ).resize(function() {

@@ -13,8 +13,12 @@ function portfolioController($scope){
 		$( ".screen-container" ).animate({scrollLeft: $(".template-image-restrict").eq(index).position().left}, 600 );
 	};
 
+	self.numberOfImagesPrevious = 0;
+	
+	// Resize the gallery to fit all loaded images.
 	self.resizeGallery = function(){
 		var $images = $(".template-image-restrict");
+		var numberOfImagesCurrent = $images.length;
 		var totalWidth = 0;
 
 		for(var i = 0; i < $images.length; ++i){
@@ -22,17 +26,38 @@ function portfolioController($scope){
 			var marginRight = $images.eq(i).css("margin-right");
 
 			totalWidth += $images.eq(i).width() + parseInt(marginLeft.substring(0, marginLeft.length - 2)) + parseInt(marginRight.substring(0, marginRight.length - 2));
-			totalWidth += 500;
+			totalWidth += 6;
 		}
 		
+		if (numberOfImagesCurrent > self.numberOfImagesPrevious && 
+			numberOfImagesCurrent > 0){
+				
+			numberOfImagesPrevious = numberOfImagesCurrent;
+			return false;
+		}
+
 		$(".template-container").css("width", totalWidth + "px");
-	}
+		self.numberOfImagesPrevious = 0;
+		return true;
+	};
+	
+	// Resize the gallery every x milliseconds (for new images loaded).
+	self.resizeGalleryAsync = function(interval){
+		var resizeGalleryInterval = setInterval(function() {
+			if(resizeGallery() === true){
+		    	clearInterval(resizeGalleryInterval);
+			}
+		}, interval);
+	};
 
 	$scope.changeTemplate = function(newTemplate){
 		$scope.currentTemplate = newTemplate;
-		$scope.$apply();
 
-		self.resizeGallery();
+		// Resize the gallery upon new template load. Try quick and late loads.
+		self.resizeGalleryAsync(100);
+		self.resizeGalleryAsync(500);
+		self.resizeGalleryAsync(2000);
+		self.resizeGalleryAsync(5000);
 	};
 
 	// Class vars

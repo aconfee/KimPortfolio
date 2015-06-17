@@ -66,6 +66,8 @@
 <!-- Resize the gallery width anytime the page loads or window is resized. This is also done in portfolioController::ChangeTemplate()-->
 	<script>
 		var numberOfImagesPrevious = 0;
+		
+		// Resize the gallery to fit all images as they load.
 		var resizeGallery = function(){
 			var $images = $(".template-image-restrict");
 			var numberOfImagesCurrent = $images.length;
@@ -83,7 +85,6 @@
 				numberOfImagesCurrent > 0){
 					
 				numberOfImagesPrevious = numberOfImagesCurrent;
-				console.log("no new images");
 				return false;
 			}
 
@@ -92,45 +93,28 @@
 			return true;
 		};
 
-		// Set an interval to resize the gallery on DOM load.
-		var resizeGalleryInterval = setInterval(function() {
-			// If the gallery is successfully resized, clear the refresh interval.
-			console.log("First resize");
-			if(resizeGallery() === true){
-		    	clearInterval(resizeGalleryInterval);
-			}
-		}, 100);
+		// Resize the gallery every x milliseconds (for new images loaded).
+		var resizeGalleryAsync = function(interval){
+			var resizeGalleryInterval = setInterval(function() {
+				if(resizeGallery() === true){
+			    	clearInterval(resizeGalleryInterval);
+				}
+			}, interval);
+		};
 		
-		// Set an interval to resize the gallery on DOM load.
-		var resizeGalleryIntervalLate = setInterval(function() {
-			// If the gallery is successfully resized, clear the refresh interval.
-			console.log("Late resize");
-			if(resizeGallery() === true){
-		    	clearInterval(resizeGalleryIntervalLate);
-			}
-		}, 500);
-		
-		// Set an interval to resize the gallery on DOM load.
-		var resizeGalleryIntervalMegaLate = setInterval(function() {
-			// If the gallery is successfully resized, clear the refresh interval.
-			console.log("Mega late resize");
-			if(resizeGallery() === true){
-		    	clearInterval(resizeGalleryIntervalMegaLate);
-			}
-		}, 2000);
-		
-		// Set an interval to resize the gallery on DOM load.
-		var resizeGalleryIntervalUltraLate = setInterval(function() {
-			// If the gallery is successfully resized, clear the refresh interval.
-			console.log("Ultra late resize");
-			if(resizeGallery() === true){
-		    	clearInterval(resizeGalleryIntervalUltraLate);
-			}
-		}, 5000);
+		// Resize the gallery on page load.
+		resizeGalleryAsync(100);
+		resizeGalleryAsync(500);
+		resizeGalleryAsync(2000);
+		resizeGalleryAsync(5000);
 
 		// Resize the gallery when the window is resized.
 		$( window ).resize(function() {
-			resizeGallery();
+			resizeGalleryAsync(100);
+			resizeGalleryAsync(500);
+			resizeGalleryAsync(2000);
+			resizeGalleryAsync(5000);
+			
 			console.log("window resized");
 		});
 	</script>

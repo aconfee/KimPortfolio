@@ -28,7 +28,7 @@
 		<!-- User controls -->
 		<div id='gallery-flyout' ng-mouseenter="galleryPeek('true')" ng-mouseleave="galleryPeek('false')" ng-click='toggleGallery();' ng-class="{ 'gallery-closed-hover': galleryOpen == false }">
 			<img id='gallery-flyout-icon' src="https://cdn2.iconfinder.com/data/icons/photo-and-video/500/Landscape_moon_mountains_multiple_photo_photograph_pictury_sun_gallery_image-512.png"></img>
-			<div id='gallery-title'>{{ mainCategory }}: {{ subCategory }}<span id='gallery-close-button' ></span></div>
+			<div id='gallery-title'>{{ galleryTitle }}<span id='gallery-close-button' ></span></div>
 			<div id='thumb-container'>
 				<div class='gallery-thumb' ng-click='scrollToMe($index);' ng-repeat="thumb in thumbs[currentThumb]">
 					<img src = "{{ thumb }}" ></img>

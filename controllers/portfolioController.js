@@ -7,6 +7,7 @@ function portfolioController($scope){
 	$scope.galleryOpen = false;
 	$scope.mainCategory = "CHARACTERS";
 	$scope.subCategory = "girls";
+	$scope.galleryTitle = "CHARACTERS: girls";
 	$scope.defaultPreview = 'http://www.warrenphotographic.co.uk/photography/cats/18458.jpg';
 	$scope.currentPreview = $scope.defaultPreview;
 	$scope.currentTemplate = "template";
@@ -116,6 +117,7 @@ function portfolioController($scope){
 		// Change the displayed thumbs in the gallery.
 		$scope.currentThumb = linkName;
 		$scope.subCategory = linkName.toLowerCase();
+		$scope.galleryTitle = $scope.mainCategory + ": " + $scope.subCategory;
 	};
 
 	$scope.expandCategory = function(index, name){
@@ -218,7 +220,7 @@ function portfolioController($scope){
 				});
 				
 				$( "#gallery-flyout" ).animate({
-			    	top: "409px",
+			    	top: "15px",
 					height: "56px"
 				  }, 200, function() {
 				    // Animation complete.

@@ -89,8 +89,8 @@ a:visited{
 	
 	border: solid 1px white;
 
-	top:409px;
-	left:260px;
+	top:15px;
+	left:261px;
 
 	width:16px;
 	height:56px;
@@ -113,7 +113,7 @@ a:visited{
 #gallery-flyout-icon{
 	position: fixed;
 
-	top:447px;
+	top:55px;
 	left:262px;
 	
 	width:40px;

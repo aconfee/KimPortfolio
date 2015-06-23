@@ -3,7 +3,7 @@ function portfolioController($scope){
 	// Angular vars
 	var self = this;
 	
-	self.isScrolling = true;
+	self.isScrolling = false;
 
 	$scope.openCategory = -1;
 	$scope.galleryOpen = false;

@@ -118,10 +118,6 @@ a:visited{
 	
 	width:40px;
 	height:auto;
-	
-	transition: all .2s ease-in-out;
-   -moz-transition: all .2s ease-in-out;
-   -webkit-transition: all .2s ease-in-out;
 }
 
 .gallery-closed-hover{
@@ -289,6 +285,10 @@ a:visited{
 	transition: all .2s ease-in-out;
    -moz-transition: all .2s ease-in-out;
    -webkit-transition: all .2s ease-in-out;
+}
+
+.activeLink{
+	color:rgba(255, 197, 96, 1.0);
 }
 
 .art-display{

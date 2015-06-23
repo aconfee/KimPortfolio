@@ -5,6 +5,8 @@ function portfolioController($scope){
 
 	$scope.openCategory = -1;
 	$scope.galleryOpen = false;
+	$scope.mainCategory = "CHARACTERS";
+	$scope.subCategory = "girls";
 	$scope.defaultPreview = 'http://www.warrenphotographic.co.uk/photography/cats/18458.jpg';
 	$scope.currentPreview = $scope.defaultPreview;
 	$scope.currentTemplate = "template";
@@ -113,9 +115,11 @@ function portfolioController($scope){
 	$scope.chooseLink = function(linkName){
 		// Change the displayed thumbs in the gallery.
 		$scope.currentThumb = linkName;
+		$scope.subCategory = linkName.toLowerCase();
 	};
 
-	$scope.expandCategory = function(index){
+	$scope.expandCategory = function(index, name){
+		$scope.mainCategory = name.toUpperCase();
 		// Clone the element with the auto property to see how far we should extend the height.
 		var elementToClone = $('.linkHeaderContainer').eq(index);
 		var elementCloneAuto = elementToClone.clone().css({"height":"auto"}).appendTo("body");

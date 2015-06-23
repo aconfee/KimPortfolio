@@ -4,7 +4,6 @@ function portfolioController($scope){
 	var self = this;
 	
 	self.isScrolling = false;
-	self.scrollBar = 0;
 
 	$scope.openCategory = -1;
 	$scope.galleryOpen = false;
@@ -17,17 +16,11 @@ function portfolioController($scope){
 
 	$scope.scrollToMe = function(index){
 		var dest = $(".template-image-restrict").eq(index).position().left;
-		var pos = dest + self.scrollBar - 230;
+		var pos = dest + $( ".screen-container" ).scrollLeft() - 230;
 		if(pos < 0){
 			pos = 0;
 		}
-		
-		console.log("self.scrollbar: " + self.scrollBar);
-		console.log("element.scrollLeft: " + $( ".screen-container" ).scrollLeft());
-		
-		var delta = pos - self.scrollBar;
-		
-		self.scrollBar += delta;
+
 		$( ".screen-container" ).animate({scrollLeft: pos}, 600 );
 	};
 		
@@ -51,7 +44,6 @@ function portfolioController($scope){
 			console.log("called");
 			var currentLeft = $(".screen-container").scrollLeft(); // ___px
 			var scrollTo = currentLeft + 1;
-			self.scrollBar += 1;
 			
 			$( ".screen-container" ).scrollLeft(scrollTo);
 		}, 3);

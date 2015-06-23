@@ -16,9 +16,13 @@ function portfolioController($scope){
 
 	$scope.scrollToMe = function(index){
 		console.log("index is: " + index);
-		var newPos = $(".template-image-restrict").eq(index).position().left - 230;
+		var dest = $(".template-image-restrict").eq(index).position().left - 230;
+		var curr = window.screenLeft;
+		var delta = abs(curr - dest);
+		
 		console.log("newpos is: " + newPos);
-		$( ".screen-container" ).animate({scrollLeft: newPos.toString()}, 600 );
+		//$( ".screen-container" ).animate({scrollLeft: newPos.toString()}, 600 );
+		$(".screen-container").scrollTo($(".template-image-restrict").eq(index), {duration:'slow', offsetRight : '50'});
 	};
 		
 	$scope.toggleScroll = function(beginScroll){

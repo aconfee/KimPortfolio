@@ -37,9 +37,10 @@ function portfolioController($scope){
 		self.scrollInterval = setInterval(function(){
 			console.log("called");
 			var currentLeft = $(".screen-container").scrollLeft(); // ___px
-			var scrollBy = currentLeft + 1;
+			var scrollTo = currentLeft + 1;
 			
-			$( ".screen-container" ).animate({scrollLeft: scrollBy}, 50 );
+			//$( ".screen-container" ).animate({scrollLeft: scrollTo}, 50 );
+			$( ".screen-container" ).scrollLeft(scrollTo);
 		}, 50);
 	}
 	

@@ -272,7 +272,7 @@ function portfolioController($scope){
 			});
 			
 			$( "#gallery-flyout-icon" ).animate({
-			    	left: "267px",
+			    	left: "240px",
 				  }, 100, function() {
 				    // Animation complete.
 			});
@@ -285,7 +285,7 @@ function portfolioController($scope){
 			});
 			
 			$( "#gallery-flyout-icon" ).animate({
-			    	left: "262px",
+			    	left: "235px",
 				  }, 100, function() {
 				    // Animation complete.
 			});

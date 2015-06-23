@@ -20,7 +20,7 @@ function portfolioController($scope){
 		var curr = window.screenLeft;
 		var delta = Math.abs(curr - dest);
 		
-		//console.log("newpos is: " + newPos);
+		console.log("newpos is: " + $(".template-image-restrict").eq(index).position().left);
 		$( ".screen-container" ).animate({scrollLeft: $(".template-image-restrict").eq(index).position().left}, 600 );
 	};
 		

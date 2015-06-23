@@ -2,6 +2,8 @@ function portfolioController($scope){
 
 	// Angular vars
 	var self = this;
+	
+	self.isScrolling = true;
 
 	$scope.openCategory = -1;
 	$scope.galleryOpen = false;
@@ -15,14 +17,33 @@ function portfolioController($scope){
 	$scope.scrollToMe = function(index){
 		$( ".screen-container" ).animate({scrollLeft: $(".template-image-restrict").eq(index).position().left}, 600 );
 	};
-	
-	$scope.scrollLeft = function(){
-		console.log("called");
-		var currentLeft = $(".screen-container").scrollLeft(); // ___px
-		var scrollBy = currentLeft + 1;
 		
-		$( ".screen-container" ).animate({scrollLeft: scrollBy}, 50 );
+	$scope.toggleScroll = function(beginScroll){
+		// If stopping scroll
+		if(beginScroll === false){
+			clearInterval(self.scrollInterval);
+			self.isScrolling = false;
+			return;	
+		}
+		
+		// If already scrolling
+		if(self.isScrolling === true){
+			return;
+		}
+		
+		// If starting scroll				
+		self.isScrolling = true;
+		
+		self.scrollInterval = setInterval(function(){
+			console.log("called");
+			var currentLeft = $(".screen-container").scrollLeft(); // ___px
+			var scrollBy = currentLeft + 1;
+			
+			$( ".screen-container" ).animate({scrollLeft: scrollBy}, 50 );
+		}, 50);
 	}
+	
+	self.scrollInterval = function(){};
 
 	self.numberOfImagesPrevious = 0;
 	

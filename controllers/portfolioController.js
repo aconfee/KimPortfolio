@@ -19,7 +19,7 @@ function portfolioController($scope){
 		console.log(pos);
 		var posNum = pos.substr(pos.indexOf('p'), 2);
 		var posInt = parseInt(posNum);
-		var newPos = posInt + 230;
+		var newPos = posInt - 230;
 		$( ".screen-container" ).animate({scrollLeft: newPos.toString()}, 600 );
 	};
 		

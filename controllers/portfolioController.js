@@ -25,10 +25,10 @@ function portfolioController($scope){
 		console.log("dest left: " + dest);
 		//var delta = dest - self.scrollBar;
 		
-		console.log("delta is: " + delta);
+		//console.log("delta is: " + delta);
 		console.log("scroll bar is: " + self.scrollBar);
 		//self.scrollBar += delta;
-		console.log("new scrollbar pos: " + self.scrollBar);
+		//console.log("new scrollbar pos: " + self.scrollBar);
 		$( ".screen-container" ).animate({scrollLeft: self.scrollBar}, 600 );
 	};
 		

@@ -201,12 +201,13 @@ function portfolioController($scope){
 	};
 
 	$scope.retractGallery = function(){
-		$("#gallery-flyout").css("background-color", "rgba(154, 169, 181, 0.7)");
 		
 		$( "#gallery-flyout" ).animate({
 			    width: "16px"
 			  }, 200, function() {
-			    // Animation complete.		
+			    // Animation complete.	
+				$("#gallery-flyout").css("background-color", "rgba(154, 169, 181, 0.7)");
+					
 				$( "#thumb-container" ).animate({
 				    opacity: "0.0"
 				  }, 400, function() {

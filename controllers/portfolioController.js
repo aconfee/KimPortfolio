@@ -21,13 +21,13 @@ function portfolioController($scope){
 		console.log($(".template-image-restrict").eq(2).position().left);
 		console.log($(".template-image-restrict").eq(3).position().left);
 		console.log($(".template-image-restrict").eq(4).position().left);
-		var dest = $(".template-image-restrict").eq(index).position().left;
+		var dest = $(".template-image-restrict").eq(index).position().left + self.scrollbar;
 		console.log("dest left: " + dest);
-		var delta = dest - self.scrollBar;
+		//var delta = dest - self.scrollBar;
 		
 		console.log("delta is: " + delta);
 		console.log("scroll bar is: " + self.scrollBar);
-		self.scrollBar += delta;
+		//self.scrollBar += delta;
 		console.log("new scrollbar pos: " + self.scrollBar);
 		$( ".screen-container" ).animate({scrollLeft: self.scrollBar}, 600 );
 	};

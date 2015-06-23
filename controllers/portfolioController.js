@@ -16,23 +16,15 @@ function portfolioController($scope){
 	$scope.currentTemplate = "template";
 
 	$scope.scrollToMe = function(index){
-		console.log($(".template-image-restrict").eq(0).position().left);
-		console.log($(".template-image-restrict").eq(1).position().left);
-		console.log($(".template-image-restrict").eq(2).position().left);
-		console.log($(".template-image-restrict").eq(3).position().left);
-		console.log($(".template-image-restrict").eq(4).position().left);
 		var dest = $(".template-image-restrict").eq(index).position().left;
-		console.log("dest left: " + $(".template-image-restrict").eq(index).position().left);
-		console.log("scrollbar: " + self.scrollBar);
-		var pos = dest + self.scrollBar;
-		console.log("posigion: " + pos);
+		var pos = dest + self.scrollBar - 230;
+		if(pos < 0){
+			pos = 0;
+		}
+		
 		var delta = pos - self.scrollBar;
-		console.log("delta: " + delta);
 		
 		self.scrollBar += delta;
-		
-		console.log("new scroll position " + self.scrollBar);
-
 		$( ".screen-container" ).animate({scrollLeft: pos}, 600 );
 	};
 		
@@ -56,6 +48,7 @@ function portfolioController($scope){
 			console.log("called");
 			var currentLeft = $(".screen-container").scrollLeft(); // ___px
 			var scrollTo = currentLeft + 1;
+			self.scrollBar += 1;
 			
 			$( ".screen-container" ).scrollLeft(scrollTo);
 		}, 3);

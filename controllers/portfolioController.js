@@ -18,10 +18,7 @@ function portfolioController($scope){
 	
 	$scope.scrollLeft = function(){
 		var currentLeft = $(".screen-container").scrollLeft(); // ___px
-		console.log("current left " + currentLeft);
-		currentLeft = currentLeft.substr(currentLeft.length - 2, 2); // ___
-		var currentLeftInt = parseInt(currentLeft); // ###
-		var scrollBy = currentLeftInt + 1;
+		var scrollBy = currentLeft + 1;
 		
 		$( ".screen-container" ).animate({scrollLeft: scrollBy}, 50 );
 	}

@@ -85,11 +85,11 @@ a:visited{
 #gallery-flyout{
 	position: fixed;
 
-	top:15px;
+	top:409px;
 	left:260px;
 
-	width:10px;
-	height:450px;
+	width:16px;
+	height:56px;
 
 
 	display: inline-block;
@@ -106,9 +106,15 @@ a:visited{
    -webkit-transition: all .2s ease-in-out;
 }
 
-#gallery-flyout:hover{
-	width:20px;
+#gallery-flyout-icon{
+	position: fixed;
 
+	top:447px;
+	left:262px;
+	
+	width:40px;
+	height:auto;
+	
 	transition: all .2s ease-in-out;
    -moz-transition: all .2s ease-in-out;
    -webkit-transition: all .2s ease-in-out;
@@ -180,7 +186,7 @@ a:visited{
 .gallery-thumb img{
 	width:100%;
 	height:100%;
-`
+	
 	max-width: 100%;
 	max-height:100%;
 }
@@ -216,6 +222,7 @@ a:visited{
 	top: 440px;
 	left: 15px;
 	letter-spacing: 0.2em;
+	font-weight:bold;
 
 	transition: all .2s ease-in-out;
    -moz-transition: all .2s ease-in-out;

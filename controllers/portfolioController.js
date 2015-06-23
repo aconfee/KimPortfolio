@@ -62,6 +62,8 @@ function portfolioController($scope){
 
 	// Class vars
 	var self = this;
+	
+	// Previews when hovering over submenu items.
 	self.navLinkPreviews = {
 		'characters':[
 			'http://www.craigspets.com/sites/default/files/imagecache/product_full/pet-for-sale/puppies_for_sale_in_pa_jlsii8653_1.jpg',
@@ -82,6 +84,7 @@ function portfolioController($scope){
 
 	$scope.currentThumb = "girls";
 
+	// Gallery thumbnails for a given section.
 	$scope.thumbs = {
 		'girls':[
 			'http://www.craigspets.com/sites/default/files/imagecache/product_full/pet-for-sale/puppies_for_sale_in_pa_jlsii8653_1.jpg',
@@ -161,23 +164,29 @@ function portfolioController($scope){
 			return;
 		}
 
-		// Expand the gallery by default.
 		$( "#gallery-flyout" ).animate({
-		    width: "700px"
+		    top: "15px",
+			height: "450px"
 		  }, 200, function() {
 		    // Animation complete.
-		  });
+			// Expand the gallery by default.
+			$( "#gallery-flyout" ).animate({
+			    width: "700px"
+			  }, 200, function() {
+			    // Animation complete.
+			});
+			
+			$( "#thumb-container" ).animate({
+			    opacity: "1.0"
+			  }, 800, function() {
+			    // Animation complete.
+			});
 
-		$( "#thumb-container" ).animate({
-		    opacity: "1.0"
-		  }, 800, function() {
-		    // Animation complete.
-		  });
-
-		$( "#gallery-title" ).animate({
-		    opacity: "1.0"
-		  }, 600, function() {
-		    // Animation complete.
+			$( "#gallery-title" ).animate({
+			    opacity: "1.0"
+			  }, 600, function() {
+			    // Animation complete.
+			});
 		  });
 
 		$scope.galleryOpen = true;
@@ -185,25 +194,64 @@ function portfolioController($scope){
 
 	$scope.retractGallery = function(){
 		$( "#gallery-flyout" ).animate({
-		    width: "10px"
-		  }, 200, function() {
-		    // Animation complete.
-		  });
-
-		$( "#thumb-container" ).animate({
-		    opacity: "0.0"
-		  }, 400, function() {
-		    // Animation complete.
-		  });
-
-		$( "#gallery-title" ).animate({
-		    opacity: "0.0"
-		  }, 400, function() {
-		    // Animation complete.
-		  });
+			    width: "16px"
+			  }, 200, function() {
+			    // Animation complete.		
+				$( "#thumb-container" ).animate({
+				    opacity: "0.0"
+				  }, 400, function() {
+				    // Animation complete.
+				});
+		
+				$( "#gallery-title" ).animate({
+				    opacity: "0.0"
+				  }, 400, function() {
+				    // Animation complete.
+				});
+				
+				$( "#gallery-flyout" ).animate({
+			    	top: "409px",
+					height: "56px"
+				  }, 200, function() {
+				    // Animation complete.
+				});
+		});
 
 		$scope.galleryOpen = false;
 	};
+	
+	$scope.galleryPeek = function(popOut){
+		if($scope.galleryOpen === true){
+			return;
+		}
+		
+		if(popOut === 'true'){
+			$( "#gallery-flyout" ).animate({
+			    	width: "26px",
+				  }, 100, function() {
+				    // Animation complete.
+			});
+			
+			$( "#gallery-flyout-icon" ).animate({
+			    	left: "267px",
+				  }, 100, function() {
+				    // Animation complete.
+			});
+		}
+		else{
+			$( "#gallery-flyout" ).animate({
+			    	width: "16px",
+				  }, 100, function() {
+				    // Animation complete.
+			});
+			
+			$( "#gallery-flyout-icon" ).animate({
+			    	left: "262px",
+				  }, 100, function() {
+				    // Animation complete.
+			});
+		}
+	}
 
 	$scope.selectThumb = function(index){
 

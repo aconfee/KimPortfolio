@@ -22,6 +22,7 @@ function portfolioController($scope){
 		console.log($(".template-image-restrict").eq(3).position().left);
 		console.log($(".template-image-restrict").eq(4).position().left);
 		var dest = $(".template-image-restrict").eq(index).position().left;
+		console.log("dest left: " + dest);
 		var delta = dest - self.scrollBar;
 		
 		console.log("delta is: " + delta);

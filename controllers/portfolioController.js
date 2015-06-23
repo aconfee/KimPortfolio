@@ -17,7 +17,7 @@ function portfolioController($scope){
 
 	$scope.scrollToMe = function(index){
 		var dest = $(".template-image-restrict").eq(index).position().left;
-		var delta = self.scrollBar - dest;
+		var delta = dest - self.scrollBar;
 		
 		console.log("delta is: " + delta);
 		console.log("scroll bar is: " + self.scrollBar);

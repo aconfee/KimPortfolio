@@ -4,6 +4,7 @@ function portfolioController($scope){
 	var self = this;
 	
 	self.isScrolling = false;
+	self.scrollBar = 0;
 
 	$scope.openCategory = -1;
 	$scope.galleryOpen = false;
@@ -15,13 +16,14 @@ function portfolioController($scope){
 	$scope.currentTemplate = "template";
 
 	$scope.scrollToMe = function(index){
-		console.log("index is: " + index);
-		var dest = $(".template-image-restrict").eq(index).position().left - 230;
-		var curr = window.screenLeft;
-		var delta = Math.abs(curr - dest);
+		var dest = $(".template-image-restrict").eq(index).position().left;
+		var delta = self.scrollBar - dest;
 		
-		console.log("newpos is: " + $(".template-image-restrict").eq(index).position().left);
-		$( ".screen-container" ).animate({scrollLeft: $(".template-image-restrict").eq(index).position().left}, 600 );
+		console.log("delta is: " + delta);
+		console.log("scroll bar is: " + self.scrollBar);
+		self.scrollBar -= delta;
+		console.log("new scrollbar pos: " + self.scrollBar);
+		$( ".screen-container" ).animate({scrollLeft: self.scrollBar}, 600 );
 	};
 		
 	$scope.toggleScroll = function(beginScroll){

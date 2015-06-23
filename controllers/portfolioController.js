@@ -16,6 +16,11 @@ function portfolioController($scope){
 	$scope.currentTemplate = "template";
 
 	$scope.scrollToMe = function(index){
+		console.log($(".template-image-restrict").eq(0).position().left);
+		console.log($(".template-image-restrict").eq(1).position().left);
+		console.log($(".template-image-restrict").eq(2).position().left);
+		console.log($(".template-image-restrict").eq(3).position().left);
+		console.log($(".template-image-restrict").eq(4).position().left);
 		var dest = $(".template-image-restrict").eq(index).position().left;
 		var delta = dest - self.scrollBar;
 		

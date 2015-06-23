@@ -22,6 +22,9 @@ function portfolioController($scope){
 			pos = 0;
 		}
 		
+		console.log("self.scrollbar: " + self.scrollBar);
+		console.log("element.scrollLeft: " + $( ".screen-container" ).scrollLeft());
+		
 		var delta = pos - self.scrollBar;
 		
 		self.scrollBar += delta;

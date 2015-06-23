@@ -21,15 +21,13 @@ function portfolioController($scope){
 		console.log($(".template-image-restrict").eq(2).position().left);
 		console.log($(".template-image-restrict").eq(3).position().left);
 		console.log($(".template-image-restrict").eq(4).position().left);
-		var dest = $(".template-image-restrict").eq(index).position().left + self.scrollbar;
-		console.log("dest left: " + dest);
-		//var delta = dest - self.scrollBar;
-		
-		//console.log("delta is: " + delta);
-		console.log("scroll bar is: " + self.scrollBar);
-		//self.scrollBar += delta;
-		//console.log("new scrollbar pos: " + self.scrollBar);
-		$( ".screen-container" ).animate({scrollLeft: self.scrollBar}, 600 );
+		var dest = $(".template-image-restrict").eq(index).position().left;
+		console.log("dest left: " + $(".template-image-restrict").eq(index).position().left);
+		console.log("scrollbar: " + self.scrollBar);
+		var pos = dest + self.scrollBar;
+		console.log("posigion/delta: " + pos);
+
+		$( ".screen-container" ).animate({scrollLeft: pos}, 600 );
 	};
 		
 	$scope.toggleScroll = function(beginScroll){

@@ -26,7 +26,6 @@
 		<div ng-include="'templates/' + currentTemplate + '.html'"></div>
 
 		<!-- User controls -->
-		<img id='gallery-flyout-icon' src="https://cdn2.iconfinder.com/data/icons/photo-and-video/500/Landscape_moon_mountains_multiple_photo_photograph_pictury_sun_gallery_image-512.png"></img>
 		<div id='gallery-flyout' ng-mouseenter="galleryPeek('true')" ng-mouseleave="galleryPeek('false')" ng-click='toggleGallery();' ng-class="{ 'gallery-closed-hover': galleryOpen == false }">
 			<div id='gallery-title'>Gallery Nav<span id='gallery-close-button' ></span></div>
 			<div id='thumb-container'>
@@ -35,6 +34,7 @@
 				</div>
 			</div>
 		</div>
+		<img id='gallery-flyout-icon' src="https://cdn2.iconfinder.com/data/icons/photo-and-video/500/Landscape_moon_mountains_multiple_photo_photograph_pictury_sun_gallery_image-512.png"></img>
 		<div id='mainNav'>
 			<div id='header'>
 				<img src=" {{ currentPreview }} "></img>

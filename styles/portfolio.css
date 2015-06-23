@@ -60,6 +60,8 @@ a:visited{
 
 #mainNav{
 	position:fixed;
+	
+	border: solid 1px grey;
 
 	top: 15px;
 	left: 15px;
@@ -84,6 +86,8 @@ a:visited{
 
 #gallery-flyout{
 	position: fixed;
+	
+	border: solid 1px white;
 
 	top:409px;
 	left:260px;

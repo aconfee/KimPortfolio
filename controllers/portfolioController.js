@@ -17,6 +17,7 @@ function portfolioController($scope){
 	};
 	
 	$scope.scrollLeft = function(){
+		console.log("called");
 		var currentLeft = $(".screen-container").scrollLeft(); // ___px
 		var scrollBy = currentLeft + 1;
 		

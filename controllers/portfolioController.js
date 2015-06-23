@@ -15,7 +15,12 @@ function portfolioController($scope){
 	$scope.currentTemplate = "template";
 
 	$scope.scrollToMe = function(index){
-		$( ".screen-container" ).animate({scrollLeft: $(".template-image-restrict").eq(index).position().left}, 600 );
+		var pos = $(".template-image-restrict").eq(index).position().left;
+		console.log(pos);
+		var posNum = pos.substr(pos.indexOf('p'), 2);
+		var posInt = parseInt(posNum);
+		var newPos = posInt + 230;
+		$( ".screen-container" ).animate({scrollLeft: newPos.toString()}, 600 );
 	};
 		
 	$scope.toggleScroll = function(beginScroll){

@@ -26,6 +26,8 @@ function portfolioController($scope){
 		console.log("scrollbar: " + self.scrollBar);
 		var pos = dest + self.scrollBar;
 		console.log("posigion/delta: " + pos);
+		
+		self.scrollBar += pos;
 
 		$( ".screen-container" ).animate({scrollLeft: pos}, 600 );
 	};

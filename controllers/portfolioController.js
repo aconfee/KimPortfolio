@@ -21,8 +21,7 @@ function portfolioController($scope){
 		var delta = Math.abs(curr - dest);
 		
 		//console.log("newpos is: " + newPos);
-		//$( ".screen-container" ).animate({scrollLeft: newPos.toString()}, 600 );
-		$(".screen-container").scrollTo($(".template-image-restrict").eq(index), {duration:'slow', offsetRight : '50'});
+		$( ".screen-container" ).animate({scrollLeft: $(".template-image-restrict").eq(index).position().left}, 600 );
 	};
 		
 	$scope.toggleScroll = function(beginScroll){

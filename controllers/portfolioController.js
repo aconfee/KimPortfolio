@@ -40,7 +40,7 @@ function portfolioController($scope){
 			var scrollTo = currentLeft + 1;
 			
 			$( ".screen-container" ).scrollLeft(scrollTo);
-		}, 10);
+		}, 5);
 	}
 	
 	self.scrollInterval = function(){};

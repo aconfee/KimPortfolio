@@ -164,6 +164,8 @@ function portfolioController($scope){
 			return;
 		}
 
+		$("#gallery-flyout").css("background-color", "rgba(99, 99, 92, 0.7)");
+
 		$( "#gallery-flyout" ).animate({
 		    top: "15px",
 			height: "450px"
@@ -193,6 +195,8 @@ function portfolioController($scope){
 	};
 
 	$scope.retractGallery = function(){
+		$("#gallery-flyout").css("background-color", "rgba(154, 169, 181, 0.7)");
+		
 		$( "#gallery-flyout" ).animate({
 			    width: "16px"
 			  }, 200, function() {

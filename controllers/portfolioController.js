@@ -18,7 +18,7 @@ function portfolioController($scope){
 		console.log("index is: " + index);
 		var dest = $(".template-image-restrict").eq(index).position().left - 230;
 		var curr = window.screenLeft;
-		var delta = abs(curr - dest);
+		var delta = Math.abs(curr - dest);
 		
 		console.log("newpos is: " + newPos);
 		//$( ".screen-container" ).animate({scrollLeft: newPos.toString()}, 600 );

@@ -39,9 +39,8 @@ function portfolioController($scope){
 			var currentLeft = $(".screen-container").scrollLeft(); // ___px
 			var scrollTo = currentLeft + 1;
 			
-			//$( ".screen-container" ).animate({scrollLeft: scrollTo}, 50 );
 			$( ".screen-container" ).scrollLeft(scrollTo);
-		}, 50);
+		}, 10);
 	}
 	
 	self.scrollInterval = function(){};

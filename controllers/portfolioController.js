@@ -25,9 +25,13 @@ function portfolioController($scope){
 		console.log("dest left: " + $(".template-image-restrict").eq(index).position().left);
 		console.log("scrollbar: " + self.scrollBar);
 		var pos = dest + self.scrollBar;
-		console.log("posigion/delta: " + pos);
+		console.log("posigion: " + pos);
+		var delta = pos - self.scrollBar;
+		console.log("delta: " + delta);
 		
-		self.scrollBar += pos;
+		self.scrollBar += delta;
+		
+		console.log("new scroll position " + self.scrollBar);
 
 		$( ".screen-container" ).animate({scrollLeft: pos}, 600 );
 	};

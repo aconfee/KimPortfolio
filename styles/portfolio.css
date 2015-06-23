@@ -299,3 +299,49 @@ a:visited{
 	top:50%;
 	right:50%;
 }
+
+#scroll-arrow{
+	position: fixed;
+	
+	border: solid 1px white;
+
+	top:0px;
+	right:0px;
+	bottom:0px;
+
+	width:50px;
+
+	display: inline-block;
+	background-color: rgba(154, 169, 181, 0.7);
+	overflow: hidden;
+
+	border-bottom-left-radius: 5px;
+	border-top-left-radius: 5px;
+
+	transition: all .2s ease-in-out;
+   -moz-transition: all .2s ease-in-out;
+   -webkit-transition: all .2s ease-in-out;
+}
+
+#scroll-arrow:hover{
+	position: fixed;
+	
+	border: solid 1px white;
+
+	top:0px;
+	right:0px;
+	bottom:0px;
+
+	width:50px;
+
+	display: inline-block;
+	background-color: rgba(99, 99, 92, 0.7);
+	overflow: hidden;
+
+	border-bottom-left-radius: 5px;
+	border-top-left-radius: 5px;
+
+	transition: all .2s ease-in-out;
+   -moz-transition: all .2s ease-in-out;
+   -webkit-transition: all .2s ease-in-out;
+}

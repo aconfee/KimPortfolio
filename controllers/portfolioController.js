@@ -15,6 +15,15 @@ function portfolioController($scope){
 	$scope.scrollToMe = function(index){
 		$( ".screen-container" ).animate({scrollLeft: $(".template-image-restrict").eq(index).position().left}, 600 );
 	};
+	
+	$scope.scrollLeft = function(){
+		var currentLeft = $(".screen-container").scrollLeft(); // ___px
+		currentLeft = currentLeft.substr(currentLeft.length - 2, 2); // ___
+		var currentLeftInt = parseInt(currentLeft); // ###
+		var scrollBy = currentLeftInt + 1;
+		
+		$( ".screen-container" ).animate({scrollLeft: scrollBy}, 50 );
+	}
 
 	self.numberOfImagesPrevious = 0;
 	
@@ -201,13 +210,12 @@ function portfolioController($scope){
 	};
 
 	$scope.retractGallery = function(){
+		$("#gallery-flyout").css("background-color", "rgba(154, 169, 181, 0.7)");
 		
 		$( "#gallery-flyout" ).animate({
 			    width: "16px"
 			  }, 200, function() {
-			    // Animation complete.	
-				$("#gallery-flyout").css("background-color", "rgba(154, 169, 181, 0.7)");
-					
+			    // Animation complete.		
 				$( "#thumb-container" ).animate({
 				    opacity: "0.0"
 				  }, 400, function() {

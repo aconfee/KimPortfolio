@@ -13,7 +13,7 @@ function portfolioController($scope){
 	$scope.galleryTitle = "CHARACTERS: projects";
 	$scope.defaultPreview = 'http://www.warrenphotographic.co.uk/photography/cats/18458.jpg';
 	$scope.currentPreview = $scope.defaultPreview;
-	$scope.currentTemplate = "template";
+	$scope.currentTemplate = "characters_projects";
 
 	$scope.scrollToMe = function(index){
 		var dest = $(".template-image-restrict").eq(index).position().left;

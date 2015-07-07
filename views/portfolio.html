@@ -43,19 +43,19 @@
 				<a href='../index.html'>HOME</a>
 				<p></p>
 				<div class='linkHeaderContainer'><span class='linkHeaderText' ng-click='expandCategory(0, "Characters");'>CHARACTERS</span>
-					<div class='listItem' ng-class="{ 'activeLink': subCategory == 'projects' && mainCategory == 'CHARACTERS' }" ng-mouseenter="getPreview('characters', 0);" ng-mouseleave="restorePreview();" ng-click="chooseLink('projects'); changeTemplate('characters_projects');">Projects</div>
-					<div class='listItem' ng-class="{ 'activeLink': subCategory == 'illustration' && mainCategory == 'CHARACTERS' }" ng-mouseenter="getPreview('characters', 1);" ng-mouseleave="restorePreview();" ng-click="chooseLink('illustration'); changeTemplate('characters_illustration');">Illustration</div>
-					<div class='listItem' ng-class="{ 'activeLink': subCategory == 'sketches' && mainCategory == 'CHARACTERS' }" ng-mouseenter="getPreview('characters', 2);" ng-mouseleave="restorePreview();" ng-click="chooseLink('sketches'); changeTemplate('characters_sketches');">Sketches</div>
+					<div class='listItem' ng-class="{ 'activeLink': subCategory == 'projects' && mainCategoryThumbChange == 'CHARACTERS' }" ng-mouseenter="getPreview('characters', 0);" ng-mouseleave="restorePreview();" ng-click="chooseLink('projects'); changeTemplate('characters_projects');">Projects</div>
+					<div class='listItem' ng-class="{ 'activeLink': subCategory == 'illustration' && mainCategoryThumbChange == 'CHARACTERS' }" ng-mouseenter="getPreview('characters', 1);" ng-mouseleave="restorePreview();" ng-click="chooseLink('illustration'); changeTemplate('characters_illustration');">Illustration</div>
+					<div class='listItem' ng-class="{ 'activeLink': subCategory == 'sketches' && mainCategoryThumbChange == 'CHARACTERS' }" ng-mouseenter="getPreview('characters', 2);" ng-mouseleave="restorePreview();" ng-click="chooseLink('sketches'); changeTemplate('characters_sketches');">Sketches</div>
 				</div>
 				<div class='linkHeaderContainer'><span class='linkHeaderText' ng-click='expandCategory(1, "Environment");'>ENVIRONMENT</span>
-					<div class='listItem' ng-class="{ 'activeLink': subCategory == 'projects' && mainCategory == 'ENVIRONMENT' }" ng-mouseenter="getPreview('environment', 0);" ng-mouseleave="restorePreview();" ng-click="chooseLink('projects'); changeTemplate('environments_projects');">Projects</div>
-					<div class='listItem' ng-class="{ 'activeLink': subCategory == 'illustration' && mainCategory == 'ENVIRONMENT' }" ng-mouseenter="getPreview('environment', 1);" ng-mouseleave="restorePreview();" ng-click="chooseLink('illustration'); changeTemplate('environments_illustration');">Illustration</div>
-					<div class='listItem' ng-class="{ 'activeLink': subCategory == 'sketches' && mainCategory == 'ENVIRONMENT' }" ng-mouseenter="getPreview('environment', 2);" ng-mouseleave="restorePreview();" ng-click="chooseLink('sketches'); changeTemplate('environments_sketches');">Sketches</div>
+					<div class='listItem' ng-class="{ 'activeLink': subCategory == 'projects' && mainCategoryThumbChange == 'ENVIRONMENT' }" ng-mouseenter="getPreview('environment', 0);" ng-mouseleave="restorePreview();" ng-click="chooseLink('projects'); changeTemplate('environments_projects');">Projects</div>
+					<div class='listItem' ng-class="{ 'activeLink': subCategory == 'illustration' && mainCategoryThumbChange == 'ENVIRONMENT' }" ng-mouseenter="getPreview('environment', 1);" ng-mouseleave="restorePreview();" ng-click="chooseLink('illustration'); changeTemplate('environments_illustration');">Illustration</div>
+					<div class='listItem' ng-class="{ 'activeLink': subCategory == 'sketches' && mainCategoryThumbChange == 'ENVIRONMENT' }" ng-mouseenter="getPreview('environment', 2);" ng-mouseleave="restorePreview();" ng-click="chooseLink('sketches'); changeTemplate('environments_sketches');">Sketches</div>
 				</div>
 				<div class='linkHeaderContainer'><span class='linkHeaderText' ng-click='expandCategory(2, "Other");'>Other</span>
-					<div class='listItem' ng-class="{ 'activeLink': subCategory == 'digital' && mainCategory == 'OTHER' }" ng-mouseenter="getPreview('other', 0);" ng-mouseleave="restorePreview();" ng-click="chooseLink('digital'); changeTemplate('other_digital');">Digital</div>
-					<div class='listItem' ng-class="{ 'activeLink': subCategory == 'traditional' && mainCategory == 'OTHER' }" ng-mouseenter="getPreview('other', 1);" ng-mouseleave="restorePreview();" ng-click="chooseLink('traditional'); changeTemplate('other_traditional');">Traditional</div>
-					<div class='listItem' ng-class="{ 'activeLink': subCategory == 'inktober' && mainCategory == 'OTHER' }" ng-mouseenter="getPreview('other', 2);" ng-mouseleave="restorePreview();" ng-click="chooseLink('inktober'); changeTemplate('other_inktober');">Inktober</div>
+					<div class='listItem' ng-class="{ 'activeLink': subCategory == 'digital' && mainCategoryThumbChange == 'OTHER' }" ng-mouseenter="getPreview('other', 0);" ng-mouseleave="restorePreview();" ng-click="chooseLink('digital'); changeTemplate('other_digital');">Digital</div>
+					<div class='listItem' ng-class="{ 'activeLink': subCategory == 'traditional' && mainCategoryThumbChange == 'OTHER' }" ng-mouseenter="getPreview('other', 1);" ng-mouseleave="restorePreview();" ng-click="chooseLink('traditional'); changeTemplate('other_traditional');">Traditional</div>
+					<div class='listItem' ng-class="{ 'activeLink': subCategory == 'inktober' && mainCategoryThumbChange == 'OTHER' }" ng-mouseenter="getPreview('other', 2);" ng-mouseleave="restorePreview();" ng-click="chooseLink('inktober'); changeTemplate('other_inktober');">Inktober</div>
 				</div>
 				<div class='linkHeaderContainer'><span class='linkHeaderText'>CONTACT</span>				
 			</div>

@@ -30,7 +30,7 @@
 			<img id='gallery-flyout-icon' src="https://cdn2.iconfinder.com/data/icons/photo-and-video/500/Landscape_moon_mountains_multiple_photo_photograph_pictury_sun_gallery_image-512.png"></img>
 			<div id='gallery-title'>{{ galleryTitle }}<span id='gallery-close-button' ></span></div>
 			<div id='thumb-container'>
-				<div class='gallery-thumb' ng-click='scrollToMe($index);' ng-repeat="thumb in thumbs[currentThumb]">
+				<div class='gallery-thumb' ng-click='scrollToMe($index);' ng-repeat="thumb in thumbs[mainCategory][subCategory]">
 					<img src = "{{ thumb }}" ></img>
 				</div>
 			</div>
@@ -45,17 +45,17 @@
 				<div class='linkHeaderContainer'><span class='linkHeaderText' ng-click='expandCategory(0, "Characters");'>CHARACTERS</span>
 					<div class='listItem' ng-class="{ 'activeLink': subCategory == 'projects' }" ng-mouseenter="getPreview('characters', 0);" ng-mouseleave="restorePreview();" ng-click="chooseLink('projects'); changeTemplate('characters_projects');">Projects</div>
 					<div class='listItem' ng-class="{ 'activeLink': subCategory == 'illustration' }" ng-mouseenter="getPreview('characters', 1);" ng-mouseleave="restorePreview();" ng-click="chooseLink('illustration'); changeTemplate('characters_illustration');">Illustration</div>
-					<div class='listItem' ng-mouseenter="getPreview('characters', 2);" ng-mouseleave="restorePreview();">Fan Art</div>
+					<div class='listItem' ng-class="{ 'activeLink': subCategory == 'sketches' }" ng-mouseenter="getPreview('characters', 2);" ng-mouseleave="restorePreview();" ng-click="chooseLink('sketches'); changeTemplate('characters_sketches');">Sketches</div>
 				</div>
 				<div class='linkHeaderContainer'><span class='linkHeaderText' ng-click='expandCategory(1, "Environment");'>ENVIRONMENT</span>
-					<div class='listItem' ng-mouseenter="getPreview('environment', 0);" ng-mouseleave="restorePreview();">Forest</div>
-					<div class='listItem' ng-mouseenter="getPreview('environment', 1);" ng-mouseleave="restorePreview();">Urban</div>
-					<div class='listItem' ng-mouseenter="getPreview('environment', 2);" ng-mouseleave="restorePreview();">Fantasy</div>
+					<div class='listItem' ng-class="{ 'activeLink': subCategory == 'projects' }" ng-mouseenter="getPreview('environment', 0);" ng-mouseleave="restorePreview();" ng-click="chooseLink('projects'); changeTemplate('environments_projects');">Projects</div>
+					<div class='listItem' ng-class="{ 'activeLink': subCategory == 'illustration' }" ng-mouseenter="getPreview('environment', 1);" ng-mouseleave="restorePreview();" ng-click="chooseLink('illustration'); changeTemplate('environments_illustration');">Illustration</div>
+					<div class='listItem' ng-class="{ 'activeLink': subCategory == 'sketches' }" ng-mouseenter="getPreview('environment', 2);" ng-mouseleave="restorePreview();" ng-click="chooseLink('sketches'); changeTemplate('environments_sketches');">Sketches</div>
 				</div>
-				<div class='linkHeaderContainer'><span class='linkHeaderText' ng-click='expandCategory(2, "Sketches");'>SKETCHES</span>
-					<div class='listItem' ng-mouseenter="getPreview('sketches', 0);" ng-mouseleave="restorePreview();">Dailies</div>
-					<div class='listItem' ng-mouseenter="getPreview('sketches', 1);" ng-mouseleave="restorePreview();">Paint</div>
-					<div class='listItem' ng-mouseenter="getPreview('sketches', 2);" ng-mouseleave="restorePreview();">Inktober</div>
+				<div class='linkHeaderContainer'><span class='linkHeaderText' ng-click='expandCategory(2, "Other");'>Other</span>
+					<div class='listItem' ng-class="{ 'activeLink': subCategory == 'digital' }" ng-mouseenter="getPreview('other', 0);" ng-mouseleave="restorePreview();" ng-click="chooseLink('digital'); changeTemplate('other_digital');">Digital</div>
+					<div class='listItem' ng-class="{ 'activeLink': subCategory == 'traditional' }" ng-mouseenter="getPreview('other', 1);" ng-mouseleave="restorePreview();" ng-click="chooseLink('traditional'); changeTemplate('other_traditional');">Traditional</div>
+					<div class='listItem' ng-class="{ 'activeLink': subCategory == 'inktober' }" ng-mouseenter="getPreview('other', 2);" ng-mouseleave="restorePreview();" ng-click="chooseLink('inktober'); changeTemplate('other_inktober');">Inktober</div>
 				</div>
 				<div class='linkHeaderContainer'><span class='linkHeaderText'>CONTACT</span>				
 			</div>

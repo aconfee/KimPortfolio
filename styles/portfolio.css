@@ -355,3 +355,7 @@ a:visited{
 	-ms-transform: translateY(-50%);
  	transform: translateY(-50%);
 }
+
+.first-image{
+	margin-left: 220px;
+}

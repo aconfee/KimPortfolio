@@ -8,6 +8,7 @@ function portfolioController($scope){
 	$scope.openCategory = -1;
 	$scope.galleryOpen = false;
 	$scope.mainCategory = "CHARACTERS";
+	$scope.mainCategoryThumbChange = "CHARACTERS";
 	$scope.subCategory = "projects";
 	$scope.galleryTitle = "CHARACTERS: projects";
 	$scope.defaultPreview = 'http://www.warrenphotographic.co.uk/photography/cats/18458.jpg';
@@ -151,7 +152,7 @@ function portfolioController($scope){
 				'http://www.craigspets.com/sites/default/files/imagecache/product_full/pet-for-sale/puppies_for_sale_in_pa_jlsii8653_1.jpg'
 			]
 		},
-		'ENVIRONMENTS':{
+		'ENVIRONMENT':{
 			'projects':[
 				'http://www.craigspets.com/sites/default/files/imagecache/product_full/pet-for-sale/puppies_for_sale_in_pa_jlsii8653_1.jpg',
 				'http://4.bp.blogspot.com/-hzVCoWekCiI/T0Oq1HCVgjI/AAAAAAAAB6A/ZcB-Zqxkpag/s1600/Brown_+Cavalier_King_Charles_Spaniel_Puppies.jpg',
@@ -192,6 +193,7 @@ function portfolioController($scope){
 		// Change the displayed thumbs in the gallery.
 		$scope.subCategory = linkName.toLowerCase();
 		$scope.galleryTitle = $scope.mainCategory + ": " + $scope.subCategory;
+		$scope.mainCategoryThumbChange = $scope.mainCategory;
 	};
 
 	$scope.expandCategory = function(index, name){

@@ -43,8 +43,8 @@
 				<a href='../index.html'>HOME</a>
 				<p></p>
 				<div class='linkHeaderContainer'><span class='linkHeaderText' ng-click='expandCategory(0, "Characters");'>CHARACTERS</span>
-					<div class='listItem' ng-class="{ 'activeLink': subCategory == 'girls' }" ng-mouseenter="getPreview('characters', 0);" ng-mouseleave="restorePreview();" ng-click="chooseLink('girls'); changeTemplate('template');">Girls</div>
-					<div class='listItem' ng-class="{ 'activeLink': subCategory == 'sketches' }" ng-mouseenter="getPreview('characters', 1);" ng-mouseleave="restorePreview();" ng-click="chooseLink('sketches'); changeTemplate('template_2');">Sketches</div>
+					<div class='listItem' ng-class="{ 'activeLink': subCategory == 'projects' }" ng-mouseenter="getPreview('characters', 0);" ng-mouseleave="restorePreview();" ng-click="chooseLink('projects'); changeTemplate('characters_projects');">Projects</div>
+					<div class='listItem' ng-class="{ 'activeLink': subCategory == 'illustration' }" ng-mouseenter="getPreview('characters', 1);" ng-mouseleave="restorePreview();" ng-click="chooseLink('illustration'); changeTemplate('characters_illustration');">Illustration</div>
 					<div class='listItem' ng-mouseenter="getPreview('characters', 2);" ng-mouseleave="restorePreview();">Fan Art</div>
 				</div>
 				<div class='linkHeaderContainer'><span class='linkHeaderText' ng-click='expandCategory(1, "Environment");'>ENVIRONMENT</span>

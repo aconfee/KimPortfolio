@@ -120,6 +120,10 @@ a:visited{
 	height:auto;
 }
 
+#gallery-flyout-icon:hover{
+	cursor: pointer;
+}
+
 .gallery-closed-hover{
 	cursor: pointer;
 }

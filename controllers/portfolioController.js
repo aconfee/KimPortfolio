@@ -5,7 +5,7 @@ function portfolioController($scope){
 	
 	self.isScrolling = false;
 
-	$scope.openCategory = -1;
+	$scope.openCategory = 0;
 	$scope.galleryOpen = false;
 	$scope.mainCategory = "CHARACTERS";
 	$scope.mainCategoryThumbChange = "CHARACTERS";

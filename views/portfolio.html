@@ -47,7 +47,8 @@
 			<div id='content-links'>
 				<a href='../index.html'>HOME</a>
 				<p></p>
-				<div class='linkHeaderContainer'><span class='linkHeaderText' ng-click='expandCategory(0, "Characters");'>CHARACTERS</span>
+				<!-- Some ass jack hackery fack right huurr. Set default hight to indicate default active category -->
+				<div class='linkHeaderContainer' style="height:101px"><span class='linkHeaderText' ng-click='expandCategory(0, "Characters");'>CHARACTERS</span>
 					<div class='listItem' ng-class="{ 'activeLink': subCategory == 'projects' && mainCategoryThumbChange == 'CHARACTERS' }" ng-mouseenter="getPreview('characters', 0);" ng-mouseleave="restorePreview();" ng-click="chooseLink('projects'); changeTemplate('characters_projects');">Projects</div>
 					<div class='listItem' ng-class="{ 'activeLink': subCategory == 'illustration' && mainCategoryThumbChange == 'CHARACTERS' }" ng-mouseenter="getPreview('characters', 1);" ng-mouseleave="restorePreview();" ng-click="chooseLink('illustration'); changeTemplate('characters_illustration');">Illustration</div>
 					<div class='listItem' ng-class="{ 'activeLink': subCategory == 'sketches' && mainCategoryThumbChange == 'CHARACTERS' }" ng-mouseenter="getPreview('characters', 2);" ng-mouseleave="restorePreview();" ng-click="chooseLink('sketches'); changeTemplate('characters_sketches');">Sketches</div>

@@ -10,7 +10,7 @@ function portfolioController($scope){
 	$scope.mainCategory = "CHARACTERS";
 	$scope.mainCategoryThumbChange = "CHARACTERS";
 	$scope.subCategory = "projects";
-	$scope.galleryTitle = "CHARACTERS: projects";
+	$scope.galleryTitle = "Quick View";
 	$scope.defaultPreview = '../../resources/icons/headerDefault.png';
 	$scope.currentPreview = $scope.defaultPreview;
 	$scope.currentTemplate = "characters_projects";
@@ -248,11 +248,8 @@ function portfolioController($scope){
 			return;
 		}
 
-		$("#gallery-flyout").css("background-color", "rgba(99, 99, 92, 0.7)");
-
 		$( "#gallery-flyout" ).animate({
-		    top: "15px",
-			height: "450px"
+			bottom: "16px"
 		  }, 200, function() {
 		    // Animation complete.
 			// Expand the gallery by default.
@@ -279,10 +276,9 @@ function portfolioController($scope){
 	};
 
 	$scope.retractGallery = function(){
-		$("#gallery-flyout").css("background-color", "rgba(154, 169, 181, 0.7)");
 		
 		$( "#gallery-flyout" ).animate({
-			    width: "16px"
+			    width: "1px"
 			  }, 200, function() {
 			    // Animation complete.		
 				$( "#thumb-container" ).animate({
@@ -298,8 +294,7 @@ function portfolioController($scope){
 				});
 				
 				$( "#gallery-flyout" ).animate({
-			    	top: "15px",
-					height: "56px"
+					height: "0px"
 				  }, 200, function() {
 				    // Animation complete.
 				});

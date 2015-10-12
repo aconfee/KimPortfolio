@@ -11,7 +11,7 @@ function portfolioController($scope){
 	$scope.mainCategoryThumbChange = "CHARACTERS";
 	$scope.subCategory = "projects";
 	$scope.galleryTitle = "CHARACTERS: projects";
-	$scope.defaultPreview = '../../resources/icons/profilePic.png';
+	$scope.defaultPreview = '../../resources/icons/headerDefault.png';
 	$scope.currentPreview = $scope.defaultPreview;
 	$scope.currentTemplate = "characters_projects";
 
@@ -112,7 +112,7 @@ function portfolioController($scope){
 		'environment':[
 			'http://www.craigspets.com/sites/default/files/imagecache/product_full/pet-for-sale/puppies_for_sale_in_pa_jlsii8653_1.jpg',
 			'http://4.bp.blogspot.com/-hzVCoWekCiI/T0Oq1HCVgjI/AAAAAAAAB6A/ZcB-Zqxkpag/s1600/Brown_+Cavalier_King_Charles_Spaniel_Puppies.jpg',
-			'http://i3.findthebest.com/sites/default/files/465/media/images/Cavalier_King_Charles_Spaniel_915857.jpg'
+			'../../resources/icons/headerEnvironmentSketches.png'
 		],
 		'other':[
 			'http://www.craigspets.com/sites/default/files/imagecache/product_full/pet-for-sale/puppies_for_sale_in_pa_jlsii8653_1.jpg',

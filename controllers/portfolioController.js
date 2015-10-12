@@ -105,9 +105,9 @@ function portfolioController($scope){
 	// Previews when hovering over submenu items.
 	self.navLinkPreviews = {
 		'characters':[
-			'http://www.craigspets.com/sites/default/files/imagecache/product_full/pet-for-sale/puppies_for_sale_in_pa_jlsii8653_1.jpg',
-			'http://4.bp.blogspot.com/-hzVCoWekCiI/T0Oq1HCVgjI/AAAAAAAAB6A/ZcB-Zqxkpag/s1600/Brown_+Cavalier_King_Charles_Spaniel_Puppies.jpg',
-			'http://i3.findthebest.com/sites/default/files/465/media/images/Cavalier_King_Charles_Spaniel_915857.jpg'
+			'../../resources/icons/headerCharacterProjects.png',
+			'../../resources/icons/headerCharacterIllustration.png',
+			'../../resources/icons/headerCharacterSketches.png'
 		],
 		'environment':[
 			'http://www.craigspets.com/sites/default/files/imagecache/product_full/pet-for-sale/puppies_for_sale_in_pa_jlsii8653_1.jpg',
@@ -240,7 +240,9 @@ function portfolioController($scope){
 		$scope.currentPreview = $scope.defaultPreview;
 	};
 
-	$scope.toggleGallery = function(){
+	$scope.toggleGallery = function(isActive){
+		if(!isActive) return;
+
 		if($scope.galleryOpen == true){
 			$scope.retractGallery();
 			return;

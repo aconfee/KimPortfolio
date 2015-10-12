@@ -275,7 +275,7 @@ a:visited{
 
 .listItem:hover{
 	cursor:pointer;
-	background-color: rgba(245, 245, 245, 0.9);
+	border: 1px none solid;
 
 	transition: all .2s ease-in-out;
    -moz-transition: all .2s ease-in-out;
@@ -283,7 +283,7 @@ a:visited{
 }
 
 .activeLink{
-	border: 1px double black;
+	border: 3px double black;
 }
 
 .art-display{

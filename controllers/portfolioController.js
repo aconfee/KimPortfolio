@@ -251,11 +251,10 @@ function portfolioController($scope){
 		$( "#gallery-flyout").css("border-left", "1px solid rgb(0, 0, 0)");
 		$( "#gallery-flyout").css("padding", "15px");
 		$( "#gallery-close-button").css("opacity", "1.0");
-		$( "#gallery-title").css("opacity", "1.0");
 		$( "#thumb-container").css("opacity", "1.0");
 
 		$( "#gallery-flyout" ).animate({
-			width: "390px",
+			width: "410px",
 			opacity: "1.0"
 		  }, 200, function() {
 			// Animation complete
@@ -269,18 +268,16 @@ function portfolioController($scope){
 		$( "#thumb-container" ).animate({
 			opacity: "0.0"
 			}, 200, function() {
-				$( "#gallery-flyout" ).animate({
-				    opacity: "0.0",
-					width: "0px"
-				  }, 200, function() {
-				    // Animation complete.
-					$( "#gallery-flyout").css("border-left", "none");
-					$( "#gallery-flyout").css("padding", "0px");				
-				});
-				
+		});
+		
+		$( "#gallery-flyout" ).animate({
+			opacity: "0.0",
+			width: "0px"
+			}, 200, function() {
 				// Animation complete.
-				$( "#gallery-close-button").css("opacity", "0.0");
-				$( "#gallery-title").css("opacity", "0.0");
+				$( "#gallery-flyout").css("border-left", "none");
+				$( "#gallery-flyout").css("padding", "0px");
+				$( "#gallery-close-button").css("opacity", "0.0");				
 		});
 
 		$scope.galleryOpen = false;

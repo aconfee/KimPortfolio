@@ -253,6 +253,8 @@ a:visited{
 
 .linkHeaderText:hover{
 	cursor: pointer;
+	
+	letter-spacing: 0.35em;
 
 	transition: all .2s ease-in-out;
    -moz-transition: all .2s ease-in-out;
@@ -281,6 +283,8 @@ a:visited{
 .listItem:hover{
 	cursor:pointer;
 
+	letter-spacing: 0.3em;
+
 	transition: all .2s ease-in-out;
    -moz-transition: all .2s ease-in-out;
    -webkit-transition: all .2s ease-in-out;
@@ -293,7 +297,13 @@ a:visited{
 }
 
 .activeLink{
+	letter-spacing: 0.3em;
 	
+	-webkit-filter: blur(1px);
+	-moz-filter: blur(1px);
+	-o-filter: blur(1px);
+	-ms-filter: blur(1px);
+	filter: blur(1px);
 }
 
 .art-display{

@@ -255,7 +255,7 @@ function portfolioController($scope){
 		$( "#thumb-container").css("opacity", "1.0");
 
 		$( "#gallery-flyout" ).animate({
-			width: "700px",
+			width: "390px",
 			opacity: "1.0"
 		  }, 200, function() {
 			// Animation complete

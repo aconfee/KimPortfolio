@@ -27,7 +27,7 @@
 
 		<!-- User controls -->
 		<div id='gallery-flyout' ng-click='toggleGallery();'>
-			<div id='gallery-title'>{{ galleryTitle }}<span id='gallery-close-button' ></span></div>
+			<!--div id='gallery-title'>{{ galleryTitle }}<span id='gallery-close-button' ></span></div-->
 			<div id='thumb-container'>
 				<div class='gallery-thumb' ng-click='scrollToMe($index);' ng-repeat="thumb in thumbs[mainCategoryThumbChange][subCategory]">
 					<img src = "{{ thumb }}" ></img>

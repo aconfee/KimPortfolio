@@ -283,7 +283,7 @@ a:visited{
 }
 
 .activeLink{
-	background-color: rgba(245, 245, 245, 0.9);
+	border: 1px double black;
 }
 
 .art-display{

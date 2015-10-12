@@ -247,94 +247,44 @@ function portfolioController($scope){
 			$scope.retractGallery();
 			return;
 		}
+		
+		$( "#gallery-flyout").css("border-left", "1px solid rgb(0, 0, 0)");
+		$( "#gallery-flyout").css("padding", "15px");
+		$( "#gallery-close-button").css("opacity", "1.0");
+		$( "#gallery-title").css("opacity", "1.0");
+		$( "#thumb-container").css("opacity", "1.0");
 
 		$( "#gallery-flyout" ).animate({
-			bottom: "16px"
+			width: "700px",
+			opacity: "1.0"
 		  }, 200, function() {
-		    // Animation complete.
-			// Expand the gallery by default.
-			$( "#gallery-flyout" ).animate({
-			    width: "700px"
-			  }, 200, function() {
-			    // Animation complete.
-			});
-			
-			$( "#thumb-container" ).animate({
-			    opacity: "1.0"
-			  }, 800, function() {
-			    // Animation complete.
-			});
-
-			$( "#gallery-title" ).animate({
-			    opacity: "1.0"
-			  }, 600, function() {
-			    // Animation complete.
-			});
-		  });
+			// Animation complete
+		});
 
 		$scope.galleryOpen = true;
 	};
 
 	$scope.retractGallery = function(){
 		
-		$( "#gallery-flyout" ).animate({
-			    width: "1px"
-			  }, 200, function() {
-			    // Animation complete.		
-				$( "#thumb-container" ).animate({
-				    opacity: "0.0"
-				  }, 400, function() {
-				    // Animation complete.
-				});
-		
-				$( "#gallery-title" ).animate({
-				    opacity: "0.0"
-				  }, 400, function() {
-				    // Animation complete.
-				});
-				
+		$( "#thumb-container" ).animate({
+			opacity: "0.0"
+			}, 200, function() {
 				$( "#gallery-flyout" ).animate({
-					height: "0px"
+				    opacity: "0.0",
+					width: "0px"
 				  }, 200, function() {
 				    // Animation complete.
+					$( "#gallery-flyout").css("border-left", "none");
+					$( "#gallery-flyout").css("padding", "0px");				
 				});
+				
+				// Animation complete.
+				$( "#gallery-close-button").css("opacity", "0.0");
+				$( "#gallery-title").css("opacity", "0.0");
 		});
 
 		$scope.galleryOpen = false;
 	};
-	
-	$scope.galleryPeek = function(popOut){
-		if($scope.galleryOpen === true){
-			return;
-		}
-		
-		if(popOut === 'true'){
-			$( "#gallery-flyout" ).animate({
-			    	width: "26px",
-				  }, 100, function() {
-				    // Animation complete.
-			});
-			
-			$( "#gallery-flyout-icon" ).animate({
-			    	left: "240px",
-				  }, 100, function() {
-				    // Animation complete.
-			});
-		}
-		else{
-			$( "#gallery-flyout" ).animate({
-			    	width: "16px",
-				  }, 100, function() {
-				    // Animation complete.
-			});
-			
-			$( "#gallery-flyout-icon" ).animate({
-			    	left: "235px",
-				  }, 100, function() {
-				    // Animation complete.
-			});
-		}
-	}
 
 	$scope.selectThumb = function(index){
 

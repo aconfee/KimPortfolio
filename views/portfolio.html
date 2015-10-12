@@ -26,7 +26,7 @@
 		<div ng-include="'templates/' + currentTemplate + '.html'"></div>
 
 		<!-- User controls -->
-		<div id='gallery-flyout' ng-mouseenter="galleryPeek('true')" ng-mouseleave="galleryPeek('false')" ng-click='toggleGallery();' ng-class="{ 'gallery-closed-hover': galleryOpen == false }">
+		<div id='gallery-flyout' ng-click='toggleGallery();'>
 			<div id='gallery-title'>{{ galleryTitle }}<span id='gallery-close-button' ></span></div>
 			<div id='thumb-container'>
 				<div class='gallery-thumb' ng-click='scrollToMe($index);' ng-repeat="thumb in thumbs[mainCategoryThumbChange][subCategory]">

@@ -54,41 +54,22 @@ a:visited{
 
 #gallery-flyout{
 	position: fixed;
-	
-	border-left: solid 1px black;
 
 	top:0px;
 	left:200px;
+	bottom:0px;
 
-	width:1px;
-	height:0px;
+	width:0px;
+	
+	opacity: 0;
 
 	display: inline-block;
 	background-color: rgba(255, 255, 255, 0.9);
-	padding:15px;
 	overflow: hidden;
 
 	transition: all .2s ease-in-out;
    -moz-transition: all .2s ease-in-out;
    -webkit-transition: all .2s ease-in-out;
-}
-
-#gallery-flyout-icon{
-	position: fixed;
-
-	top:55px;
-	left:235px;
-	
-	width:40px;
-	height:auto;
-}
-
-#gallery-flyout-icon:hover{
-	cursor: pointer;
-}
-
-.gallery-closed-hover{
-	cursor: pointer;
 }
 
 #gallery-title{
@@ -97,7 +78,6 @@ a:visited{
 	letter-spacing: 0.3em;
 
 	width: 615px;
-	opacity: 0;
 
 	margin-top: 10px;
 	margin-bottom: 30px;
@@ -121,7 +101,6 @@ a:visited{
 	width:590px;
 	height:350px;
 	overflow-y:scroll;
-	opacity: 0;
 
 	margin-left: auto;
 	margin-right: auto;

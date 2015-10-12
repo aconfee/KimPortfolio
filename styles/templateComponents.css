@@ -20,6 +20,8 @@
 	width:auto;
 
 	display:inline-block;
+	
+	border-radius:4px;
 
 	max-width:3000%;
 	max-height:95%;

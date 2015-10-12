@@ -258,6 +258,12 @@ a:visited{
 	transition: all .2s ease-in-out;
    -moz-transition: all .2s ease-in-out;
    -webkit-transition: all .2s ease-in-out;
+   
+   -webkit-filter: blur(1px);
+	-moz-filter: blur(1px);
+	-o-filter: blur(1px);
+	-ms-filter: blur(1px);
+	filter: blur(1px);
 }
 
 .listItem{
@@ -275,11 +281,17 @@ a:visited{
 
 .listItem:hover{
 	cursor:pointer;
-	border: 1px none solid;
+	border-style: none solid;
 
 	transition: all .2s ease-in-out;
    -moz-transition: all .2s ease-in-out;
    -webkit-transition: all .2s ease-in-out;
+   
+   -webkit-filter: blur(1px);
+	-moz-filter: blur(1px);
+	-o-filter: blur(1px);
+	-ms-filter: blur(1px);
+	filter: blur(1px);
 }
 
 .activeLink{

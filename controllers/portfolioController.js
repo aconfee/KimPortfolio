@@ -248,13 +248,12 @@ function portfolioController($scope){
 			return;
 		}
 		
-		$( "#gallery-flyout").css("border-left", "1px solid rgb(0, 0, 0)");
 		$( "#gallery-flyout").css("padding", "15px");
 		$( "#gallery-close-button").css("opacity", "1.0");
 		$( "#thumb-container").css("opacity", "1.0");
 
 		$( "#gallery-flyout" ).animate({
-			width: "410px",
+			width: "390px",
 			opacity: "1.0"
 		  }, 200, function() {
 			// Animation complete
@@ -275,7 +274,6 @@ function portfolioController($scope){
 			width: "0px"
 			}, 200, function() {
 				// Animation complete.
-				$( "#gallery-flyout").css("border-left", "none");
 				$( "#gallery-flyout").css("padding", "0px");
 				$( "#gallery-close-button").css("opacity", "0.0");				
 		});

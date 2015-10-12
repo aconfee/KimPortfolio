@@ -22,27 +22,6 @@ body{
 	font-family: 'Poiret One', 'Avant Garde', 'Helvetica', cursive;
 }
 
-a{
-	text-decoration: none;
-	color:white;
-	letter-spacing: 0.2em;
-	font-size: 1.1em;
-
-	transition: all .2s ease-in-out;
-   -moz-transition: all .2s ease-in-out;
-   -webkit-transition: all .2s ease-in-out;
-}
-
-a:hover{
-	text-decoration: none;
-	cursor: pointer;
-	color:rgba(255, 197, 96, 1.0);
-
-	transition: all .2s ease-in-out;
-   -moz-transition: all .2s ease-in-out;
-   -webkit-transition: all .2s ease-in-out;
-}
-
 a:visited{
 	text-decoration: none;
 }
@@ -214,6 +193,32 @@ a:visited{
 	margin-bottom: 10px;
 }
 
+#content-links a{
+	text-decoration: none;
+	color: black;
+	letter-spacing: 0.2em;
+	font-size: 1.1em;
+
+	transition: all .2s ease-in-out;
+   -moz-transition: all .2s ease-in-out;
+   -webkit-transition: all .2s ease-in-out;
+}
+
+#content-links a:hover{
+	text-decoration: none;
+	cursor: pointer;
+	
+	-webkit-filter: blur(1px);
+	-moz-filter: blur(1px);
+	-o-filter: blur(1px);
+	-ms-filter: blur(1px);
+	filter: blur(1px);
+
+	transition: all .2s ease-in-out;
+   -moz-transition: all .2s ease-in-out;
+   -webkit-transition: all .2s ease-in-out;
+}
+
 #contact-button{
 	position: absolute;
 	top: 440px;
@@ -228,7 +233,6 @@ a:visited{
 
 #contact-button:hover{
 	cursor: pointer;
-	color:rgba(255, 197, 96, 1.0);
 
 	transition: all .2s ease-in-out;
    -moz-transition: all .2s ease-in-out;

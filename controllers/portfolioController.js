@@ -11,7 +11,7 @@ function portfolioController($scope){
 	$scope.mainCategoryThumbChange = "CHARACTERS";
 	$scope.subCategory = "projects";
 	$scope.galleryTitle = "CHARACTERS: projects";
-	$scope.defaultPreview = 'http://www.warrenphotographic.co.uk/photography/cats/18458.jpg';
+	$scope.defaultPreview = '../../resources/icons/profilePic.png';
 	$scope.currentPreview = $scope.defaultPreview;
 	$scope.currentTemplate = "characters_projects";
 

@@ -267,10 +267,7 @@ function portfolioController($scope){
 	$scope.openGallery = function(isActive){
 		if(!isActive) return;		
 		if(self.galleryAnimating) return;
-
-		if($scope.galleryOpen == true){
-			return;
-		}
+		if($scope.galleryOpen) return;
 		
 		self.galleryAnimating = true;
 		$( "#gallery-flyout").css("padding", "15px");
@@ -289,9 +286,9 @@ function portfolioController($scope){
 
 	$scope.retractGallery = function(){
 		if(self.galleryAnimating) return;
+		if(!$scope.galleryOpen) return;
 		
-		self.galleryAnimating = true;
-		
+		self.galleryAnimating = true;		
 		$( "#gallery-flyout" ).animate({
 			opacity: "0.0",
 			width: "0px"

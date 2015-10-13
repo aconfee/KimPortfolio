@@ -14,6 +14,8 @@ function portfolioController($scope){
 	$scope.defaultPreview = '../../resources/icons/headerDefault.png';
 	$scope.currentPreview = $scope.defaultPreview;
 	$scope.currentTemplate = "characters_projects";
+	
+	self.galleryAnimating = false;
 
 	$scope.scrollToMe = function(index){
 		var dest = $(".template-image-restrict").eq(index).position().left;
@@ -261,9 +263,35 @@ function portfolioController($scope){
 
 		$scope.galleryOpen = true;
 	};
+	
+	$scope.openGallery = function(isActive){
+		if(!isActive) return;		
+		if(self.galleryAnimating) return;
+
+		if($scope.galleryOpen == true){
+			return;
+		}
+		
+		self.galleryAnimating = true;
+		$( "#gallery-flyout").css("padding", "15px");
+		$( "#gallery-close-button").css("opacity", "1.0");
+		$( "#thumb-container").css("opacity", "1.0");
+
+		$( "#gallery-flyout" ).animate({
+			width: "390px",
+			opacity: "1.0"
+		  }, 200, function() {
+			// Animation complete
+			self.galleryAnimating = false;
+			$scope.galleryOpen = true;
+		});
+	};
 
 	$scope.retractGallery = function(){
+		if(self.galleryAnimating) return;
 		
+		self.galleryAnimating = true;
+				
 		$( "#thumb-container" ).animate({
 			opacity: "0.0"
 			}, 200, function() {
@@ -275,10 +303,11 @@ function portfolioController($scope){
 			}, 200, function() {
 				// Animation complete.
 				$( "#gallery-flyout").css("padding", "0px");
-				$( "#gallery-close-button").css("opacity", "0.0");				
+				$( "#gallery-close-button").css("opacity", "0.0");	
+				
+				self.galleryAnimating = false;
+				$scope.galleryOpen = false;		
 		});
-
-		$scope.galleryOpen = false;
 	};
 
 	$scope.selectThumb = function(index){

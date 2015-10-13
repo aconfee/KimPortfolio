@@ -291,22 +291,22 @@ function portfolioController($scope){
 		if(self.galleryAnimating) return;
 		
 		self.galleryAnimating = true;
-				
-		$( "#thumb-container" ).animate({
-			opacity: "0.0"
-			}, 200, function() {
-		});
 		
 		$( "#gallery-flyout" ).animate({
 			opacity: "0.0",
 			width: "0px"
 			}, 200, function() {
 				// Animation complete.
-				$( "#gallery-flyout").css("padding", "0px");
-				$( "#gallery-close-button").css("opacity", "0.0");	
 				
-				self.galleryAnimating = false;
-				$scope.galleryOpen = false;		
+				$( "#thumb-container" ).animate({
+					opacity: "0.0"
+					}, 200, function() {
+						$( "#gallery-flyout").css("padding", "0px");
+						$( "#gallery-close-button").css("opacity", "0.0");
+						
+						self.galleryAnimating = false;
+						$scope.galleryOpen = false;	
+				});		
 		});
 	};
 

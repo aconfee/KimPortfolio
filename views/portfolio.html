@@ -26,7 +26,7 @@
 		<div ng-include="'templates/' + currentTemplate + '.html'"></div>
 
 		<!-- User controls -->
-		<div id='gallery-flyout' ng-mouseleave='retractGallery(true);'>
+		<div id='gallery-flyout' ng-mouseleave='retractGallery(true);' ng-click='retractGallery(true);'>
 			<!--div id='gallery-title'>{{ galleryTitle }}<span id='gallery-close-button' ></span></div-->
 			<div id='thumb-container'>
 				<div class='gallery-thumb' ng-click='scrollToMe($index);' ng-repeat="thumb in thumbs[mainCategoryThumbChange][subCategory]">
@@ -62,7 +62,7 @@
 			</div>
 		</div>
 	</div>
-	<div id='gallery-flyout-button'><img src="../../resources/icons/galleryFlyoutArrow.png" /></div>
+	<div id='gallery-flyout-button'><img src="../../resources/icons/galleryFlyoutArrow2.png" /></div>
 </body>
 
 <!-- Resize the gallery width anytime the page loads or window is resized. This is also done in portfolioController::ChangeTemplate()-->

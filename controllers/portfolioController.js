@@ -309,6 +309,13 @@ function portfolioController($scope){
 				});		
 		});
 	};
+	
+	$scope.hideGallery = function(){
+		$( "#gallery-flyout").css("opacity", "0.0");
+		$( "#thumb-container").css("opacity", "0.0");
+		$( "#gallery-flyout").css("padding", "0px");
+		$( "#gallery-close-button").css("opacity", "0.0");
+	};
 
 	$scope.selectThumb = function(index){
 

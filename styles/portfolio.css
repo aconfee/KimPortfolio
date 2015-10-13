@@ -52,6 +52,14 @@ a:visited{
 	overflow: hidden;
 }
 
+#gallery-flyout-button{
+	position:fixed;
+	
+	left:200px;
+	
+	width:5px;
+}
+
 #gallery-flyout{
 	position: fixed;
 

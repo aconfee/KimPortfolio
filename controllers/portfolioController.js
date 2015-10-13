@@ -295,12 +295,12 @@ function portfolioController($scope){
 		$( "#gallery-flyout" ).animate({
 			opacity: "0.0",
 			width: "0px"
-			}, 200, function() {
+			}, 100, function() {
 				// Animation complete.
 				
 				$( "#thumb-container" ).animate({
 					opacity: "0.0"
-					}, 200, function() {
+					}, 100, function() {
 						$( "#gallery-flyout").css("padding", "0px");
 						$( "#gallery-close-button").css("opacity", "0.0");
 						
@@ -315,6 +315,8 @@ function portfolioController($scope){
 		$( "#thumb-container").css("opacity", "0.0");
 		$( "#gallery-flyout").css("padding", "0px");
 		$( "#gallery-close-button").css("opacity", "0.0");
+		
+		$scope.galleryOpen = false;
 	};
 
 	$scope.selectThumb = function(index){

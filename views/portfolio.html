@@ -41,7 +41,9 @@
 			</div>
 			<div id='content-links'>
 				<a href='../index.html'>HOME</a>
+				<div id='contactButton'><span class='linkHeaderText' ng-class="{ 'activeLink': subCategory == 'contact' }" ng-click="chooseLink('contact'); changeTemplate('contact'); hideGallery();">CONTACT</span>
 				<p></p>
+				
 				<!-- Some ass jack hackery fack right huurr. Set default hight to indicate default active category -->
 				<div class='linkHeaderContainer' style="height:101px"><span class='linkHeaderText' ng-click='expandCategory(0, "Characters");'>CHARACTERS</span>
 					<div class='listItem' ng-class="{ 'activeLink': subCategory == 'projects' && mainCategoryThumbChange == 'CHARACTERS' }" ng-mouseenter="getPreview('characters', 0); ng-mouseleave="restorePreview();" ng-click="chooseLink('projects'); changeTemplate('characters_projects'); hideGallery();">Projects</div>
@@ -57,8 +59,7 @@
 					<div class='listItem' ng-class="{ 'activeLink': subCategory == 'digital' && mainCategoryThumbChange == 'OTHER' }" ng-mouseenter="getPreview('other', 0);" ng-mouseleave="restorePreview();" ng-click="chooseLink('digital'); changeTemplate('other_digital');hideGallery();">Digital</div>
 					<div class='listItem' ng-class="{ 'activeLink': subCategory == 'traditional' && mainCategoryThumbChange == 'OTHER' }" ng-mouseenter="getPreview('other', 1);" ng-mouseleave="restorePreview();" ng-click="chooseLink('traditional'); changeTemplate('other_traditional');hideGallery();">Traditional</div>
 					<div class='listItem' ng-class="{ 'activeLink': subCategory == 'inktober' && mainCategoryThumbChange == 'OTHER' }" ng-mouseenter="getPreview('other', 2);" ng-mouseleave="restorePreview();" ng-click="chooseLink('inktober'); changeTemplate('other_inktober');hideGallery();">Inktober</div>
-				</div>
-				<div class='linkHeaderContainer'><span class='linkHeaderText'>CONTACT</span>				
+				</div>				
 			</div>
 		</div>
 	</div>

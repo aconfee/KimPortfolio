@@ -188,6 +188,11 @@ function portfolioController($scope){
 			'inktober':[
 				'http://www.craigspets.com/sites/default/files/imagecache/product_full/pet-for-sale/puppies_for_sale_in_pa_jlsii8653_1.jpg'
 			]
+		},
+		'CONTACT':{
+			'contact':[
+				// No thumbs
+			]
 		}
 	};
 

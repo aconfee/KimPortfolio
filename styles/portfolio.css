@@ -124,11 +124,16 @@ a:visited{
 
 .gallery-thumb:hover{
 	cursor: pointer;
-	zoom:120%;
 
 	transition: all .2s ease-in-out;
    -moz-transition: all .2s ease-in-out;
    -webkit-transition: all .2s ease-in-out;
+   
+   	-webkit-transform: scale(1.2);
+	-moz-transform: scale(1.2);
+	-ms-transform: scale(1.2);
+	-o-transform: scale(1.2);
+	transform: scale(1.2);
    
    	-webkit-filter: blur(1px);
 	-moz-filter: blur(1px);

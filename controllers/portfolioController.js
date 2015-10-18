@@ -129,29 +129,11 @@ function portfolioController($scope){
 			'projects':[
 				'../../resources/characters/projects/thumbs/1.png',
 				'../../resources/characters/projects/thumbs/2.png',
-				'../../resources/icons/comingSoonThumb.png',
-				'../../resources/icons/comingSoonThumb.png',
-				'../../resources/icons/comingSoonThumb.png',
-				'../../resources/icons/comingSoonThumb.png',
-				'../../resources/icons/comingSoonThumb.png',
-				'../../resources/icons/comingSoonThumb.png',
-				'../../resources/icons/comingSoonThumb.png',
-				'../../resources/icons/comingSoonThumb.png',
-				'../../resources/icons/comingSoonThumb.png',
 				'../../resources/icons/comingSoonThumb.png'
 			],
 			'illustration':[
 				'../../resources/characters/illustration/thumbs/1.png',
 				'../../resources/characters/illustration/thumbs/2.png',
-				'../../resources/icons/comingSoonThumb.png',
-				'../../resources/icons/comingSoonThumb.png',
-				'../../resources/icons/comingSoonThumb.png',
-				'../../resources/icons/comingSoonThumb.png',
-				'../../resources/icons/comingSoonThumb.png',
-				'../../resources/icons/comingSoonThumb.png',
-				'../../resources/icons/comingSoonThumb.png',
-				'../../resources/icons/comingSoonThumb.png',
-				'../../resources/icons/comingSoonThumb.png',
 				'../../resources/icons/comingSoonThumb.png'
 			],
 			'sketches':[
@@ -163,21 +145,9 @@ function portfolioController($scope){
 		},
 		'ENVIRONMENT':{
 			'projects':[
-				'../../resources/icons/comingSoonThumb.png',
-				'../../resources/icons/comingSoonThumb.png',
-				'../../resources/icons/comingSoonThumb.png',
-				'../../resources/icons/comingSoonThumb.png',
 				'../../resources/icons/comingSoonThumb.png'
 			],
 			'illustration':[
-				'../../resources/icons/comingSoonThumb.png',
-				'../../resources/icons/comingSoonThumb.png',
-				'../../resources/icons/comingSoonThumb.png',
-				'../../resources/icons/comingSoonThumb.png',
-				'../../resources/icons/comingSoonThumb.png',
-				'../../resources/icons/comingSoonThumb.png',
-				'../../resources/icons/comingSoonThumb.png',
-				'../../resources/icons/comingSoonThumb.png',
 				'../../resources/icons/comingSoonThumb.png'
 			],
 			'sketches':[

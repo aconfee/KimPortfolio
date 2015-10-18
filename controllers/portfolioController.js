@@ -127,66 +127,76 @@ function portfolioController($scope){
 	$scope.thumbs = {
 		'CHARACTERS':{
 			'projects':[
-				'http://www.craigspets.com/sites/default/files/imagecache/product_full/pet-for-sale/puppies_for_sale_in_pa_jlsii8653_1.jpg',
-				'http://4.bp.blogspot.com/-hzVCoWekCiI/T0Oq1HCVgjI/AAAAAAAAB6A/ZcB-Zqxkpag/s1600/Brown_+Cavalier_King_Charles_Spaniel_Puppies.jpg',
-				'http://i3.findthebest.com/sites/default/files/465/media/images/Cavalier_King_Charles_Spaniel_915857.jpg',
-				'http://resource.supercheats.com/library/2013/1384846394forzahorizon.jpg',
-				'http://compass.xboxlive.com/assets/5e/39/5e393b30-ea3c-4443-8c89-c4be56649bfd.jpg?n=Horizon_cars_banner.jpg',
-				'http://www.twinfinite.net/wp-content/uploads/2014/07/TheLastofUs_feature.jpg',
-				'http://www.cinemablend.com/images/gallery/s44494/Forza_Horizon_Limited_Collector_s_Edition_13420393014891.jpg',
-				'http://cdni.wired.co.uk/1920x1280/s_v/the-last-of-us.jpg',
-				'http://stancewords.stanceworks.netdna-cdn.com/wp-content/uploads/2012/10/bmw-1m-forza-horizon.jpg',
-				'http://ecx.images-amazon.com/images/I/71awkWHQJ6L._SL1280_.jpg'
+				'../../resources/characters/projects/thumbs/1.png',
+				'../../resources/characters/projects/thumbs/2.png',
+				'../../resources/icons/comingSoonThumb.png',
+				'../../resources/icons/comingSoonThumb.png',
+				'../../resources/icons/comingSoonThumb.png',
+				'../../resources/icons/comingSoonThumb.png',
+				'../../resources/icons/comingSoonThumb.png',
+				'../../resources/icons/comingSoonThumb.png',
+				'../../resources/icons/comingSoonThumb.png',
+				'../../resources/icons/comingSoonThumb.png',
+				'../../resources/icons/comingSoonThumb.png',
+				'../../resources/icons/comingSoonThumb.png'
 			],
 			'illustration':[
-				'http://www.craigspets.com/sites/default/files/imagecache/product_full/pet-for-sale/puppies_for_sale_in_pa_jlsii8653_1.jpg',
-				'http://4.bp.blogspot.com/-hzVCoWekCiI/T0Oq1HCVgjI/AAAAAAAAB6A/ZcB-Zqxkpag/s1600/Brown_+Cavalier_King_Charles_Spaniel_Puppies.jpg',
-				'http://i3.findthebest.com/sites/default/files/465/media/images/Cavalier_King_Charles_Spaniel_915857.jpg',
-				'http://resource.supercheats.com/library/2013/1384846394forzahorizon.jpg',
-				'http://compass.xboxlive.com/assets/5e/39/5e393b30-ea3c-4443-8c89-c4be56649bfd.jpg?n=Horizon_cars_banner.jpg',
-				'http://www.twinfinite.net/wp-content/uploads/2014/07/TheLastofUs_feature.jpg',
-				'http://www.cinemablend.com/images/gallery/s44494/Forza_Horizon_Limited_Collector_s_Edition_13420393014891.jpg',
-				'http://cdni.wired.co.uk/1920x1280/s_v/the-last-of-us.jpg',
-				'http://stancewords.stanceworks.netdna-cdn.com/wp-content/uploads/2012/10/bmw-1m-forza-horizon.jpg',
-				'http://ecx.images-amazon.com/images/I/71awkWHQJ6L._SL1280_.jpg'
+				'../../resources/characters/illustration/thumbs/1.png',
+				'../../resources/characters/illustration/thumbs/2.png',
+				'../../resources/icons/comingSoonThumb.png',
+				'../../resources/icons/comingSoonThumb.png',
+				'../../resources/icons/comingSoonThumb.png',
+				'../../resources/icons/comingSoonThumb.png',
+				'../../resources/icons/comingSoonThumb.png',
+				'../../resources/icons/comingSoonThumb.png',
+				'../../resources/icons/comingSoonThumb.png',
+				'../../resources/icons/comingSoonThumb.png',
+				'../../resources/icons/comingSoonThumb.png',
+				'../../resources/icons/comingSoonThumb.png'
 			],
 			'sketches':[
-				'http://www.craigspets.com/sites/default/files/imagecache/product_full/pet-for-sale/puppies_for_sale_in_pa_jlsii8653_1.jpg'
+				'../../resources/characters/sketches/thumbs/1.png',
+				'../../resources/characters/sketches/thumbs/2.png',
+				'../../resources/characters/sketches/thumbs/3.png',
+				'../../resources/icons/comingSoonThumb.png'
 			]
 		},
 		'ENVIRONMENT':{
 			'projects':[
-				'http://www.craigspets.com/sites/default/files/imagecache/product_full/pet-for-sale/puppies_for_sale_in_pa_jlsii8653_1.jpg',
-				'http://4.bp.blogspot.com/-hzVCoWekCiI/T0Oq1HCVgjI/AAAAAAAAB6A/ZcB-Zqxkpag/s1600/Brown_+Cavalier_King_Charles_Spaniel_Puppies.jpg',
-				'http://i3.findthebest.com/sites/default/files/465/media/images/Cavalier_King_Charles_Spaniel_915857.jpg',
-				'http://resource.supercheats.com/library/2013/1384846394forzahorizon.jpg',
-				'http://compass.xboxlive.com/assets/5e/39/5e393b30-ea3c-4443-8c89-c4be56649bfd.jpg?n=Horizon_cars_banner.jpg',
-				'http://www.twinfinite.net/wp-content/uploads/2014/07/TheLastofUs_feature.jpg'
+				'../../resources/icons/comingSoonThumb.png',
+				'../../resources/icons/comingSoonThumb.png',
+				'../../resources/icons/comingSoonThumb.png',
+				'../../resources/icons/comingSoonThumb.png',
+				'../../resources/icons/comingSoonThumb.png'
 			],
 			'illustration':[
-				'http://www.craigspets.com/sites/default/files/imagecache/product_full/pet-for-sale/puppies_for_sale_in_pa_jlsii8653_1.jpg',
-				'http://4.bp.blogspot.com/-hzVCoWekCiI/T0Oq1HCVgjI/AAAAAAAAB6A/ZcB-Zqxkpag/s1600/Brown_+Cavalier_King_Charles_Spaniel_Puppies.jpg',
-				'http://i3.findthebest.com/sites/default/files/465/media/images/Cavalier_King_Charles_Spaniel_915857.jpg',
-				'http://resource.supercheats.com/library/2013/1384846394forzahorizon.jpg',
-				'http://compass.xboxlive.com/assets/5e/39/5e393b30-ea3c-4443-8c89-c4be56649bfd.jpg?n=Horizon_cars_banner.jpg',
-				'http://www.twinfinite.net/wp-content/uploads/2014/07/TheLastofUs_feature.jpg',
-				'http://www.cinemablend.com/images/gallery/s44494/Forza_Horizon_Limited_Collector_s_Edition_13420393014891.jpg',
-				'http://cdni.wired.co.uk/1920x1280/s_v/the-last-of-us.jpg',
-				'http://stancewords.stanceworks.netdna-cdn.com/wp-content/uploads/2012/10/bmw-1m-forza-horizon.jpg'
+				'../../resources/icons/comingSoonThumb.png',
+				'../../resources/icons/comingSoonThumb.png',
+				'../../resources/icons/comingSoonThumb.png',
+				'../../resources/icons/comingSoonThumb.png',
+				'../../resources/icons/comingSoonThumb.png',
+				'../../resources/icons/comingSoonThumb.png',
+				'../../resources/icons/comingSoonThumb.png',
+				'../../resources/icons/comingSoonThumb.png',
+				'../../resources/icons/comingSoonThumb.png'
 			],
 			'sketches':[
-				'http://www.craigspets.com/sites/default/files/imagecache/product_full/pet-for-sale/puppies_for_sale_in_pa_jlsii8653_1.jpg'
+				'../../resources/environments/sketches/thumbs/1.png',
+				'../../resources/environments/sketches/thumbs/2.png',
+				'../../resources/environments/sketches/thumbs/3.png',
+				'../../resources/environments/sketches/thumbs/4.png',
+				'../../resources/icons/comingSoonThumb.png'
 			]
 		},
 		'OTHER':{
 			'digital':[
-				'http://www.craigspets.com/sites/default/files/imagecache/product_full/pet-for-sale/puppies_for_sale_in_pa_jlsii8653_1.jpg'
+				'../../resources/icons/comingSoonThumb.png'
 			],
 			'traditional':[
-				'http://www.craigspets.com/sites/default/files/imagecache/product_full/pet-for-sale/puppies_for_sale_in_pa_jlsii8653_1.jpg'
+				'../../resources/icons/comingSoonThumb.png'
 			],
 			'inktober':[
-				'http://www.craigspets.com/sites/default/files/imagecache/product_full/pet-for-sale/puppies_for_sale_in_pa_jlsii8653_1.jpg'
+				'../../resources/icons/comingSoonThumb.png'
 			]
 		},
 		'CONTACT':{

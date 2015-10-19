@@ -179,8 +179,26 @@ function portfolioController($scope){
 	$scope.chooseLink = function(linkName){
 		// Change the displayed thumbs in the gallery.
 		$scope.subCategory = linkName.toLowerCase();
-		$scope.galleryTitle = $scope.mainCategory + ": " + $scope.subCategory;
+		//$scope.galleryTitle = $scope.mainCategory + ": " + $scope.subCategory;
 		$scope.mainCategoryThumbChange = $scope.mainCategory;
+	};
+	
+	$scope.subCategoryRestore;
+	$scope.mainCategoryRestore;
+	
+	// Show thumb preview of link when hovered over.
+	$scope.showGallery = function(mainCategoryPreview, subCategoryPreview){
+		$scope.subCategoryRestore = $scope.subCategory;
+		$scope.mainCategoryRestore = $scope.mainCategoryThumbChange;
+		
+		$scope.subCategory = subCategoryPreview.toLowerCase();
+		$scope.mainCategoryThumbChange = mainCategoryPreview.toUpperCase();
+	};
+	
+	// Restore thumb navigation to active template
+	$scope.restoreGallery = function(){
+		$scope.subCategory = $scope.subCategoryRestore;
+		$scope.mainCategoryThumbChange = $scope.mainCategoryRestore;
 	};
 
 	$scope.expandCategory = function(index, name){

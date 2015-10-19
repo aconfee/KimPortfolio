@@ -23,10 +23,10 @@
 	<div ng-controller='portfolioController'>
 
 		<!-- Content display -->
-		<div ng-include="'templates/' + currentTemplate + '.html'"></div>
+		<div ng-include="'templates/' + currentTemplate + '.html'" ng-mouseenter='retractGallery();'></div>
 
 		<!-- User controls -->
-		<div id='gallery-flyout' ng-mouseleave='retractGallery(true);' ng-click='retractGallery(true);'>
+		<div id='gallery-flyout' ng-click='retractGallery();'>
 			<!--div id='gallery-title'>{{ galleryTitle }}<span id='gallery-close-button' ></span></div-->
 			<div id='thumb-container'>
 				<div class='gallery-thumb' ng-click='scrollToMe($index);' ng-repeat="thumb in thumbs[mainCategoryThumbChange][subCategory]">
@@ -35,7 +35,7 @@
 			</div>
 		</div>
 		
-		<div id='mainNav' ng-mouseover='openGallery(true)'>
+		<div id='mainNav' ng-mouseenter='openGallery()'>
 			<div id='header'>
 				<img src=" {{ currentPreview }} "></img>
 			</div>

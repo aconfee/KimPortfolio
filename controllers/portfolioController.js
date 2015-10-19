@@ -176,15 +176,18 @@ function portfolioController($scope){
 		}
 	};
 
+	$scope.subCategoryRestore;
+	$scope.mainCategoryRestore;
+	
 	$scope.chooseLink = function(linkName){
 		// Change the displayed thumbs in the gallery.
 		$scope.subCategory = linkName.toLowerCase();
 		//$scope.galleryTitle = $scope.mainCategory + ": " + $scope.subCategory;
 		$scope.mainCategoryThumbChange = $scope.mainCategory;
+		
+		$scope.subCategoryRestore = $scope.subCategory;
+		$scope.mainCategoryRestore = $scope.mainCategoryThumbChange;
 	};
-	
-	$scope.subCategoryRestore;
-	$scope.mainCategoryRestore;
 	
 	// Show thumb preview of link when hovered over.
 	$scope.showGallery = function(mainCategoryPreview, subCategoryPreview){
@@ -245,9 +248,7 @@ function portfolioController($scope){
 		$scope.currentPreview = $scope.defaultPreview;
 	};
 
-	$scope.toggleGallery = function(isActive){
-		if(!isActive) return;
-
+	$scope.toggleGallery = function(){
 		if($scope.galleryOpen == true){
 			$scope.retractGallery();
 			return;
@@ -267,8 +268,7 @@ function portfolioController($scope){
 		$scope.galleryOpen = true;
 	};
 	
-	$scope.openGallery = function(isActive){
-		if(!isActive) return;		
+	$scope.openGallery = function(){	
 		if(self.galleryAnimating) return;
 		if($scope.galleryOpen) return;
 		

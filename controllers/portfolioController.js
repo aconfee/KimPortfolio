@@ -1,16 +1,9 @@
 function portfolioController($scope){
 
-	// Angular vars
 
 	$scope.openCategory = 0;
 	$scope.galleryOpen = false;
-	$scope.mainCategory = "CHARACTERS";
-	$scope.mainCategoryThumbChange = "CHARACTERS";
-	$scope.subCategory = "projects";
 	$scope.galleryTitle = "Quick View";
-	$scope.defaultPreview = '../../resources/icons/headerDefault.png';
-	$scope.currentPreview = $scope.defaultPreview;
-	$scope.currentTemplate = "characters_projects";
 	
 	//// New Freshness
 	
@@ -20,13 +13,8 @@ function portfolioController($scope){
 	self.activeCategory = "characters_projects";
 	self.isScrolling = false;
 	
-	// HTML bindings
-	$scope.activeGalleryTemplate = "templates/" + self.activeCategory + "_gallery.html";
-	$scope.activeHeaderImage = self.defaultHeaderImage;
-	$scope.activeThumbs = self.sectionInfo["characters_projects"]["quickThumbs"];
-	
 	// Data
-	self.sectionInfo = {
+	$scope.sectionInfo = {
 		"characters_projects" : {
 			"headerPreview" : "../../resources/icons/headerCharacterProjects.png",
 			"quickThumbs" : [
@@ -100,6 +88,11 @@ function portfolioController($scope){
 		}
 	}
 	
+	// HTML bindings
+	$scope.activeGalleryTemplate = "templates/" + self.activeCategory + "_gallery.html";
+	$scope.activeHeaderImage = self.defaultHeaderImage;
+	$scope.activeThumbs = $scope.sectionInfo["characters_projects"]["quickThumbs"];
+	
 	///
 	/// Update the preview spaces for a category.
 	/// Spaces include header image and thumbs gallery.
@@ -110,8 +103,8 @@ function portfolioController($scope){
 		categoryName = categoryName.toLowerCase();
 		
 		// Update HTML bindings
-		$scope.activeHeaderImage = self.sectionInfo[categoryName]["headerPreview"];
-		$scope.activeThumbs = self.sectionInfo[categoryName]["quickThumbs"];
+		$scope.activeHeaderImage = $scope.sectionInfo[categoryName]["headerPreview"];
+		$scope.activeThumbs = $scope.sectionInfo[categoryName]["quickThumbs"];
 	};
 	
 	///
@@ -121,7 +114,7 @@ function portfolioController($scope){
 	$scope.hidePreview = function(){
 		// Update HTML bindings
 		$scope.activeHeaderImage = self.defaultHeaderImage;
-		$scope.activeThumbs = self.sectionInfo[self.activeCategory]["quickThumbs"];
+		$scope.activeThumbs = $scope.sectionInfo[self.activeCategory]["quickThumbs"];
 	}
 	
 	///
@@ -138,7 +131,7 @@ function portfolioController($scope){
 		
 		// Update HTML bindings and templates to show the new gallery.
 		$scope.activeGalleryTemplate = "templates/" + categoryName + "_gallery.html";
-		$scope.activeThumbs = self.sectionInfo[categoryName]["quickThumbs"];
+		$scope.activeThumbs = $scope.sectionInfo[categoryName]["quickThumbs"];
 		
 		// Resize the gallery upon new template load. Try quick and late loads.
 		self.resizeGalleryAsync(100);

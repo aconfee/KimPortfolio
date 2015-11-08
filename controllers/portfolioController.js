@@ -1,9 +1,6 @@
 function portfolioController($scope){
 
 	// Angular vars
-	var self = this;
-	
-	self.isScrolling = false;
 
 	$scope.openCategory = 0;
 	$scope.galleryOpen = false;
@@ -14,6 +11,141 @@ function portfolioController($scope){
 	$scope.defaultPreview = '../../resources/icons/headerDefault.png';
 	$scope.currentPreview = $scope.defaultPreview;
 	$scope.currentTemplate = "characters_projects";
+	
+	//// New Freshness
+	
+	// Class members
+	var self = this;
+	self.defaultHeaderImage = "../../resources/icons/headerDefault.png";
+	self.activeCategory = "characters_projects";
+	self.isScrolling = false;
+	
+	// HTML bindings
+	$scope.activeGalleryTemplate = "templates/" + self.activeCategory + "_gallery.html";
+	$scope.activeHeaderImage = self.defaultHeaderImage;
+	$scope.activeThumbs = self.sectionInfo["characters_projects"]["quickThumbs"];
+	
+	// Data
+	self.sectionInfo = {
+		"characters_projects" : {
+			"headerPreview" : "../../resources/icons/headerCharacterProjects.png",
+			"quickThumbs" : [
+				"../../resources/characters/projects/thumbs/1.png",
+				"../../resources/characters/projects/thumbs/2.png",
+				"../../resources/icons/comingSoonThumb.png"
+			]
+		},
+		"characters_illustrations" : {
+			"headerPreview" : "../../resources/icons/headerCharacterIllustration.png",
+			"quickThumbs" : [
+				"../../resources/characters/illustration/thumbs/1.png",
+				"../../resources/characters/illustration/thumbs/2.png",
+				"../../resources/icons/comingSoonThumb.png"
+			]
+		},
+		"characters_sketches" : {
+			"headerPreview" : "../../resources/icons/headerCharacterSketches.png",
+			"quickThumbs" : [
+				"../../resources/characters/sketches/thumbs/1.png",
+				"../../resources/characters/sketches/thumbs/2.png",
+				"../../resources/characters/sketches/thumbs/3.png",
+				"../../resources/icons/comingSoonThumb.png"
+			]
+		},
+		"environments_projects" : {
+			"headerPreview" : "http://www.craigspets.com/sites/default/files/imagecache/product_full/pet-for-sale/puppies_for_sale_in_pa_jlsii8653_1.jpg",
+			"quickThumbs" : [
+				"../../resources/icons/comingSoonThumb.png"
+			]
+		},
+		"environments_illustrations" : {
+			"headerPreview" : "http://4.bp.blogspot.com/-hzVCoWekCiI/T0Oq1HCVgjI/AAAAAAAAB6A/ZcB-Zqxkpag/s1600/Brown_+Cavalier_King_Charles_Spaniel_Puppies.jpg",
+			"quickThumbs" : [
+				"../../resources/icons/comingSoonThumb.png"
+			]
+		},
+		"environments_sketches" : {
+			"headerPreview" : "../../resources/icons/headerEnvironmentSketches.png",
+			"quickThumbs" : [
+				"../../resources/environments/sketches/thumbs/1.png",
+				"../../resources/environments/sketches/thumbs/2.png",
+				"../../resources/environments/sketches/thumbs/3.png",
+				"../../resources/environments/sketches/thumbs/4.png",
+				"../../resources/icons/comingSoonThumb.png"
+			]
+		},
+		"other_digital" : {
+			"headerPreview" : "http://www.craigspets.com/sites/default/files/imagecache/product_full/pet-for-sale/puppies_for_sale_in_pa_jlsii8653_1.jpg",
+			"quickThumbs" : [
+				"../../resources/icons/comingSoonThumb.png"
+			]
+		},
+		"other_traditional" : {
+			"headerPreview" : "http://4.bp.blogspot.com/-hzVCoWekCiI/T0Oq1HCVgjI/AAAAAAAAB6A/ZcB-Zqxkpag/s1600/Brown_+Cavalier_King_Charles_Spaniel_Puppies.jpg",
+			"quickThumbs" : [
+				"../../resources/icons/comingSoonThumb.png"
+			]
+		},
+		"other_inktober" : {
+			"headerPreview" : "http://i3.findthebest.com/sites/default/files/465/media/images/Cavalier_King_Charles_Spaniel_915857.jpg",
+			"quickThumbs" : [
+				"../../resources/icons/comingSoonThumb.png"
+			]
+		},
+		"contact" : {
+			"headerPreview" : self.defaultHeaderImage,
+			"quickThumbs" : [
+				
+			]
+		}
+	}
+	
+	///
+	/// Update the preview spaces for a category.
+	/// Spaces include header image and thumbs gallery.
+	///
+	/// params: categoryName = The name of the category to grab preview content from.
+	///
+	$scope.showPreview = function(categoryName){
+		categoryName = categoryName.toLowerCase();
+		
+		// Update HTML bindings
+		$scope.activeHeaderImage = self.sectionInfo[categoryName]["headerPreview"];
+		$scope.activeThumbs = self.sectionInfo[categoryName]["quickThumbs"];
+	};
+	
+	///
+	/// Restore default/active content to preview spaces.
+	/// Spaces incluse header image and thumbs gallery.
+	///
+	$scope.hidePreview = function(){
+		// Update HTML bindings
+		$scope.activeHeaderImage = self.defaultHeaderImage;
+		$scope.activeThumbs = self.sectionInfo[self.activeCategory]["quickThumbs"];
+	}
+	
+	///
+	/// Show a new category or section of content. Updates the template
+	/// showing the gallery and the quick-nav thumbs.
+	///
+	/// params: categoryName = The name of the category to grab content from.
+	///
+	$scope.loadGallery = function(categoryName){
+		categoryName = categoryName.toLowerCase();
+		
+		// Update class info
+		self.activeCategory = categoryName;
+		
+		// Update HTML bindings and templates to show the new gallery.
+		$scope.activeGalleryTemplate = "templates/" + categoryName + "_gallery.html";
+		$scope.activeThumbs = self.sectionInfo[categoryName]["quickThumbs"];
+		
+		// Resize the gallery upon new template load. Try quick and late loads.
+		self.resizeGalleryAsync(100);
+		self.resizeGalleryAsync(500);
+		self.resizeGalleryAsync(2000);
+		self.resizeGalleryAsync(5000);
+	}
 	
 	self.galleryAnimating = false;
 
@@ -26,33 +158,6 @@ function portfolioController($scope){
 
 		$( ".screen-container" ).animate({scrollLeft: pos}, 600 );
 	};
-		
-	$scope.toggleScroll = function(beginScroll){
-		// If stopping scroll
-		if(beginScroll === false){
-			clearInterval(self.scrollInterval);
-			self.isScrolling = false;
-			return;	
-		}
-		
-		// If already scrolling
-		if(self.isScrolling === true){
-			return;
-		}
-		
-		// If starting scroll				
-		self.isScrolling = true;
-		
-		self.scrollInterval = setInterval(function(){
-			console.log("called");
-			var currentLeft = $(".screen-container").scrollLeft(); // ___px
-			var scrollTo = currentLeft + 1;
-			
-			$( ".screen-container" ).scrollLeft(scrollTo);
-		}, 3);
-	}
-	
-	self.scrollInterval = function(){};
 
 	self.numberOfImagesPrevious = 0;
 	
@@ -91,119 +196,6 @@ function portfolioController($scope){
 		}, interval);
 	};
 
-	$scope.changeTemplate = function(newTemplate){
-		$scope.currentTemplate = newTemplate;
-
-		// Resize the gallery upon new template load. Try quick and late loads.
-		self.resizeGalleryAsync(100);
-		self.resizeGalleryAsync(500);
-		self.resizeGalleryAsync(2000);
-		self.resizeGalleryAsync(5000);
-	};
-
-	// Class vars
-	var self = this;
-	
-	// Previews when hovering over submenu items.
-	self.navLinkPreviews = {
-		'characters':[
-			'../../resources/icons/headerCharacterProjects.png',
-			'../../resources/icons/headerCharacterIllustration.png',
-			'../../resources/icons/headerCharacterSketches.png'
-		],
-		'environment':[
-			'http://www.craigspets.com/sites/default/files/imagecache/product_full/pet-for-sale/puppies_for_sale_in_pa_jlsii8653_1.jpg',
-			'http://4.bp.blogspot.com/-hzVCoWekCiI/T0Oq1HCVgjI/AAAAAAAAB6A/ZcB-Zqxkpag/s1600/Brown_+Cavalier_King_Charles_Spaniel_Puppies.jpg',
-			'../../resources/icons/headerEnvironmentSketches.png'
-		],
-		'other':[
-			'http://www.craigspets.com/sites/default/files/imagecache/product_full/pet-for-sale/puppies_for_sale_in_pa_jlsii8653_1.jpg',
-			'http://4.bp.blogspot.com/-hzVCoWekCiI/T0Oq1HCVgjI/AAAAAAAAB6A/ZcB-Zqxkpag/s1600/Brown_+Cavalier_King_Charles_Spaniel_Puppies.jpg',
-			'http://i3.findthebest.com/sites/default/files/465/media/images/Cavalier_King_Charles_Spaniel_915857.jpg'
-		]
-	};
-
-	// Gallery thumbnails for a given section.
-	$scope.thumbs = {
-		'CHARACTERS':{
-			'projects':[
-				'../../resources/characters/projects/thumbs/1.png',
-				'../../resources/characters/projects/thumbs/2.png',
-				'../../resources/icons/comingSoonThumb.png'
-			],
-			'illustration':[
-				'../../resources/characters/illustration/thumbs/1.png',
-				'../../resources/characters/illustration/thumbs/2.png',
-				'../../resources/icons/comingSoonThumb.png'
-			],
-			'sketches':[
-				'../../resources/characters/sketches/thumbs/1.png',
-				'../../resources/characters/sketches/thumbs/2.png',
-				'../../resources/characters/sketches/thumbs/3.png',
-				'../../resources/icons/comingSoonThumb.png'
-			]
-		},
-		'ENVIRONMENT':{
-			'projects':[
-				'../../resources/icons/comingSoonThumb.png'
-			],
-			'illustration':[
-				'../../resources/icons/comingSoonThumb.png'
-			],
-			'sketches':[
-				'../../resources/environments/sketches/thumbs/1.png',
-				'../../resources/environments/sketches/thumbs/2.png',
-				'../../resources/environments/sketches/thumbs/3.png',
-				'../../resources/environments/sketches/thumbs/4.png',
-				'../../resources/icons/comingSoonThumb.png'
-			]
-		},
-		'OTHER':{
-			'digital':[
-				'../../resources/icons/comingSoonThumb.png'
-			],
-			'traditional':[
-				'../../resources/icons/comingSoonThumb.png'
-			],
-			'inktober':[
-				'../../resources/icons/comingSoonThumb.png'
-			]
-		},
-		'CONTACT':{
-			'contact':[
-				// No thumbs
-			]
-		}
-	};
-
-	$scope.subCategoryRestore;
-	$scope.mainCategoryRestore;
-	
-	$scope.chooseLink = function(linkName){
-		// Change the displayed thumbs in the gallery.
-		$scope.subCategory = linkName.toLowerCase();
-		//$scope.galleryTitle = $scope.mainCategory + ": " + $scope.subCategory;
-		$scope.mainCategoryThumbChange = $scope.mainCategory;
-		
-		$scope.subCategoryRestore = $scope.subCategory;
-		$scope.mainCategoryRestore = $scope.mainCategoryThumbChange;
-	};
-	
-	// Show thumb preview of link when hovered over.
-	$scope.showGallery = function(mainCategoryPreview, subCategoryPreview){
-		$scope.subCategoryRestore = $scope.subCategory;
-		$scope.mainCategoryRestore = $scope.mainCategoryThumbChange;
-		
-		$scope.subCategory = subCategoryPreview.toLowerCase();
-		$scope.mainCategoryThumbChange = mainCategoryPreview.toUpperCase();
-	};
-	
-	// Restore thumb navigation to active template
-	$scope.restoreGallery = function(){
-		$scope.subCategory = $scope.subCategoryRestore;
-		$scope.mainCategoryThumbChange = $scope.mainCategoryRestore;
-	};
-
 	$scope.expandCategory = function(index, name){
 		$scope.mainCategory = name.toUpperCase();
 		// Clone the element with the auto property to see how far we should extend the height.
@@ -237,38 +229,8 @@ function portfolioController($scope){
 		    // Animation complete.
 		  });
 	};
-
-	// Get the preview for this link.
-	$scope.getPreview = function(category, index){
-		$scope.currentPreview = self.navLinkPreviews[category.toLowerCase()][index];
-	};
-
-	// Restore the default preview
-	$scope.restorePreview = function(){
-		$scope.currentPreview = $scope.defaultPreview;
-	};
-
-	$scope.toggleGallery = function(){
-		if($scope.galleryOpen == true){
-			$scope.retractGallery();
-			return;
-		}
-		
-		$( "#gallery-flyout").css("padding", "15px");
-		$( "#gallery-close-button").css("opacity", "1.0");
-		$( "#thumb-container").css("opacity", "1.0");
-
-		$( "#gallery-flyout" ).animate({
-			width: "390px",
-			opacity: "1.0"
-		  }, 200, function() {
-			// Animation complete
-		});
-
-		$scope.galleryOpen = true;
-	};
 	
-	$scope.openGallery = function(){	
+	$scope.expandThumbs = function(){	
 		if(self.galleryAnimating) return;
 		if($scope.galleryOpen) return;
 		
@@ -287,7 +249,7 @@ function portfolioController($scope){
 		});
 	};
 
-	$scope.retractGallery = function(){
+	$scope.retractThumbs = function(){
 		if(self.galleryAnimating) return;
 		if(!$scope.galleryOpen) return;
 		
@@ -310,7 +272,7 @@ function portfolioController($scope){
 		});
 	};
 	
-	$scope.hideGallery = function(){
+	$scope.hideThumbs = function(){
 		$( "#gallery-flyout").css("opacity", "0.0");
 		$( "#thumb-container").css("opacity", "0.0");
 		$( "#gallery-flyout").css("padding", "0px");

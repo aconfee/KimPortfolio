@@ -29,7 +29,7 @@
 		<div id='gallery-flyout' ng-click='retractThumbs();'>
 			<!--div id='gallery-title'>{{ galleryTitle }}<span id='gallery-close-button' ></span></div-->
 			<div id='thumb-container'>
-				<div class='gallery-thumb' ng-click='scrollToMe($index);' ng-repeat="thumb in sectionInfo[activeCategory]['quickThumbs']">
+				<div class='gallery-thumb' ng-click='scrollToMe($index);' ng-repeat="thumb in activeThumbs">
 					<img src = "{{ thumb }}" ></img>
 				</div>
 			</div>
@@ -52,7 +52,7 @@
 				</div>
 				<div class='linkHeaderContainer'><span class='linkHeaderText' ng-click='expandCategory(1, "Environment");'>ENVIRONMENTS</span>
 					<div class='listItem' ng-class="{ 'activeLink': activeCategory == 'environments_projects' }" ng-mouseenter="showPreview('environments_projects');" ng-mouseleave="hidePreview();" ng-click="loadGallery('environments_projects');">Projects</div>
-					<div class='listItem' ng-class="{ 'activeLink': activeCategory == 'environments_illustrations' }" ng-mouseenter="showPreview('environments_illustration');" ng-mouseleave="hidePreview();" ng-click="loadGallery('environments_illustrations');">Illustration</div>
+					<div class='listItem' ng-class="{ 'activeLink': activeCategory == 'environments_illustrations' }" ng-mouseenter="showPreview('environments_illustrations');" ng-mouseleave="hidePreview();" ng-click="loadGallery('environments_illustrations');">Illustration</div>
 					<div class='listItem' ng-class="{ 'activeLink': activeCategory == 'environments_sketches' }" ng-mouseenter="showPreview('environments_sketches');" ng-mouseleave="hidePreview()" ng-click="loadGallery('environments_sketches');">Sketches</div>
 				</div>
 				<div class='linkHeaderContainer'><span class='linkHeaderText' ng-click='expandCategory(2, "Other");'>OTHER</span>

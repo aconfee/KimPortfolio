@@ -1,8 +1,5 @@
 function portfolioController($scope){
 
-
-	$scope.openCategory = 0;
-	$scope.galleryOpen = false;
 	$scope.galleryTitle = "Quick View";
 	
 	//// New Freshness
@@ -10,11 +7,13 @@ function portfolioController($scope){
 	// Class members
 	var self = this;
 	self.defaultHeaderImage = "../../resources/icons/headerDefault.png";
-	self.activeCategory = "characters_projects";
-	self.isScrolling = false;
+	self.openCategory = 0; // The currently expanded high level category in the side menu.
+	self.thumbsOpen = false;
+	self.numberOfImagesPrevious = 0; // Used for loading images and resizing the gallery container.
+	self.thumbFlyoutAnimating = false; // Lock any interaction with the thumb flyout while animating.
 	
 	// Data
-	$scope.sectionInfo = {
+	self.sectionInfo = {
 		"characters_projects" : {
 			"headerPreview" : "../../resources/icons/headerCharacterProjects.png",
 			"quickThumbs" : [
@@ -89,9 +88,10 @@ function portfolioController($scope){
 	}
 	
 	// HTML bindings
-	$scope.activeGalleryTemplate = "templates/" + self.activeCategory + "_gallery.html";
+	$scope.activeCategory = "characters_projects"; // Bound to marking active tab
+	$scope.activeGalleryTemplate = "templates/" + $scope.activeCategory + "_gallery.html";
 	$scope.activeHeaderImage = self.defaultHeaderImage;
-	$scope.activeThumbs = $scope.sectionInfo["characters_projects"]["quickThumbs"];
+	$scope.activeThumbs = self.sectionInfo["characters_projects"]["quickThumbs"];
 	
 	///
 	/// Update the preview spaces for a category.
@@ -103,8 +103,8 @@ function portfolioController($scope){
 		categoryName = categoryName.toLowerCase();
 		
 		// Update HTML bindings
-		$scope.activeHeaderImage = $scope.sectionInfo[categoryName]["headerPreview"];
-		$scope.activeThumbs = $scope.sectionInfo[categoryName]["quickThumbs"];
+		$scope.activeHeaderImage = self.sectionInfo[categoryName]["headerPreview"];
+		$scope.activeThumbs = self.sectionInfo[categoryName]["quickThumbs"];
 	};
 	
 	///
@@ -114,7 +114,7 @@ function portfolioController($scope){
 	$scope.hidePreview = function(){
 		// Update HTML bindings
 		$scope.activeHeaderImage = self.defaultHeaderImage;
-		$scope.activeThumbs = $scope.sectionInfo[self.activeCategory]["quickThumbs"];
+		$scope.activeThumbs = self.sectionInfo[$scope.activeCategory]["quickThumbs"];
 	}
 	
 	///
@@ -127,11 +127,11 @@ function portfolioController($scope){
 		categoryName = categoryName.toLowerCase();
 		
 		// Update class info
-		self.activeCategory = categoryName;
+		$scope.activeCategory = categoryName;
 		
 		// Update HTML bindings and templates to show the new gallery.
 		$scope.activeGalleryTemplate = "templates/" + categoryName + "_gallery.html";
-		$scope.activeThumbs = $scope.sectionInfo[categoryName]["quickThumbs"];
+		$scope.activeThumbs = self.sectionInfo[categoryName]["quickThumbs"];
 		
 		// Resize the gallery upon new template load. Try quick and late loads.
 		self.resizeGalleryAsync(100);
@@ -140,9 +140,44 @@ function portfolioController($scope){
 		self.resizeGalleryAsync(5000);
 	}
 	
-	self.galleryAnimating = false;
+	///
+	/// Expand the high level hierarchy in the main side menu.
+	///
+	/// params: index = The index (top to bottom) of this category as it lies in the main menu. 
+	///
+	$scope.expandCategory = function(index){
+		// If already open, don't do anything.
+		if(index == self.openCategory) return;
+		
+		// Clone the element with the auto property to see how far we should extend the height.
+		var elementToClone = $('.linkHeaderContainer').eq(index);
+		var elementCloneAuto = elementToClone.clone().css({"height":"auto"}).appendTo("body");
+		autoHeight = elementCloneAuto.css("height");
+		elementCloneAuto.remove();
 
-	$scope.scrollToMe = function(index){
+		// Close the previously open category
+		$( ".linkHeaderContainer" ).eq(self.openCategory).animate({
+			height: "20px"
+			}, 200, function() {
+			// Animation complete.
+		});
+
+		self.openCategory = index;
+
+		// Open the selected category.
+		$( ".linkHeaderContainer" ).eq(self.openCategory).animate({
+		    height: autoHeight
+		  }, 200, function() {
+		    // Animation complete.
+		});
+	};
+
+	///
+	/// Scroll to an element in the displayed gallery.
+	///
+	/// params: index = The index (left to right) of the image to scroll to.
+	///
+	$scope.slideTo = function(index){
 		var dest = $(".template-image-restrict").eq(index).position().left;
 		var pos = dest + $( ".screen-container" ).scrollLeft() - 230;
 		if(pos < 0){
@@ -151,10 +186,12 @@ function portfolioController($scope){
 
 		$( ".screen-container" ).animate({scrollLeft: pos}, 600 );
 	};
-
-	self.numberOfImagesPrevious = 0;
 	
-	// Resize the gallery to fit all loaded images.
+	///
+	/// Resize the gallery to fit all loaded images.
+	///
+	/// returns: Whether the page is finished loading or not.
+	///
 	self.resizeGallery = function(){
 		var $images = $(".template-image-restrict");
 		var numberOfImagesCurrent = $images.length;
@@ -168,6 +205,7 @@ function portfolioController($scope){
 			totalWidth += 6;
 		}
 		
+		// If new images have been loaded since last call, assume we're not done loading.
 		if (numberOfImagesCurrent > self.numberOfImagesPrevious && 
 			numberOfImagesCurrent > 0){
 				
@@ -175,12 +213,16 @@ function portfolioController($scope){
 			return false;
 		}
 
+		// If no new images have been added since last call, assume loaded.
 		$(".template-container").css("width", totalWidth + "px");
 		self.numberOfImagesPrevious = 0;
 		return true;
 	};
 	
-	// Resize the gallery every x milliseconds (for new images loaded).
+	///
+	/// Resize the gallery every x milliseconds. Allows checking for quick and late loads.
+	///
+	/// params: interval = How often to try reloading and resizing. 
 	self.resizeGalleryAsync = function(interval){
 		var resizeGalleryInterval = setInterval(function() {
 			if(resizeGallery() === true){
@@ -188,46 +230,15 @@ function portfolioController($scope){
 			}
 		}, interval);
 	};
-
-	$scope.expandCategory = function(index, name){
-		$scope.mainCategory = name.toUpperCase();
-		// Clone the element with the auto property to see how far we should extend the height.
-		var elementToClone = $('.linkHeaderContainer').eq(index);
-		var elementCloneAuto = elementToClone.clone().css({"height":"auto"}).appendTo("body");
-		autoHeight = elementCloneAuto.css("height");
-		elementCloneAuto.remove();
-
-		// Close the previously open category
-		if($scope.openCategory > -1){
-			$( ".linkHeaderContainer" ).eq($scope.openCategory).animate({
-			    height: "20px"
-			  }, 200, function() {
-			    // Animation complete.
-			  });
-		}
-
-		// If the clicked item was already open and we just shut it, 
-		// don't open and reset $scope.openCategory.
-		if($scope.openCategory == index){
-			$scope.openCategory = -1;
-			return;
-		}
-
-		$scope.openCategory = index;
-
-		// Open the selected category.
-		$( ".linkHeaderContainer" ).eq($scope.openCategory).animate({
-		    height: autoHeight
-		  }, 200, function() {
-		    // Animation complete.
-		  });
-	};
 	
+	///
+	/// Expand the thumbnail flyout.
+	///
 	$scope.expandThumbs = function(){	
-		if(self.galleryAnimating) return;
-		if($scope.galleryOpen) return;
+		if(self.thumbFlyoutAnimating) return;
+		if(self.thumbsOpen) return;
 		
-		self.galleryAnimating = true;
+		self.thumbFlyoutAnimating = true;
 		$( "#gallery-flyout").css("padding", "15px");
 		$( "#gallery-close-button").css("opacity", "1.0");
 		$( "#thumb-container").css("opacity", "1.0");
@@ -237,48 +248,47 @@ function portfolioController($scope){
 			opacity: "1.0"
 		  }, 200, function() {
 			// Animation complete
-			self.galleryAnimating = false;
-			$scope.galleryOpen = true;
+			self.thumbFlyoutAnimating = false;
+			self.thumbsOpen = true;
 		});
 	};
 
+	/// 
+	/// Close the thumbnail flyout.
+	///
 	$scope.retractThumbs = function(){
-		if(self.galleryAnimating) return;
-		if(!$scope.galleryOpen) return;
+		if(self.thumbFlyoutAnimating) return;
+		if(!self.thumbsOpen) return;
 		
-		self.galleryAnimating = true;		
+		self.thumbFlyoutAnimating = true;		
 		$( "#gallery-flyout" ).animate({
 			opacity: "0.0",
 			width: "0px"
 			}, 100, function() {
-				// Animation complete.
-				
+				// Animation complete.				
 				$( "#thumb-container" ).animate({
 					opacity: "0.0"
 					}, 100, function() {
+						// Animation complete.
 						$( "#gallery-flyout").css("padding", "0px");
 						$( "#gallery-close-button").css("opacity", "0.0");
 						
-						self.galleryAnimating = false;
-						$scope.galleryOpen = false;	
+						self.thumbFlyoutAnimating = false;
+						self.thumbsOpen = false;	
 				});		
 		});
 	};
 	
+	///
+	/// Instantly hide the thumbs without animating.
+	/// Used on contact page to not confuse the user.
+	///
 	$scope.hideThumbs = function(){
 		$( "#gallery-flyout").css("opacity", "0.0");
 		$( "#thumb-container").css("opacity", "0.0");
 		$( "#gallery-flyout").css("padding", "0px");
 		$( "#gallery-close-button").css("opacity", "0.0");
 		
-		$scope.galleryOpen = false;
-	};
-
-	$scope.selectThumb = function(index){
-
-	};
-
-	$scope.populateGallery = function(index){
-		console.log("hello world");
+		self.thumbsOpen = false;
 	};
 };

@@ -29,7 +29,7 @@
 		<div id='gallery-flyout' ng-click='retractThumbs();'>
 			<!--div id='gallery-title'>{{ galleryTitle }}<span id='gallery-close-button' ></span></div-->
 			<div id='thumb-container'>
-				<div class='gallery-thumb' ng-click='scrollToMe($index);' ng-repeat="thumb in activeThumbs">
+				<div class='gallery-thumb' ng-click='scrollTo($index);' ng-repeat="thumb in activeThumbs">
 					<img src = "{{ thumb }}" ></img>
 				</div>
 			</div>
@@ -41,24 +41,23 @@
 			</div>
 			<div id='content-links'>
 				<a href='../index.html'>HOME</a>
-				<div id='contactButton'><span class='linkHeaderText' ng-class="{ 'activeLink': activeCategory == 'contact' }" ng-click="loadGallery('contact'); hideThumbs();">CONTACT</span>
+				<div id='contactButton'><span class='linkHeaderText' ng-class="{activeLink: activeCategory == 'contact' }" ng-click="loadGallery('contact'); hideThumbs();">CONTACT</span>
 				<p></p>
 				
-				<!-- Some ass jack hackery fack right huurr. Set default hight to indicate default active category -->
-				<div class='linkHeaderContainer' style="height:101px"><span class='linkHeaderText' ng-click='expandCategory(0, "Characters");'>CHARACTERS</span>
-					<div class='listItem' ng-class="{ 'activeLink': activeCategory == 'characters_projects' }" ng-mouseenter="showPreview('characters_projects');" ng-mouseleave="hidePreview();" ng-click="loadGallery('characters_projects');">Projects</div>
-					<div class='listItem' ng-class="{ 'activeLink': activeCategory == 'characters_illustrations' }" ng-mouseenter="showPreview('characters_illustrations');" ng-mouseleave="hidePreview();" ng-click="loadGallery('characters_illustrations');">Illustrations</div>
-					<div class='listItem' ng-class="{ 'activeLink': activeCategory == 'characters_sketches' }" ng-mouseenter="showPreview('characters_sketches');" ng-mouseleave="hidePreview();" ng-click="loadGallery('characters_sketches');">Sketches</div>
+				<div class='linkHeaderContainer' style="height:101px"><span class='linkHeaderText' ng-click='expandCategory(0);'>CHARACTERS</span>
+					<div class='listItem' ng-class="{activeLink: activeCategory == 'characters_projects'}" ng-mouseenter="showPreview('characters_projects');" ng-mouseleave="hidePreview();" ng-click="loadGallery('characters_projects');">Projects</div>
+					<div class='listItem' ng-class="{activeLink: activeCategory == 'characters_illustrations'}" ng-mouseenter="showPreview('characters_illustrations');" ng-mouseleave="hidePreview();" ng-click="loadGallery('characters_illustrations');">Illustrations</div>
+					<div class='listItem' ng-class="{activeLink: activeCategory == 'characters_sketches'}" ng-mouseenter="showPreview('characters_sketches');" ng-mouseleave="hidePreview();" ng-click="loadGallery('characters_sketches');">Sketches</div>
 				</div>
-				<div class='linkHeaderContainer'><span class='linkHeaderText' ng-click='expandCategory(1, "Environment");'>ENVIRONMENTS</span>
-					<div class='listItem' ng-class="{ 'activeLink': activeCategory == 'environments_projects' }" ng-mouseenter="showPreview('environments_projects');" ng-mouseleave="hidePreview();" ng-click="loadGallery('environments_projects');">Projects</div>
-					<div class='listItem' ng-class="{ 'activeLink': activeCategory == 'environments_illustrations' }" ng-mouseenter="showPreview('environments_illustrations');" ng-mouseleave="hidePreview();" ng-click="loadGallery('environments_illustrations');">Illustration</div>
-					<div class='listItem' ng-class="{ 'activeLink': activeCategory == 'environments_sketches' }" ng-mouseenter="showPreview('environments_sketches');" ng-mouseleave="hidePreview()" ng-click="loadGallery('environments_sketches');">Sketches</div>
+				<div class='linkHeaderContainer'><span class='linkHeaderText' ng-click='expandCategory(1);'>ENVIRONMENTS</span>
+					<div class='listItem' ng-class="{activeLink: activeCategory == 'environments_projects'}" ng-mouseenter="showPreview('environments_projects');" ng-mouseleave="hidePreview();" ng-click="loadGallery('environments_projects');">Projects</div>
+					<div class='listItem' ng-class="{activeLink: activeCategory == 'environments_illustrations'}" ng-mouseenter="showPreview('environments_illustrations');" ng-mouseleave="hidePreview();" ng-click="loadGallery('environments_illustrations');">Illustration</div>
+					<div class='listItem' ng-class="{activeLink: activeCategory == 'environments_sketches'}" ng-mouseenter="showPreview('environments_sketches');" ng-mouseleave="hidePreview()" ng-click="loadGallery('environments_sketches');">Sketches</div>
 				</div>
-				<div class='linkHeaderContainer'><span class='linkHeaderText' ng-click='expandCategory(2, "Other");'>OTHER</span>
-					<div class='listItem' ng-class="{ 'activeLink': activeCategory == 'other_digital' }" ng-mouseenter="showPreview('other_digital');" ng-mouseleave="hidePreview();" ng-click="loadGallery('other_digital');">Digital</div>
-					<div class='listItem' ng-class="{ 'activeLink': activeCategory == 'other_traditional' }" ng-mouseenter="showPreview('other_traditional');" ng-mouseleave="hidePreview();" ng-click="loadGallery('other_traditional');">Traditional</div>
-					<div class='listItem' ng-class="{ 'activeLink': activeCategory == 'other_inktober' }" ng-mouseenter="showPreview('other_inktober');" ng-mouseleave="hidePreview();" ng-click="loadGallery('other_inktober');">Inktober</div>
+				<div class='linkHeaderContainer'><span class='linkHeaderText' ng-click='expandCategory(2);'>OTHER</span>
+					<div class='listItem' ng-class="{activeLink: activeCategory == 'other_digital'}" ng-mouseenter="showPreview('other_digital');" ng-mouseleave="hidePreview();" ng-click="loadGallery('other_digital');">Digital</div>
+					<div class='listItem' ng-class="{activeLink: activeCategory == 'other_traditional'}" ng-mouseenter="showPreview('other_traditional');" ng-mouseleave="hidePreview();" ng-click="loadGallery('other_traditional');">Traditional</div>
+					<div class='listItem' ng-class="{activeLink: activeCategory == 'other_inktober'}" ng-mouseenter="showPreview('other_inktober');" ng-mouseleave="hidePreview();" ng-click="loadGallery('other_inktober');">Inktober</div>
 				</div>				
 			</div>
 		</div>

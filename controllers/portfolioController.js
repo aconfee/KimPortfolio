@@ -1,9 +1,5 @@
 function portfolioController($scope){
-
-	$scope.galleryTitle = "Quick View";
-	
-	//// New Freshness
-	
+		
 	// Class members
 	var self = this;
 	self.defaultHeaderImage = "../../resources/icons/headerDefault.png";

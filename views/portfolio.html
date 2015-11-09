@@ -27,9 +27,8 @@
 
 		<!-- User controls -->
 		<div id='gallery-flyout' ng-click='retractThumbs();'>
-			<!--div id='gallery-title'>{{ galleryTitle }}<span id='gallery-close-button' ></span></div-->
 			<div id='thumb-container'>
-				<div class='gallery-thumb' ng-click='scrollTo($index);' ng-repeat="thumb in activeThumbs">
+				<div class='gallery-thumb' ng-click='slideTo($index);' ng-repeat="thumb in activeThumbs">
 					<img src = "{{ thumb }}" ></img>
 				</div>
 			</div>

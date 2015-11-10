@@ -10,69 +10,41 @@ function portfolioController($scope){
 	
 	// Data
 	self.sectionInfo = {
-		"characters_projects" : {
-			"headerPreview" : "../../resources/icons/headerCharacterProjects.png",
+		"characters_concept" : {
+			"headerPreview" : "../../resources/characters_concept/header.png",
 			"quickThumbs" : [
-				"../../resources/characters/projects/thumbs/1.png",
-				"../../resources/characters/projects/thumbs/2.png",
-				"../../resources/icons/comingSoonThumb.png"
+				"../../resources/characters_concept/thumbs/waterGirlThumb.png",
+				"../../resources/characters_concept/thumbs/christmasMermaidThumb.png",
+				"../../resources/characters_concept/thumbs/hipsterCentaurThumb.png"
 			]
 		},
-		"characters_illustrations" : {
-			"headerPreview" : "../../resources/icons/headerCharacterIllustration.png",
+		"characters_studies" : {
+			"headerPreview" : "../../resources/characters_studies/header.png",
 			"quickThumbs" : [
-				"../../resources/characters/illustration/thumbs/1.png",
-				"../../resources/characters/illustration/thumbs/2.png",
-				"../../resources/icons/comingSoonThumb.png"
-			]
-		},
-		"characters_sketches" : {
-			"headerPreview" : "../../resources/icons/headerCharacterSketches.png",
-			"quickThumbs" : [
-				"../../resources/characters/sketches/thumbs/1.png",
-				"../../resources/characters/sketches/thumbs/2.png",
-				"../../resources/characters/sketches/thumbs/3.png",
-				"../../resources/icons/comingSoonThumb.png"
-			]
-		},
-		"environments_projects" : {
-			"headerPreview" : "http://www.craigspets.com/sites/default/files/imagecache/product_full/pet-for-sale/puppies_for_sale_in_pa_jlsii8653_1.jpg",
-			"quickThumbs" : [
-				"../../resources/icons/comingSoonThumb.png"
+				"../../resources/characters_studies/thumbs/1Thumb.png",
+				"../../resources/characters_studies/thumbs/2Thumb.png",
+				"../../resources/characters_studies/thumbs/3Thumb.png"
 			]
 		},
 		"environments_illustrations" : {
-			"headerPreview" : "http://4.bp.blogspot.com/-hzVCoWekCiI/T0Oq1HCVgjI/AAAAAAAAB6A/ZcB-Zqxkpag/s1600/Brown_+Cavalier_King_Charles_Spaniel_Puppies.jpg",
+			"headerPreview" : "../../resources/environments_illustrations/header.png",
 			"quickThumbs" : [
-				"../../resources/icons/comingSoonThumb.png"
+				"../../resources/environments_illustrations/mountainPieceThumb.png"
 			]
 		},
-		"environments_sketches" : {
-			"headerPreview" : "../../resources/icons/headerEnvironmentSketches.png",
+		"environments_studies" : {
+			"headerPreview" : "../../resources/environments_studies/header.png",
 			"quickThumbs" : [
-				"../../resources/environments/sketches/thumbs/1.png",
-				"../../resources/environments/sketches/thumbs/2.png",
-				"../../resources/environments/sketches/thumbs/3.png",
-				"../../resources/environments/sketches/thumbs/4.png",
-				"../../resources/icons/comingSoonThumb.png"
+				"../../resources/environments_studies/thumbs/parkThumb.png",
+				"../../resources/environments_studies/thumbs/mountainRangeThumb.png",
+				"../../resources/environments_studies/thumbs/courtyardThumb.png",
+				"../../resources/environments_studies/thumbs/rainforestThumb.png"
 			]
 		},
-		"other_digital" : {
-			"headerPreview" : "http://www.craigspets.com/sites/default/files/imagecache/product_full/pet-for-sale/puppies_for_sale_in_pa_jlsii8653_1.jpg",
+		"other_fanArt" : {
+			"headerPreview" : self.defaultHeaderImage,
 			"quickThumbs" : [
-				"../../resources/icons/comingSoonThumb.png"
-			]
-		},
-		"other_traditional" : {
-			"headerPreview" : "http://4.bp.blogspot.com/-hzVCoWekCiI/T0Oq1HCVgjI/AAAAAAAAB6A/ZcB-Zqxkpag/s1600/Brown_+Cavalier_King_Charles_Spaniel_Puppies.jpg",
-			"quickThumbs" : [
-				"../../resources/icons/comingSoonThumb.png"
-			]
-		},
-		"other_inktober" : {
-			"headerPreview" : "http://i3.findthebest.com/sites/default/files/465/media/images/Cavalier_King_Charles_Spaniel_915857.jpg",
-			"quickThumbs" : [
-				"../../resources/icons/comingSoonThumb.png"
+				"../../resources/other_fanArt/leeLooThumb.png"
 			]
 		},
 		"contact" : {

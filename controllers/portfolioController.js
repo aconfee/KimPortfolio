@@ -14,8 +14,9 @@ function portfolioController($scope){
 			"headerPreview" : "../../resources/characters_concept/header.png",
 			"quickThumbs" : [
 				"../../resources/characters_concept/thumbs/waterGirlThumb.png",
-				"../../resources/characters_concept/thumbs/christmasMermaidThumb.png",
-				"../../resources/characters_concept/thumbs/hipsterCentaurThumb.png"
+				"../../resources/characters_concept/thumbs/peterPanMermaidThumb.png",
+				"../../resources/characters_concept/thumbs/hipsterCentaurThumb.png",
+				"../../resources/characters_concept/thumbs/christmasMermaidThumb.png"
 			]
 		},
 		"characters_studies" : {
@@ -29,7 +30,7 @@ function portfolioController($scope){
 		"environments_illustrations" : {
 			"headerPreview" : "../../resources/environments_illustrations/header.png",
 			"quickThumbs" : [
-				"../../resources/environments_illustrations/mountainPieceThumb.png"
+				"../../resources/environments_illustrations/thumbs/mountainPieceThumb.png"
 			]
 		},
 		"environments_studies" : {
@@ -42,9 +43,9 @@ function portfolioController($scope){
 			]
 		},
 		"other_fanArt" : {
-			"headerPreview" : self.defaultHeaderImage,
+			"headerPreview" : "../../resources/other_fanArt/header.png",
 			"quickThumbs" : [
-				"../../resources/other_fanArt/leeLooThumb.png"
+				"../../resources/other_fanArt/thumbs/leeLooThumb.png"
 			]
 		},
 		"contact" : {

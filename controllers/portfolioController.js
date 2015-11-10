@@ -56,10 +56,10 @@ function portfolioController($scope){
 	}
 	
 	// HTML bindings
-	$scope.activeCategory = "characters_projects"; // Bound to marking active tab
+	$scope.activeCategory = "characters_concept"; // Bound to marking active tab
 	$scope.activeGalleryTemplate = "templates/" + $scope.activeCategory + "_gallery.html";
 	$scope.activeHeaderImage = self.defaultHeaderImage;
-	$scope.activeThumbs = self.sectionInfo["characters_projects"]["quickThumbs"];
+	$scope.activeThumbs = self.sectionInfo["characters_concept"]["quickThumbs"];
 	
 	///
 	/// Update the preview spaces for a category.

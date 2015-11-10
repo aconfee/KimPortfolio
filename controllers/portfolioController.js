@@ -42,7 +42,7 @@ function portfolioController($scope){
 				"../../resources/environments_studies/thumbs/rainforestThumb.png"
 			]
 		},
-		"other_fanArt" : {
+		"other_fanart" : {
 			"headerPreview" : "../../resources/other_fanArt/header.png",
 			"quickThumbs" : [
 				"../../resources/other_fanArt/thumbs/leeLooThumb.png"

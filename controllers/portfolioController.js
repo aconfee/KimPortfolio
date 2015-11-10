@@ -2,7 +2,7 @@ function portfolioController($scope){
 		
 	// Class members
 	var self = this;
-	self.defaultHeaderImage = "../../resources/icons/headerDefault.png";
+	self.defaultHeaderImage = "../../resources/headerDefault.png";
 	self.openCategory = 0; // The currently expanded high level category in the side menu.
 	self.thumbsOpen = false;
 	self.numberOfImagesPrevious = 0; // Used for loading images and resizing the gallery container.

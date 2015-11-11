@@ -46,10 +46,26 @@ body{
 
 	max-width:100%;
 	max-height:100%;
+	
+	transition: all .2s ease-in-out;
+   -moz-transition: all .2s ease-in-out;
+   -webkit-transition: all .2s ease-in-out;
 }
 
-.social-link:hover{
+.social-link img:hover{
 	cursor:pointer;
+	
+	opacity: 0.7;
+	
+	transition: all .2s ease-in-out;
+   -moz-transition: all .2s ease-in-out;
+   -webkit-transition: all .2s ease-in-out;
+   
+   -webkit-filter: blur(1px);
+	-moz-filter: blur(1px);
+	-o-filter: blur(1px);
+	-ms-filter: blur(1px);
+	filter: blur(1px);
 }
 
 #view-portfolio-button{

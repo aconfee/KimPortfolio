@@ -168,15 +168,6 @@ function portfolioController($scope){
 	};
 	
 	///
-	/// Scroll the entire screen to the left.
-	///
-	$scope.slideScreen = function(){
-		
-		var destination = $( ".screen-container" ).scrollLeft() + screen.width - 230;
-		$( ".screen-container" ).animate({scrollLeft: destination}, 600 );
-	};
-	
-	///
 	/// Resize the gallery to fit all loaded images.
 	///
 	/// returns: Whether the page is finished loading or not.

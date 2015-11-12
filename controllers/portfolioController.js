@@ -174,16 +174,7 @@ function portfolioController($scope){
 	///
 	$scope.slideToNext = function(){
 		
-		++self.currentGalleryIndex;
-		
-		// If scrolling past the end, go back to the start. 
-		var numberOfImages = $(".template-image-restrict").length - 1;
-		if(self.currentGalleryIndex > numberOfImages)
-		{
-			self.currentGalleryIndex = 0;
-		}
-		
-		$scope.slideTo(self.currentGalleryIndex);
+		$( ".screen-container" ).animate({scrollLeft: screen.width}, 600 );
 	};
 	
 	///

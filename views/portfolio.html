@@ -31,9 +31,10 @@
 				<div class='gallery-thumb' ng-click='slideTo($index);' ng-repeat="thumb in activeThumbs">
 					<img src = "{{ thumb }}" ></img>
 				</div>
-				<div class=".endlessThumbFade"></div>
 			</div>
 		</div>
+		
+		<div class="scroll-button cover-scroll-button scroll-button-right cover-scroll-button-right" ng-click="slideToNext();"></div>
 		
 		<div id='mainNav' ng-mouseenter='expandThumbs()'>
 			<div id='header'>
@@ -41,7 +42,7 @@
 			</div>
 			<div id='content-links'>
 				<a href='../index.html'>HOME</a>
-				<div id='contactButton'><span class='linkHeaderText' ng-class="{activeLink: activeCategory == 'contact' }" ng-click="loadGallery('contact'); hideThumbs();">CONTACT</span>
+				<div id='contactButton'><span class='linkHeaderText' ng-class="{activeLink: activeCategory == 'contact' }" ng-click="loadGallery('contact'); hideThumbs();">CONTACT</span></div>
 				<p></p>
 				
 				<div class='linkHeaderContainer' style="height:75px"><span class='linkHeaderText' ng-click='expandCategory(0);'>CHARACTERS</span>

@@ -7,6 +7,7 @@ function portfolioController($scope){
 	self.thumbsOpen = false;
 	self.numberOfImagesPrevious = 0; // Used for loading images and resizing the gallery container.
 	self.thumbFlyoutAnimating = false; // Lock any interaction with the thumb flyout while animating.
+	self.currentGalleryIndex = 0;
 	
 	// Data
 	self.sectionInfo = {
@@ -16,26 +17,7 @@ function portfolioController($scope){
 				"../../resources/characters_concept/thumbs/waterGirlThumb.png",
 				"../../resources/characters_concept/thumbs/peterPanMermaidThumb.png",
 				"../../resources/characters_concept/thumbs/hipsterCentaurThumb.png",
-				"../../resources/icons/instagramIcon.png",
-				"../../resources/characters_concept/thumbs/christmasMermaidThumb.png",
-				"../../resources/characters_studies/thumbs/1Thumb.png",
-				"../../resources/characters_studies/thumbs/2Thumb.png",
-				"../../resources/icons/twitterIcon.png",
-				"../../resources/characters_studies/thumbs/3Thumb.png",
-				"../../resources/environments_illustrations/thumbs/mountainPieceThumb.png",
-				"../../resources/environments_studies/thumbs/parkThumb.png",
-				"../../resources/environments_studies/thumbs/mountainRangeThumb.png",
-				"../../resources/icons/facebookIcon.png",
-				"../../resources/environments_studies/thumbs/courtyardThumb.png",
-				"../../resources/environments_studies/thumbs/rainforestThumb.png",
-				"../../resources/icons/tumblrIcon.png",
-				"../../resources/other_fanArt/thumbs/leeLooThumb.png",
-				"../../resources/other_fanArt/header.png",
-				"../../resources/environments_studies/header.png",
-				"../../resources/environments_illustrations/header.png",
-				"../../resources/characters_studies/header.png",
-				"../../resources/characters_concept/header.png",
-				"../../resources/headerDefault.png"
+				"../../resources/characters_concept/thumbs/christmasMermaidThumb.png"
 			]
 		},
 		"characters_studies" : {
@@ -166,6 +148,16 @@ function portfolioController($scope){
 	/// params: index = The index (left to right) of the image to scroll to.
 	///
 	$scope.slideTo = function(index){
+		
+		// Bounds check.
+		var numberOfImages = $(".template-image-restrict").length - 1;
+		if(index > numberOfImages || index < 0)
+		{
+			return;
+		}
+		
+		self.currentGalleryIndex = index;
+		
 		var dest = $(".template-image-restrict").eq(index).position().left;
 		var pos = dest + $( ".screen-container" ).scrollLeft() - 230;
 		if(pos < 0){
@@ -173,6 +165,25 @@ function portfolioController($scope){
 		}
 
 		$( ".screen-container" ).animate({scrollLeft: pos}, 600 );
+	};
+	
+	///
+	/// Scroll to the next element in the gallery.
+	///
+	/// params: index = The index (left to right) of the image to scroll to.
+	///
+	$scope.slideToNext = function(){
+		
+		++self.currentGalleryIndex;
+		
+		// If scrolling past the end, go back to the start. 
+		var numberOfImages = $(".template-image-restrict").length - 1;
+		if(self.currentGalleryIndex > numberOfImages)
+		{
+			self.currentGalleryIndex = 0;
+		}
+		
+		$scope.slideTo(self.currentGalleryIndex);
 	};
 	
 	///

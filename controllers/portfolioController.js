@@ -174,7 +174,8 @@ function portfolioController($scope){
 	///
 	$scope.slideToNext = function(){
 		
-		$( ".screen-container" ).animate({scrollLeft: screen.width}, 600 );
+		var destination = $( ".screen-container" ).scrollLeft() + screen.width - 230;
+		$( ".screen-container" ).animate({scrollLeft: destination}, 600 );
 	};
 	
 	///

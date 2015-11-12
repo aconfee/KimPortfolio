@@ -339,12 +339,4 @@ a:visited{
 .portfolio-scroll-button{
 	position: fixed;
 	top: 45%;
-	width: 50px;
-	height: 75px;
-	border-top-left-radius: 3px;
-	border-bottom-left-radius: 3px;
-	border: 1px solid #FFF;
-	right: -1px;
-	background-color: #C0C0C0;
-	opacity: 0.7;
 }

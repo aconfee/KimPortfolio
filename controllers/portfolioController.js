@@ -168,11 +168,9 @@ function portfolioController($scope){
 	};
 	
 	///
-	/// Scroll to the next element in the gallery.
+	/// Scroll the entire screen to the left.
 	///
-	/// params: index = The index (left to right) of the image to scroll to.
-	///
-	$scope.slideToNext = function(){
+	$scope.slideScreen = function(){
 		
 		var destination = $( ".screen-container" ).scrollLeft() + screen.width - 230;
 		$( ".screen-container" ).animate({scrollLeft: destination}, 600 );

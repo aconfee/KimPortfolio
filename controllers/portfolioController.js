@@ -43,10 +43,11 @@ function portfolioController($scope){
 				"../../resources/environments_studies/thumbs/rainforestThumb.png"
 			]
 		},
-		"other_fanart" : {
+		"personal_fanart" : {
 			"headerPreview" : "../../resources/other_fanArt/header.png",
 			"quickThumbs" : [
-				"../../resources/other_fanArt/thumbs/leeLooThumb.png"
+				"../../resources/other_fanArt/thumbs/leeLooThumb.png",
+				"../../resources/other_fanArt/thumbs/harleyQuinnThumb.png"
 			]
 		},
 		"contact" : {

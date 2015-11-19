@@ -46,8 +46,8 @@ function portfolioController($scope){
 		"personal_fanart" : {
 			"headerPreview" : "../../resources/other_fanArt/header.png",
 			"quickThumbs" : [
-				"../../resources/other_fanArt/thumbs/leeLooThumb.png",
-				"../../resources/other_fanArt/thumbs/harleyQuinnThumb.png"
+				"../../resources/personal_fanArt/thumbs/leeLooThumb.png",
+				"../../resources/personal_fanArt/thumbs/harleyQuinnThumb.png"
 			]
 		},
 		"contact" : {

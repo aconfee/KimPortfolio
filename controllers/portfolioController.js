@@ -293,21 +293,29 @@ function portfolioController($scope){
 	self.initializeListItemLinks = function(){
 		$(".listItem").on({			
 			mouseenter: function(){
-				var id = $(this).attr("id");				
-				$scope.showPreview(id);
+				// Call apply to update Angular bindings. Use callback to catch errors.
+				// http://jimhoskins.com/2012/12/17/angularjs-and-apply.html
+				$scope.apply(function(){
+					var id = $(this).attr("id");				
+					$scope.showPreview(id);
+				});
 			},
 			
-			mouseleave: function(){				
-				$scope.hidePreview();
+			mouseleave: function(){	
+				$scope.apply(function(){			
+					$scope.hidePreview();
+				});
 			},
 			
 			click: function(){
-				var id = $(this).attr("id");
-				$scope.loadGallery(id);
-				
-				// Remove previous active link and set the current active link
-				$(".listItem.activeLink").removeClass("activeLink");
-				$(this).addClass("activeLink");
+				$scope.apply(function(){
+					var id = $(this).attr("id");
+					$scope.loadGallery(id);
+					
+					// Remove previous active link and set the current active link
+					$(".listItem.activeLink").removeClass("activeLink");
+					$(this).addClass("activeLink");
+				});
 			}
 		});	
 	};

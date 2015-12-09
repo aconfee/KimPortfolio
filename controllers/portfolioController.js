@@ -215,11 +215,23 @@ function portfolioController($scope){
 	/// params: interval = How often to try reloading and resizing. 
 	self.resizeGalleryAsync = function(interval){
 		var resizeGalleryInterval = setInterval(function() {
-			if(resizeGallery() === true){
+			if(self.resizeGallery() === true){
 		    	clearInterval(resizeGalleryInterval);
 			}
 		}, interval);
 	};
+	
+	///
+	/// Resize the gallery any time the window is resized (this includes onload).
+	///
+	$( window ).resize(function() {
+		self.resizeGalleryAsync(100);
+		self.resizeGalleryAsync(500);
+		self.resizeGalleryAsync(2000);
+		self.resizeGalleryAsync(5000);
+		
+		console.log("Window resized. Loading gallery.");
+	});
 	
 	///
 	/// Expand the thumbnail flyout.

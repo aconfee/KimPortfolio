@@ -57,10 +57,15 @@ function portfolioController($scope){
 			]
 		}
 	}
-	
+	/*
 	window.sayHello = function(){
 		console.log("Portfolio controller - Hello!");	
 	};
+	*/
+	
+	$(document).ready(function(){
+		Console.log("Using document ready from inside controller to initialize controller... duh.");
+	});
 	
 	// HTML bindings
 	$scope.activeCategory = "characters_concept"; // Bound to marking active tab

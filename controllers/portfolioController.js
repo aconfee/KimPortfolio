@@ -70,7 +70,7 @@ function portfolioController($scope){
 	///
 	/// params: categoryName = The name of the category to grab preview content from.
 	///
-	$scope.showPreview = function(categoryName){
+	self.showPreview = function(categoryName){
 		categoryName = categoryName.toLowerCase();
 		
 		// Update HTML bindings
@@ -82,7 +82,7 @@ function portfolioController($scope){
 	/// Restore default/active content to preview spaces.
 	/// Spaces incluse header image and thumbs gallery.
 	///
-	$scope.hidePreview = function(){
+	self.hidePreview = function(){
 		// Update HTML bindings
 		$scope.activeHeaderImage = self.defaultHeaderImage;
 		$scope.activeThumbs = self.sectionInfo[$scope.activeCategory]["quickThumbs"];
@@ -94,7 +94,7 @@ function portfolioController($scope){
 	///
 	/// params: categoryName = The name of the category to grab content from.
 	///
-	$scope.loadGallery = function(categoryName){
+	self.loadGallery = function(categoryName){
 		categoryName = categoryName.toLowerCase();
 		
 		// Update class info
@@ -264,7 +264,7 @@ function portfolioController($scope){
 	/// Instantly hide the thumbs without animating.
 	/// Used on contact page to not confuse the user.
 	///
-	$scope.hideThumbs = function(){
+	self.hideThumbs = function(){
 		$( "#gallery-flyout").css("opacity", "0.0");
 		$( "#thumb-container").css("opacity", "0.0");
 		$( "#gallery-flyout").css("padding", "0px");
@@ -274,6 +274,52 @@ function portfolioController($scope){
 	};
 	
 	//// JQUERY EVENTS AND INITIALIZERS
+	
+	///
+	/// Initialize the listItem link events.
+	///
+	self.initializeListItemLinks = function(){
+		$(".listItem").on({			
+			mouseenter: function(){
+				// Call apply to update Angular bindings. Use callback to catch errors.
+				// http://jimhoskins.com/2012/12/17/angularjs-and-apply.html
+				var id = $(this).attr("id");
+				$scope.$apply(function(){				
+					self.showPreview(id);
+				});
+			},
+			
+			mouseleave: function(){	
+				$scope.$apply(function(){			
+					self.hidePreview();
+				});
+			},
+			
+			click: function(){
+				var id = $(this).attr("id");
+				$scope.$apply(function(){
+					self.loadGallery(id);
+				});
+				
+				// Remove previous active link and set the current active link
+				$(".listItem.activeLink").removeClass("activeLink");
+				$(this).addClass("activeLink");
+			}
+		});	
+		
+		// This is gross and bad that it's a unique case. I know. I really fooled up css design here. 
+		$("#contactButton").on({
+			click: function(){
+				$scope.$apply(function(){
+					self.loadGallery("contact");
+				});
+				
+				self.hideThumbs();
+				$(".listItem.activeLink").removeClass("activeLink");
+				$(this).addClass("activeLink");
+			}
+		});
+	};
 	
 	///
 	/// Resize the gallery any time the window is resized (this includes onload).
@@ -288,39 +334,6 @@ function portfolioController($scope){
 	});
 	
 	///
-	/// Initialize the listItem link events.
-	///
-	self.initializeListItemLinks = function(){
-		$(".listItem").on({			
-			mouseenter: function(){
-				// Call apply to update Angular bindings. Use callback to catch errors.
-				// http://jimhoskins.com/2012/12/17/angularjs-and-apply.html
-				var id = $(this).attr("id");
-				$scope.$apply(function(){				
-					$scope.showPreview(id);
-				});
-			},
-			
-			mouseleave: function(){	
-				$scope.$apply(function(){			
-					$scope.hidePreview();
-				});
-			},
-			
-			click: function(){
-				var id = $(this).attr("id");
-				$scope.$apply(function(){
-					$scope.loadGallery(id);
-					
-					// Remove previous active link and set the current active link
-					$(".listItem.activeLink").removeClass("activeLink");
-					$(this).addClass("activeLink");
-				});
-			}
-		});	
-	};
-	
-	///
 	/// Initialize events for the gallery when loaded. This assumes that this controller
 	/// will only be used for this page.
 	/// 
@@ -331,7 +344,5 @@ function portfolioController($scope){
 		self.resizeGalleryAsync(5000);
 		
 		self.initializeListItemLinks();
-		
-		console.log("Using document ready from inside controller to initialize controller... duh.");
 	});
 };

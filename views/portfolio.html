@@ -41,7 +41,7 @@
 			</div>
 			<div id='content-links'>
 				<a href='../index.html'>HOME</a>
-				<div id='contactButton'><span class='linkHeaderText' ng-class="{activeLink: activeCategory == 'contact' }" ng-click="loadGallery('contact'); hideThumbs();">CONTACT</span></div>
+				<div id="contactButton" class="linkHeaderText">CONTACT</div>
 				<p></p>
 				
 				<div class='linkHeaderContainer' style="height:75px"><span class='linkHeaderText' ng-click='expandCategory(0);'>CHARACTERS</span>
@@ -49,11 +49,11 @@
 					<div id="characters_studies" class="listItem">Studies</div>
 				</div>
 				<div class='linkHeaderContainer'><span class='linkHeaderText' ng-click='expandCategory(1);'>ENVIRONMENTS</span>
-					<div id="environments_illustrations" class='listItem' ng-class="{activeLink: activeCategory == 'environments_illustrations'}" ng-mouseenter="showPreview('environments_illustrations');" ng-mouseleave="hidePreview();" ng-click="loadGallery('environments_illustrations');">Illustration</div>
-					<div id="environments_studies" class='listItem' ng-class="{activeLink: activeCategory == 'environments_studies'}" ng-mouseenter="showPreview('environments_studies');" ng-mouseleave="hidePreview()" ng-click="loadGallery('environments_studies');">Studies</div>
+					<div id="environments_illustrations" class="listItem">Illustration</div>
+					<div id="environments_studies" class="listItem">Studies</div>
 				</div>
 				<div class='linkHeaderContainer'><span class='linkHeaderText' ng-click='expandCategory(2);'>PERSONAL</span>
-					<div id="personal_fanart" class='listItem' ng-class="{activeLink: activeCategory == 'personal_fanart'}" ng-mouseenter="showPreview('personal_fanart');" ng-mouseleave="hidePreview();" ng-click="loadGallery('personal_fanart');">Fan Art</div>
+					<div id="personal_fanart" class="listItem">Fan Art</div>
 				</div>				
 			</div>
 		</div>

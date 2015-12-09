@@ -237,7 +237,7 @@ function portfolioController($scope){
 	/// 
 	/// Close the thumbnail flyout.
 	///
-	$scope.retractThumbs = function(){
+	self.retractThumbs = function(){
 		if(self.thumbFlyoutAnimating) return;
 		if(!self.thumbsOpen) return;
 		
@@ -343,10 +343,17 @@ function portfolioController($scope){
 			self.slideTo(index);
 		});
 		
-		// Hide thumbs when the open flyout is clicked.
-		$("#gallery-flyout").click(function(){
-			$scope.retractThumbs();
+		// Hide thumbs flyout when main gallery hovered.
+		$("#gallery-template").mouseenter(function(){
+			self.retractThumbs();
 		});
+		
+		// Hide thumbs when the open flyout is clicked.
+		/*
+		$("#gallery-flyout").click(function(){
+			self.retractThumbs();
+		});
+		*/
 	};
 	
 	///

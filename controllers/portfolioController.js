@@ -295,20 +295,20 @@ function portfolioController($scope){
 			mouseenter: function(){
 				// Call apply to update Angular bindings. Use callback to catch errors.
 				// http://jimhoskins.com/2012/12/17/angularjs-and-apply.html
-				$scope.apply(function(){
+				$scope.$apply(function(){
 					var id = $(this).attr("id");				
 					$scope.showPreview(id);
 				});
 			},
 			
 			mouseleave: function(){	
-				$scope.apply(function(){			
+				$scope.$apply(function(){			
 					$scope.hidePreview();
 				});
 			},
 			
 			click: function(){
-				$scope.apply(function(){
+				$scope.$apply(function(){
 					var id = $(this).attr("id");
 					$scope.loadGallery(id);
 					

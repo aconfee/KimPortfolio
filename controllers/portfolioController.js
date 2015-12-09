@@ -64,7 +64,7 @@ function portfolioController($scope){
 	*/
 	
 	$(document).ready(function(){
-		Console.log("Using document ready from inside controller to initialize controller... duh.");
+		console.log("Using document ready from inside controller to initialize controller... duh.");
 	});
 	
 	// HTML bindings

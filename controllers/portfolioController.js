@@ -58,6 +58,10 @@ function portfolioController($scope){
 		}
 	}
 	
+	$scope.sayHello = function(){
+		console.log("Portfolio controller - Hello!");	
+	};
+	
 	// HTML bindings
 	$scope.activeCategory = "characters_concept"; // Bound to marking active tab
 	$scope.activeGalleryTemplate = "templates/" + $scope.activeCategory + "_gallery.html";

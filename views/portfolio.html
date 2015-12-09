@@ -61,7 +61,7 @@
 </body>
 
 <!-- Resize the gallery width anytime the page loads or window is resized. This is also done in portfolioController::ChangeTemplate()-->
-	<script>
+	<script ng-controller='portfolioController'>
 		var numberOfImagesPrevious = 0;
 		
 		// Resize the gallery to fit all images as they load.
@@ -113,6 +113,11 @@
 			resizeGalleryAsync(5000);
 			
 			console.log("window resized");
+		});
+		
+		$( document ).ready(function(){
+			console.log("document ready!");
+			sayHello();
 		});
 	</script>
 

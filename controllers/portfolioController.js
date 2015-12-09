@@ -148,7 +148,7 @@ function portfolioController($scope){
 	///
 	/// params: index = The index (left to right) of the image to scroll to.
 	///
-	self.slideTo = function(index){
+	$scope.slideTo = function(index){
 		
 		// Bounds check.
 		var numberOfImages = $(".template-image-restrict").length - 1;
@@ -367,7 +367,7 @@ function portfolioController($scope){
 	/// Initialize events for the gallery when loaded. This assumes that this controller
 	/// will only be used for this page.
 	/// 
-	$(document).ready(function(){
+	$( document ).ready(function(){
 		self.resizeGalleryAsync(100);
 		self.resizeGalleryAsync(500);
 		self.resizeGalleryAsync(2000);

@@ -5,12 +5,12 @@
 	<title>Kim Greenough</title>
 
 	<!-- STYLES -->
-	<link rel='stylesheet' type='text/css' href='../styles/portfolio.css' />
-	<link rel='stylesheet' type='text/css' href='../styles/templateComponents.css' />
-	<link rel='stylesheet' type='text/css' href='../styles/components.css' />
+	<link rel="stylesheet" type="text/css" href="../styles/portfolio.css" />
+	<link rel="stylesheet" type="text/css" href="../styles/templateComponents.css" />
+	<link rel="stylesheet" type="text/css" href="../styles/components.css" />
 
 	<!-- FONT -->
-	<link href='http://fonts.googleapis.com/css?family=Poiret+One' rel='stylesheet' type='text/css'>
+	<link href="http://fonts.googleapis.com/css?family=Poiret+One" rel="stylesheet" type="text/css">
 
 	<!-- SCRIPTS -->
 	<!-- jQuery -->
@@ -21,39 +21,43 @@
 </head>
 
 <body>
-	<div ng-controller='portfolioController'>
+	<div ng-controller="portfolioController">
 
 		<!-- Content display -->
-		<div ng-include="activeGalleryTemplate" ng-mouseenter='retractThumbs();'></div>
+		<div ng-include="activeGalleryTemplate"></div>
 
 		<!-- User controls -->
-		<div id='gallery-flyout' ng-click='retractThumbs();'>
-			<div id='thumb-container'>
-				<div class='gallery-thumb' ng-repeat="thumb in activeThumbs">
+		<div id="gallery-flyout">
+			<div id="thumb-container">
+				<div class="gallery-thumb" ng-repeat="thumb in activeThumbs">
 					<img src = "{{ thumb }}" ></img>
 				</div>
 			</div>
 		</div>
 		
-		<div id='mainNav' ng-mouseenter='expandThumbs()'>
-			<div id='header'>
-				<img src=" {{ activeHeaderImage }} "></img>
-				
+		<!-- Main navigation menu -->
+		<div id="mainNav">
+			<div id="header">
+				<img src=" {{ activeHeaderImage }} "></img>				
 			</div>
-			<div id='content-links'>
-				<a href='../index.html'>HOME</a>
+			
+			<div id="content-links">
+				<a href="../index.html">HOME</a>
 				<div id="contactButton" class="linkHeaderText">CONTACT</div>
 				<p></p>
 				
-				<div class='linkHeaderContainer linkHeaderText' style="height:75px">CHARACTERS
+				<div class="linkHeaderContainer linkHeaderText" style="height:75px">
+					<span class="linkHeaderText">CHARACTERS</span>
 					<div id="characters_concept" class="listItem activeLink">Concept</div>
 					<div id="characters_studies" class="listItem">Studies</div>
 				</div>
-				<div class='linkHeaderContainer'><span class='linkHeaderText'>ENVIRONMENTS</span>
+				<div class="linkHeaderContainer">
+					<span class="linkHeaderText">ENVIRONMENTS</span>
 					<div id="environments_illustrations" class="listItem">Illustration</div>
 					<div id="environments_studies" class="listItem">Studies</div>
 				</div>
-				<div class='linkHeaderContainer'><span class='linkHeaderText'>PERSONAL</span>
+				<div class="linkHeaderContainer">
+					<span class="linkHeaderText">PERSONAL</span>
 					<div id="personal_fanart" class="listItem">Fan Art</div>
 				</div>				
 			</div>

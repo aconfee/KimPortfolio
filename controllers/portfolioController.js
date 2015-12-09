@@ -215,7 +215,7 @@ function portfolioController($scope){
 	///
 	/// Expand the thumbnail flyout.
 	///
-	$scope.expandThumbs = function(){	
+	self.expandThumbs = function(){	
 		if(self.thumbFlyoutAnimating) return;
 		if(self.thumbsOpen) return;
 		
@@ -237,7 +237,7 @@ function portfolioController($scope){
 	/// 
 	/// Close the thumbnail flyout.
 	///
-	$scope.retractThumbs = function(){
+	self.retractThumbs = function(){
 		if(self.thumbFlyoutAnimating) return;
 		if(!self.thumbsOpen) return;
 		
@@ -331,9 +331,26 @@ function portfolioController($scope){
 	/// Initialize the gallery thumbs.
 	///
 	self.initializeGalleryThumbs = function(){
+		
+		// Expand the thumbnail gallery when the mavigation main menu is hovered.
+		$("#mainNav").mouseenter(function(){
+			self.expandThumbs();
+		});
+		
+		// Slide to a piece when thumb is clicked.
 		$(".gallery-thumb").click(function(){
 			var index = $(".gallery-thumb").index(this);
 			self.slideTo(index);
+		});
+		
+		// Hide thumbs flyout when main gallery hovered.
+		$(".template-container").mouseenter(function(){
+			self.retractThumbs();
+		});
+		
+		// Hide thumbs when the open flyout is clicked.
+		$("#gallery-flyout").click(function(){
+			self.retractThumbs();
 		});
 	};
 	

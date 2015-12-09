@@ -237,7 +237,7 @@ function portfolioController($scope){
 	/// 
 	/// Close the thumbnail flyout.
 	///
-	self.retractThumbs = function(){
+	$scope.retractThumbs = function(){
 		if(self.thumbFlyoutAnimating) return;
 		if(!self.thumbsOpen) return;
 		
@@ -337,23 +337,17 @@ function portfolioController($scope){
 			self.expandThumbs();
 		});
 		
-		// Slide to a piece when thumb is clicked.
-		$(".gallery-thumb").click(function(){
-			var index = $(".gallery-thumb").index(this);
-			self.slideTo(index);
-		});
-		
 		// Hide thumbs flyout when main gallery hovered.
-		$("#gallery-template").mouseenter(function(){
-			self.retractThumbs();
-		});
-		
-		// Hide thumbs when the open flyout is clicked.
 		/*
-		$("#gallery-flyout").click(function(){
-			self.retractThumbs();
+		$("#gallery-template").mouseenter(function(){
+			$scope.retractThumbs();
 		});
 		*/
+		
+		// Hide thumbs when the open flyout is clicked.
+		$("#gallery-flyout").click(function(){
+			$scope.retractThumbs();
+		});
 	};
 	
 	///
@@ -364,6 +358,7 @@ function portfolioController($scope){
 		self.resizeGalleryAsync(500);
 		self.resizeGalleryAsync(2000);
 		self.resizeGalleryAsync(5000);
+		self.resizeGalleryAsync(15000);
 		
 		console.log("Window resized. Loading gallery.");
 	});
@@ -377,6 +372,7 @@ function portfolioController($scope){
 		self.resizeGalleryAsync(500);
 		self.resizeGalleryAsync(2000);
 		self.resizeGalleryAsync(5000);
+		self.resizeGalleryAsync(15000);
 		
 		self.initializeNavigationLinks();
 		self.initializeGalleryThumbs();

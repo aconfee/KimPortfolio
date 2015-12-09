@@ -351,5 +351,6 @@ function portfolioController($scope){
 		self.resizeGalleryAsync(5000);
 		
 		self.initializeListItemLinks();
+		self.initializeGalleryThumbs();
 	});
 };

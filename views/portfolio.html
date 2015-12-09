@@ -45,15 +45,15 @@
 				<p></p>
 				
 				<div class='linkHeaderContainer' style="height:75px"><span class='linkHeaderText' ng-click='expandCategory(0);'>CHARACTERS</span>
-					<div class='listItem' ng-class="{activeLink: activeCategory == 'characters_concept'}" ng-mouseenter="showPreview('characters_concept');" ng-mouseleave="hidePreview();" ng-click="loadGallery('characters_concept');">Concept</div>
-					<div class='listItem' ng-class="{activeLink: activeCategory == 'characters_studies'}" ng-mouseenter="showPreview('characters_studies');" ng-mouseleave="hidePreview();" ng-click="loadGallery('characters_studies');">Studies</div>
+					<div id="characters_concept" class="listItem">Concept</div>
+					<div id="characters_studies" class="listItem">Studies</div>
 				</div>
 				<div class='linkHeaderContainer'><span class='linkHeaderText' ng-click='expandCategory(1);'>ENVIRONMENTS</span>
-					<div class='listItem' ng-class="{activeLink: activeCategory == 'environments_illustrations'}" ng-mouseenter="showPreview('environments_illustrations');" ng-mouseleave="hidePreview();" ng-click="loadGallery('environments_illustrations');">Illustration</div>
-					<div class='listItem' ng-class="{activeLink: activeCategory == 'environments_studies'}" ng-mouseenter="showPreview('environments_studies');" ng-mouseleave="hidePreview()" ng-click="loadGallery('environments_studies');">Studies</div>
+					<div id="environments_illustrations" class='listItem' ng-class="{activeLink: activeCategory == 'environments_illustrations'}" ng-mouseenter="showPreview('environments_illustrations');" ng-mouseleave="hidePreview();" ng-click="loadGallery('environments_illustrations');">Illustration</div>
+					<div id="environments_studies" class='listItem' ng-class="{activeLink: activeCategory == 'environments_studies'}" ng-mouseenter="showPreview('environments_studies');" ng-mouseleave="hidePreview()" ng-click="loadGallery('environments_studies');">Studies</div>
 				</div>
 				<div class='linkHeaderContainer'><span class='linkHeaderText' ng-click='expandCategory(2);'>PERSONAL</span>
-					<div class='listItem' ng-class="{activeLink: activeCategory == 'personal_fanart'}" ng-mouseenter="showPreview('personal_fanart');" ng-mouseleave="hidePreview();" ng-click="loadGallery('personal_fanart');">Fan Art</div>
+					<div id="personal_fanart" class='listItem' ng-class="{activeLink: activeCategory == 'personal_fanart'}" ng-mouseenter="showPreview('personal_fanart');" ng-mouseleave="hidePreview();" ng-click="loadGallery('personal_fanart');">Fan Art</div>
 				</div>				
 			</div>
 		</div>

@@ -213,31 +213,6 @@ function portfolioController($scope){
 	};
 	
 	///
-	/// Resize the gallery any time the window is resized (this includes onload).
-	///
-	$( window ).resize(function() {
-		self.resizeGalleryAsync(100);
-		self.resizeGalleryAsync(500);
-		self.resizeGalleryAsync(2000);
-		self.resizeGalleryAsync(5000);
-		
-		console.log("Window resized. Loading gallery.");
-	});
-	
-	///
-	/// Initialize events for the gallery when loaded. This assumes that this controller
-	/// will only be used for this page.
-	/// 
-	$(document).ready(function(){
-		self.resizeGalleryAsync(100);
-		self.resizeGalleryAsync(500);
-		self.resizeGalleryAsync(2000);
-		self.resizeGalleryAsync(5000);
-		
-		console.log("Using document ready from inside controller to initialize controller... duh.");
-	});
-	
-	///
 	/// Expand the thumbnail flyout.
 	///
 	$scope.expandThumbs = function(){	
@@ -297,4 +272,58 @@ function portfolioController($scope){
 		
 		self.thumbsOpen = false;
 	};
+	
+	//// JQUERY EVENTS AND INITIALIZERS
+	
+	///
+	/// Resize the gallery any time the window is resized (this includes onload).
+	///
+	$( window ).resize(function() {
+		self.resizeGalleryAsync(100);
+		self.resizeGalleryAsync(500);
+		self.resizeGalleryAsync(2000);
+		self.resizeGalleryAsync(5000);
+		
+		console.log("Window resized. Loading gallery.");
+	});
+	
+	///
+	/// Initialize the listItem link events.
+	///
+	self.initializeListItemLinks = function(){
+		$(".listItem").on({			
+			mouseenter: function(){
+				var id = $(this).attr("id");				
+				$scope.showPreview(id);
+			},
+			
+			mouseleave: function(){				
+				$scope.hidePreview();
+			},
+			
+			click: function(){
+				var id = $(this).attr("id");
+				$scope.loadGallery(id);
+				
+				// Remove previous active link and set the current active link
+				$(".listItem.activeLink").removeClass("activeLink");
+				$(this).addClass("activeLink");
+			}
+		});	
+	};
+	
+	///
+	/// Initialize events for the gallery when loaded. This assumes that this controller
+	/// will only be used for this page.
+	/// 
+	$(document).ready(function(){
+		self.resizeGalleryAsync(100);
+		self.resizeGalleryAsync(500);
+		self.resizeGalleryAsync(2000);
+		self.resizeGalleryAsync(5000);
+		
+		self.initializeListItemLinks();
+		
+		console.log("Using document ready from inside controller to initialize controller... duh.");
+	});
 };

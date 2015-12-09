@@ -190,7 +190,7 @@ function portfolioController($scope){
 		if (numberOfImagesCurrent > self.numberOfImagesPrevious && 
 			numberOfImagesCurrent > 0){
 				
-			numberOfImagesPrevious = numberOfImagesCurrent;
+			self.numberOfImagesPrevious = numberOfImagesCurrent;
 			return false;
 		}
 

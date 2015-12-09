@@ -58,7 +58,7 @@ function portfolioController($scope){
 		}
 	}
 	
-	$scope.sayHello = function(){
+	window.sayHello = function(){
 		console.log("Portfolio controller - Hello!");	
 	};
 	

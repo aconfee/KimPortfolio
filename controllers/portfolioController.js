@@ -116,7 +116,7 @@ function portfolioController($scope){
 	///
 	/// params: index = The index (top to bottom) of this category as it lies in the main menu. 
 	///
-	$scope.expandCategory = function(index){
+	self.expandCategory = function(index){
 		// If already open, don't do anything.
 		if(index == self.openCategory) return;
 		
@@ -278,7 +278,15 @@ function portfolioController($scope){
 	///
 	/// Initialize the listItem link events.
 	///
-	self.initializeListItemLinks = function(){
+	self.initializeNavigationLinks = function(){
+		
+		// Initialize the main expandable categories.
+		$(".linkHeaderContainer").click(function(){
+			var index = $(".linkHeaderContainer").index(this);
+			self.expandCategory(index);
+		});
+		
+		// Initialize the sub-category links.
 		$(".listItem").on({			
 			mouseenter: function(){
 				// Call apply to update Angular bindings. Use callback to catch errors.
@@ -307,24 +315,25 @@ function portfolioController($scope){
 			}
 		});	
 		
-		self.initializeGalleryThumbs = function(){
-			$(".gallery-thumb").click(function(){
-				var index = $(".gallery-thumb").index(this);
-				self.slideTo(index);
+		// Initialize the contact button (bad bad special case. I'm sorry!).
+		$("#contactButton").click(function(){
+			$scope.$apply(function(){
+				self.loadGallery("contact");
 			});
-		}
-		
-		// This is gross and bad that it's a unique case. I know. I really fooled up css design here. 
-		$("#contactButton").on({
-			click: function(){
-				$scope.$apply(function(){
-					self.loadGallery("contact");
-				});
-				
-				self.hideThumbs();
-				$(".listItem.activeLink").removeClass("activeLink");
-				$(this).addClass("activeLink");
-			}
+			
+			self.hideThumbs();
+			$(".listItem.activeLink").removeClass("activeLink");
+			$(this).addClass("activeLink");
+		});
+	};
+	
+	///
+	/// Initialize the gallery thumbs.
+	///
+	self.initializeGalleryThumbs = function(){
+		$(".gallery-thumb").click(function(){
+			var index = $(".gallery-thumb").index(this);
+			self.slideTo(index);
 		});
 	};
 	
@@ -350,7 +359,7 @@ function portfolioController($scope){
 		self.resizeGalleryAsync(2000);
 		self.resizeGalleryAsync(5000);
 		
-		self.initializeListItemLinks();
+		self.initializeNavigationLinks();
 		self.initializeGalleryThumbs();
 	});
 };

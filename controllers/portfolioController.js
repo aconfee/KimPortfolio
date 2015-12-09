@@ -237,7 +237,7 @@ function portfolioController($scope){
 	/// 
 	/// Close the thumbnail flyout.
 	///
-	self.retractThumbs = function(){
+	$scope.retractThumbs = function(){
 		if(self.thumbFlyoutAnimating) return;
 		if(!self.thumbsOpen) return;
 		
@@ -343,14 +343,9 @@ function portfolioController($scope){
 			self.slideTo(index);
 		});
 		
-		// Hide thumbs flyout when main gallery hovered.
-		$(".template-container").mouseenter(function(){
-			self.retractThumbs();
-		});
-		
 		// Hide thumbs when the open flyout is clicked.
 		$("#gallery-flyout").click(function(){
-			self.retractThumbs();
+			$scope.retractThumbs();
 		});
 	};
 	

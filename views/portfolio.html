@@ -24,7 +24,7 @@
 	<div ng-controller="portfolioController">
 
 		<!-- Content display -->
-		<div ng-include="activeGalleryTemplate"></div>
+		<div ng-include="activeGalleryTemplate" ng-mouseenter="retractThumbs();"></div>
 
 		<!-- User controls -->
 		<div id="gallery-flyout">
@@ -46,7 +46,7 @@
 				<div id="contactButton" class="linkHeaderText">CONTACT</div>
 				<p></p>
 				
-				<div class="linkHeaderContainer linkHeaderText" style="height:75px">
+				<div class="linkHeaderContainer" style="height:75px">
 					<span class="linkHeaderText">CHARACTERS</span>
 					<div id="characters_concept" class="listItem activeLink">Concept</div>
 					<div id="characters_studies" class="listItem">Studies</div>

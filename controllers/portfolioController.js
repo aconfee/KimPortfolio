@@ -57,15 +57,6 @@ function portfolioController($scope){
 			]
 		}
 	}
-	/*
-	window.sayHello = function(){
-		console.log("Portfolio controller - Hello!");	
-	};
-	*/
-	
-	$(document).ready(function(){
-		console.log("Using document ready from inside controller to initialize controller... duh.");
-	});
 	
 	// HTML bindings
 	$scope.activeCategory = "characters_concept"; // Bound to marking active tab
@@ -231,6 +222,19 @@ function portfolioController($scope){
 		self.resizeGalleryAsync(5000);
 		
 		console.log("Window resized. Loading gallery.");
+	});
+	
+	///
+	/// Initialize events for the gallery when loaded. This assumes that this controller
+	/// will only be used for this page.
+	/// 
+	$(document).ready(function(){
+		self.resizeGalleryAsync(100);
+		self.resizeGalleryAsync(500);
+		self.resizeGalleryAsync(2000);
+		self.resizeGalleryAsync(5000);
+		
+		console.log("Using document ready from inside controller to initialize controller... duh.");
 	});
 	
 	///

@@ -148,7 +148,7 @@ function portfolioController($scope){
 	///
 	/// params: index = The index (left to right) of the image to scroll to.
 	///
-	$scope.slideTo = function(index){
+	self.slideTo = function(index){
 		
 		// Bounds check.
 		var numberOfImages = $(".template-image-restrict").length - 1;
@@ -306,6 +306,13 @@ function portfolioController($scope){
 				$(this).addClass("activeLink");
 			}
 		});	
+		
+		self.initializeGalleryThumbs = function(){
+			$(".gallery-thumb").click(function(){
+				var index = $(".gallery-thumb").index(this);
+				self.slideTo(index);
+			});
+		}
 		
 		// This is gross and bad that it's a unique case. I know. I really fooled up css design here. 
 		$("#contactButton").on({

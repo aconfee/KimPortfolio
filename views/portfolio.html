@@ -13,9 +13,9 @@
 	<link href='http://fonts.googleapis.com/css?family=Poiret+One' rel='stylesheet' type='text/css'>
 
 	<!-- SCRIPTS -->
-	<!-- jQuery for bootstrap and minor animations -->
+	<!-- jQuery -->
 	<script src="../bower_components/jquery/dist/jquery.min.js"></script>
-	<!-- Javascript for bootstrap -->
+	<!-- Javascripts -->
 	<script src="../bower_components/angular/angular.min.js"></script>
 	<script src="../controllers/portfolioController.js"></script>
 </head>
@@ -29,7 +29,7 @@
 		<!-- User controls -->
 		<div id='gallery-flyout' ng-click='retractThumbs();'>
 			<div id='thumb-container'>
-				<div class='gallery-thumb' ng-click='slideTo($index);' ng-repeat="thumb in activeThumbs">
+				<div class='gallery-thumb' ng-repeat="thumb in activeThumbs">
 					<img src = "{{ thumb }}" ></img>
 				</div>
 			</div>
@@ -38,6 +38,7 @@
 		<div id='mainNav' ng-mouseenter='expandThumbs()'>
 			<div id='header'>
 				<img src=" {{ activeHeaderImage }} "></img>
+				
 			</div>
 			<div id='content-links'>
 				<a href='../index.html'>HOME</a>

@@ -28,7 +28,7 @@
 
 		<!-- User controls -->
 		<div id="gallery-flyout">
-			<div id="thumb-container">
+			<div class="thumb-container">
 				<!-- Use ng-click instead of jquery so that click event is created for new content as it is generated. Use callbacks for new content generation in the future. -->
 				<div class="gallery-thumb" ng-repeat="thumb in activeThumbs" ng-click="slideTo($index);">
 					<img src = "{{ thumb }}" ></img>

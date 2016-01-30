@@ -195,7 +195,7 @@ function portfolioController($scope){
 		}
         
         // Add room for quick click container.
-        totalWidth += 405;
+        totalWidth += 700;
 
 		// If no new images have been added since last call, assume loaded.
 		$(".template-container").css("width", totalWidth + "px");

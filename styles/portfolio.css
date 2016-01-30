@@ -112,8 +112,10 @@ a:visited{
     
     display:inline-block;
 
-	margin:10px 30px;
-    padding:20px;
+    border: 1px solid #E1E1E1;
+
+	margin:15px 0 0 0;
+    padding:0px 20px;
     
     vertical-align: top;
     
@@ -125,7 +127,6 @@ a:visited{
     height:auto;
 	max-height:100%;
 	overflow: auto;
-    border: 1px solid #E1E1E1;
 }
 
 .gallery-thumb{

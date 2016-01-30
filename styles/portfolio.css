@@ -105,12 +105,26 @@ a:visited{
 	background-color: white;
 }
 
+.quick-click-container{
+    width: 475px;
+    height: 95%;
+    max-height:95%;
+    
+    display:inline-block;
+
+	margin:10px 30px;
+    padding:20px;
+    
+    vertical-align: top;
+    
+    overflow:hidden;
+}
+
 .thumb-container{
-	width:415px;
+	width:432px;
     height:auto;
 	max-height:100%;
 	overflow: auto;
-    padding:20px;
     border: 1px solid #E1E1E1;
 }
 
@@ -335,16 +349,3 @@ a:visited{
 	margin-top: 5px;
 }
 
-.quick-click-container{
-    width: 390px;
-    height: 95%;
-    max-height:95%;
-    
-    display:inline-block;
-
-	margin:10px 30px;
-    
-    vertical-align: top;
-    
-    overflow:hidden;
-}

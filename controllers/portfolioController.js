@@ -193,6 +193,9 @@ function portfolioController($scope){
 			self.numberOfImagesPrevious = numberOfImagesCurrent;
 			return false;
 		}
+        
+        // Add room for quick click container.
+        todalWidth += 405;
 
 		// If no new images have been added since last call, assume loaded.
 		$(".template-container").css("width", totalWidth + "px");

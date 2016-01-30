@@ -106,7 +106,7 @@ a:visited{
 }
 
 .quick-click-container{
-    width: 475px;
+    width: 414px;
     height: 95%;
     max-height:95%;
     
@@ -123,7 +123,7 @@ a:visited{
 }
 
 .thumb-container{
-	width:432px;
+	width:414px;
     height:auto;
 	max-height:100%;
 	overflow: auto;
@@ -132,7 +132,7 @@ a:visited{
 .gallery-thumb{
 	width:120px;
 	height:120px;
-	margin: 10px;
+	margin: 7px;
 	display:inline-block;
 	
 	overflow: hidden;

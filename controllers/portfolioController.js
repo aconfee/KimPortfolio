@@ -378,6 +378,6 @@ function portfolioController($scope){
 		self.resizeGalleryAsync(15000);
 		
 		self.initializeNavigationLinks();
-		self.initializeGalleryThumbs();
+		//self.initializeGalleryThumbs();
 	});
 };

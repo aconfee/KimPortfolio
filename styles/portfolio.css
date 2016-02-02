@@ -349,3 +349,12 @@ a:visited{
 	margin-top: 5px;
 }
 
+#menu-break{
+    width:75px;
+    height:10px;
+    
+    margin: 20px 0px;
+    
+    border-top:1px solid silver;
+}
+

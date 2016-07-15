@@ -23,30 +23,33 @@ body{
 	height:auto;
 	width:auto;
 
-	top:70px;
-	left:20px;
+	top:15px;
+	right:0px;
 }
 
 .social-link{
 	position:relative;
 	display:inline-block;
-	width:50px;
-	height:50px;
-	
-	border-radius: 3px;
+	width:40px;
+	height:40px;
 
-	margin-right:20px;
+	border: 1px solid white;
+
+	border-radius: 2px;
+
+	margin-right:15px;
+	padding:3px;
 }
 
 .social-link img{
 	width:100%;
 	height:100%;
-	
+
 	border-radius: 3px;
 
 	max-width:100%;
 	max-height:100%;
-	
+
 	transition: all .2s ease-in-out;
    -moz-transition: all .2s ease-in-out;
    -webkit-transition: all .2s ease-in-out;
@@ -54,13 +57,13 @@ body{
 
 .social-link img:hover{
 	cursor:pointer;
-	
+
 	opacity: 0.7;
-	
+
 	transition: all .2s ease-in-out;
    -moz-transition: all .2s ease-in-out;
    -webkit-transition: all .2s ease-in-out;
-   
+
    -webkit-filter: blur(1px);
 	-moz-filter: blur(1px);
 	-o-filter: blur(1px);
@@ -71,8 +74,8 @@ body{
 #view-portfolio-button{
 	position:absolute;
 
-	top:170px;
-	left:20px;
+	top:320px;
+	left:15px;
 }
 
 .cover-scroll-button{
@@ -88,4 +91,17 @@ body{
 
 .cover-scroll-button-right{
 	right:0px;
+}
+
+.title-container{
+	position:fixed;
+	width:300px;
+	height:300px;
+	top:15px;
+	left:10px;
+}
+
+.title-container img{
+	max-width:100%;
+	height: auto;
 }

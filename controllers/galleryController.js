@@ -113,7 +113,7 @@ function galleryController($scope){
 
 	// Initialize auto scroll timer
 	(function(){
-		$scope.nextSlideInterval = window.setInterval(function(){$scope.nextSlide()},3360);
+		$scope.nextSlideInterval = window.setInterval(function(){$scope.nextSlide()},4000);
 	})();
 
 	$scope.stopAutoscroll = function(){

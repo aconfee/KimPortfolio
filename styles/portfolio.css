@@ -1,18 +1,18 @@
 /*
-div::-webkit-scrollbar {  
-    width: 10px; 
-}  
-div::-webkit-scrollbar-track { 
-	width: 10px; 
-    background-color: #a09d9d;  
-    border-left: 1px solid white;  
-}  
-div::-webkit-scrollbar-thumb {  
-    background-color: #eadda4;  
-}  
-div::-webkit-scrollbar-thumb:hover {  
-    background-color: #d3c57c;  
-}  
+div::-webkit-scrollbar {
+    width: 10px;
+}
+div::-webkit-scrollbar-track {
+	width: 10px;
+    background-color: #a09d9d;
+    border-left: 1px solid white;
+}
+div::-webkit-scrollbar-thumb {
+    background-color: #eadda4;
+}
+div::-webkit-scrollbar-thumb:hover {
+    background-color: #d3c57c;
+}
 */
 ul{
 	list-style: none;
@@ -54,9 +54,9 @@ a:visited{
 
 #gallery-flyout-button{
 	position:fixed;
-	
+
 	left:200px;
-	
+
 	width:5px;
 }
 
@@ -68,7 +68,7 @@ a:visited{
 	bottom:16px;
 
 	width:0px;
-	
+
 	opacity: 0;
 
 	display: inline-block;
@@ -109,16 +109,16 @@ a:visited{
     width: 414px;
     height: 95%;
     max-height:95%;
-    
+
     display:inline-block;
 
     border: 1px solid #E1E1E1;
 
 	margin:15px 0 0 0;
     padding:0px 20px;
-    
+
     vertical-align: top;
-    
+
     overflow:hidden;
 }
 
@@ -134,7 +134,7 @@ a:visited{
 	height:120px;
 	margin: 7px;
 	display:inline-block;
-	
+
 	overflow: hidden;
 
 	transition: all .2s ease-in-out;
@@ -153,16 +153,16 @@ a:visited{
 .gallery-thumb img{
 	width:100%;
 	height:100%;
-	
+
 	max-width: 100%;
 	max-height:100%;
-	
+
 	-webkit-transform: scale(1.1);
 	-moz-transform: scale(1.1);
 	-ms-transform: scale(1.1);
 	-o-transform: scale(1.1);
 	transform: scale(1.1);
-	
+
 	transition: all .2s ease-in-out;
    -moz-transition: all .2s ease-in-out;
    -webkit-transition: all .2s ease-in-out;
@@ -174,13 +174,13 @@ a:visited{
 	-ms-transform: scale(1.0);
 	-o-transform: scale(1.0);
 	transform: scale(1.0);
-   
+
    	-webkit-filter: blur(1px);
 	-moz-filter: blur(1px);
 	-o-filter: blur(1px);
 	-ms-filter: blur(1px);
 	filter: blur(1px);
-	
+
 	transition: all .2s ease-in-out;
    -moz-transition: all .2s ease-in-out;
    -webkit-transition: all .2s ease-in-out;
@@ -197,7 +197,7 @@ a:visited{
 
 #header img{
 	width:100%;
-	
+
 	max-width: 100%;
 	max-height: 100%;
 }
@@ -227,7 +227,7 @@ a:visited{
 #content-links a:hover{
 	text-decoration: none;
 	cursor: pointer;
-	
+
 	-webkit-filter: blur(1px);
 	-moz-filter: blur(1px);
 	-o-filter: blur(1px);
@@ -281,7 +281,7 @@ a:visited{
 	transition: all .2s ease-in-out;
    -moz-transition: all .2s ease-in-out;
    -webkit-transition: all .2s ease-in-out;
-   
+
    -webkit-filter: blur(1px);
 	-moz-filter: blur(1px);
 	-o-filter: blur(1px);
@@ -308,7 +308,7 @@ a:visited{
 	transition: all .2s ease-in-out;
    -moz-transition: all .2s ease-in-out;
    -webkit-transition: all .2s ease-in-out;
-   
+
    -webkit-filter: blur(1px);
 	-moz-filter: blur(1px);
 	-o-filter: blur(1px);
@@ -317,11 +317,11 @@ a:visited{
 }
 
 .activeLink{
-	
+
 	transition: all .2s ease-in-out;
    -moz-transition: all .2s ease-in-out;
    -webkit-transition: all .2s ease-in-out;
-	
+
 	-webkit-filter: blur(1px);
 	-moz-filter: blur(1px);
 	-o-filter: blur(1px);
@@ -352,9 +352,8 @@ a:visited{
 #menu-break{
     width:200px;
     height:10px;
-    
+
     margin: 15px 0px 10px 0px;
-    
+
     border-top:1px solid #C0C0C0;
 }
-
